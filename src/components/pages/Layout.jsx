@@ -132,6 +132,8 @@ const Layout = styled.div`
     }
     box-sizing: border-box;
     width: 100%;
+    /* max-width: 1730px;
+    margin: 0 auto; */
     @media all and (min-width: 1136px) {
         padding: 0 64px;
     }
