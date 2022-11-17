@@ -1,22 +1,13 @@
+import styled from 'styled-components';
 import { fontSize } from '../../../lib/styles/fontSize';
 import { fontWeight } from '../../../lib/styles/fontWeight';
 
-const Text = ({ fontStyle, content }) => {
-    return (
-        <p
-            style={{
-                fontWeight: fontWeight[fontStyle.fontWeight],
-                whiteSpace:
-                    fontStyle.fontWeight === 'light' ? 'pre-line' : null,
-                fontSize: fontSize[fontStyle.fontSize],
-                color: fontStyle?.color,
-                position: fontStyle?.position,
-                bottom: fontStyle?.bottom,
-            }}
-        >
-            {content}
-        </p>
-    );
-};
-
-export default Text;
+export default styled.p`
+    line-height: 1.2;
+    font-weight: ${(props) => fontWeight[props?.fontStyle?.fontWeight]};
+    font-size: ${(props) => fontSize[props?.fontStyle?.fontSize]}px;
+    white-space: ${(props) => props?.fontStyle?.whiteSpace};
+    color: ${(props) => props?.fontStyle?.color};
+    position: ${(props) => props?.fontStyle?.position};
+    bottom: ${(props) => props?.fontStyle?.bottom};
+`;

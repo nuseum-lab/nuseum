@@ -36,21 +36,23 @@ const Image = ({ imgObject, type }) => {
                 }}
             >
                 <Text
-                    content='Your Museum of'
                     fontStyle={{
                         fontSize: 'sub',
-                        fontWeight: 'sub',
+                        fontWeight: 'primary',
                         color: 'white',
                     }}
-                />
+                >
+                    Your Museum of
+                </Text>
                 <Text
-                    content='Nutrient Physiology & Pharmacology'
                     fontStyle={{
                         fontSize: 'sub',
-                        fontWeight: 'sub',
+                        fontWeight: 'primary',
                         color: 'white',
                     }}
-                />
+                >
+                    Nutrient Physiology & Pharmacology
+                </Text>
                 <Button style={{ marginTop: 30, fontSize: fontSize.button }}>
                     EXPORE NUSEUM
                 </Button>

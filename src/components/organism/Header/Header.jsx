@@ -9,8 +9,9 @@ const Header = () => {
                     fontSize: 'logo',
                     fontWeight: 'logo',
                 }}
-                content={'NUSEUM'}
-            />
+            >
+                NUSEUM
+            </Text>
         </Box>
     );
 };
