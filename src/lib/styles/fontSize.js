@@ -1,7 +1,7 @@
 export const fontSize = {
-    logo: 44,
     primary: 64,
-    sub: 36,
-    normal: 28,
-    button: 16,
+    logo: 44,
+    sub: 28,
+    normal: 20,
+    button: 14,
 };
