@@ -1,4 +1,5 @@
 import Text from '../../atom/Text/Text';
+import GNB from '../../molecules/GNB';
 import { Box } from './Header.styled';
 
 const Header = () => {
@@ -12,6 +13,7 @@ const Header = () => {
             >
                 NUSEUM
             </Text>
+            <GNB />
         </Box>
     );
 };
