@@ -5,89 +5,96 @@ const GNB = () => {
         <div
             style={{
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                width: 400,
+                flexDirection: 'column',
+                alignItems: 'flex-end'
             }}
         >
             <div
                 style={{
-                    position: 'absolute',
-                    top: 8,
-                    right: 64,
                     display: 'flex',
                     justifyContent: 'space-between',
                     width: 120,
+                    paddingTop: '12px',
                 }}
             >
-                <Text fontStyle={{ fontSize: 'button', fontWeight: 'normal' }}>
+                <Text fontStyle={{ fontSize: 'subtext', fontWeight: 'normal' }}>
                     Login
                 </Text>
-                <Text fontStyle={{ fontSize: 'button', fontWeight: 'normal' }}>
+                <Text fontStyle={{ fontSize: 'subtext', fontWeight: 'normal' }}>
                     Sign Up
                 </Text>
             </div>
-            <Text
-                fontStyle={{
-                    fontSize: 'button',
-                    fontWeight: 'sub',
-                    opacity: 0.6,
+            
+            <div
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
                 }}
-                style={{ cursor: 'pointer' }}
-            >
-                SHOP
-            </Text>
-            <Text
-                fontStyle={{
-                    fontSize: 'button',
-                    fontWeight: 'sub',
-                    opacity: 0.6,
+            >    
+                <Text
+                    fontStyle={{
+                        fontSize: 'menu',
+                        fontWeight: 'sub',
+                        opacity: 0.6,
+                    }}
+                    style={{ cursor: 'pointer', padding: '20px 0 40px 40px',
                 }}
-                style={{ cursor: 'pointer' }}
-            >
-                RESTAURANT
-            </Text>
-            <Text
-                fontStyle={{
-                    fontSize: 'button',
-                    fontWeight: 'sub',
-                    opacity: 0.6,
-                }}
-                style={{ cursor: 'pointer' }}
-            >
-                DIARY
-            </Text>
-            <Text
-                fontStyle={{
-                    fontSize: 'button',
-                    fontWeight: 'sub',
-                    opacity: 0.6,
-                }}
-                style={{ cursor: 'pointer' }}
-            >
-                ME
-            </Text>
-            <Text
-                fontStyle={{
-                    fontSize: 'button',
-                    fontWeight: 'sub',
-                    opacity: 0.6,
-                }}
-                style={{ cursor: 'pointer' }}
-            >
-                LIBRARY
-            </Text>
-            <Text
-                fontStyle={{
-                    fontSize: 'button',
-                    fontWeight: 'sub',
-                    opacity: 0.6,
-                }}
-                style={{ cursor: 'pointer' }}
-            >
-                CURATOR
-            </Text>
-        </div>
+                >
+                    SHOP
+                </Text>
+                <Text
+                    fontStyle={{
+                        fontSize: 'menu',
+                        fontWeight: 'sub',
+                        opacity: 0.6,
+                    }}
+                    style={{ cursor: 'pointer', padding: '20px 0 40px 40px' }}
+                >
+                    RESTAURANT
+                </Text>
+                <Text
+                    fontStyle={{
+                        fontSize: 'menu',
+                        fontWeight: 'sub',
+                        opacity: 0.6,
+                    }}
+                    style={{ cursor: 'pointer', padding: '20px 0 40px 40px'}}
+                >
+                    DIARY
+                </Text>
+                <Text
+                    fontStyle={{
+                        fontSize: 'menu',
+                        fontWeight: 'sub',
+                        opacity: 0.6,
+                    }}
+                    style={{ cursor: 'pointer', padding: '20px 0 40px 40px'}}
+                >
+                    ME
+                </Text>
+                <Text
+                    fontStyle={{
+                        fontSize: 'menu',
+                        fontWeight: 'sub',
+                        opacity: 0.6,
+                    }}
+                    style={{ cursor: 'pointer' , padding: '20px 0 40px 40px'}}
+                >
+                    LIBRARY
+                </Text>
+                <Text
+                    fontStyle={{
+                        fontSize: 'menu',
+                        fontWeight: 'sub',
+                        opacity: 0.6,
+                    }}
+                    style={{ cursor: 'pointer' , padding: '20px 0 40px 40px'}}
+                >
+                    CURATOR
+                </Text>
+            </div>
+    </div>
     );
 };
 
