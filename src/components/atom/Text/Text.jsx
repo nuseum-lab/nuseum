@@ -10,4 +10,7 @@ export default styled.p`
     color: ${(props) => props?.fontStyle?.color};
     position: ${(props) => props?.fontStyle?.position};
     bottom: ${(props) => props?.fontStyle?.bottom};
+    &:hover {
+        opacity: ${(props) => props?.fontStyle?.opacity};
+    }
 `;
