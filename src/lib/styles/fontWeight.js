@@ -3,4 +3,5 @@ export const fontWeight = {
     primary: 700,
     sub: 600,
     normal: 400,
+    light: 300,
 };
