@@ -6,13 +6,16 @@ import mockup from '../../../lib/assets/mockup.png';
 import Section from '../../atom/Section/Section';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 import Text from '../../atom/Text/Text';
-import { ImageBox, SectionImage } from './Home.styled';
+import { ImageBox, InformationBox, SectionImage } from './Home.styled';
 import section1 from '../../../lib/assets/section1.png';
 import section2 from '../../../lib/assets/section2.png';
 import section3 from '../../../lib/assets/section3.png';
 import section4 from '../../../lib/assets/section4.png';
 import section5 from '../../../lib/assets/section5.png';
 import logo from '../../../lib/assets/logo.png';
+import Button from '../../atom/Button';
+import footerLogo from '../../../lib/assets/footer-logo.png';
+import { fontSize } from '../../../lib/styles/fontSize';
 
 const Home = () => {
     return (
@@ -295,6 +298,79 @@ const Home = () => {
                 </div>
                 <img src={logo} style={{ width: '80%' }} alt='logo' />
             </Section>
+            <Section
+                bgColor={'#101112'}
+                style={{
+                    height: 370,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
+                <div
+                    style={{
+                        height: 'auto',
+                        width: 'auto',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    }}
+                >
+                    <Text
+                        style={{ color: 'white' }}
+                        fontStyle={{ fontSize: 'logo', fontWeight: 'primary' }}
+                    >
+                        Ready to get started?
+                    </Text>
+                    <Button
+                        style={{ marginTop: 30, fontSize: fontSize.button }}
+                    >
+                        EXPORE NUSEUM
+                    </Button>
+                </div>
+            </Section>
+            <InformationBox>
+                <img src={footerLogo} alt='footer' height='80px' />
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        width: 400,
+                    }}
+                >
+                    <Text
+                        fontStyle={{
+                            fontSize: 'sub',
+                            fontWeight: 'normal',
+                            opacity: 0.6,
+                        }}
+                        style={{ cursor: 'pointer' }}
+                    >
+                        Our Team
+                    </Text>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'sub',
+                            fontWeight: 'normal',
+                            opacity: 0.6,
+                        }}
+                        style={{ cursor: 'pointer' }}
+                    >
+                        Blog
+                    </Text>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'sub',
+                            fontWeight: 'normal',
+                            opacity: 0.6,
+                        }}
+                        style={{ cursor: 'pointer' }}
+                    >
+                        Contacts
+                    </Text>
+                </div>
+            </InformationBox>
         </Layout>
     );
 };
