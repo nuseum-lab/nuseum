@@ -334,40 +334,58 @@ const Home = () => {
                 <div
                     style={{
                         display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        width: 400,
+                        flexDirection: 'column',
+                        alignItems: 'flex-end',
                     }}
                 >
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            width: 400,
+                        }}
+                    >
+                        <Text
+                            fontStyle={{
+                                fontSize: 'sub',
+                                fontWeight: 'normal',
+                                opacity: 0.6,
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            Our Team
+                        </Text>
+                        <Text
+                            fontStyle={{
+                                fontSize: 'sub',
+                                fontWeight: 'normal',
+                                opacity: 0.6,
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            Blog
+                        </Text>
+                        <Text
+                            fontStyle={{
+                                fontSize: 'sub',
+                                fontWeight: 'normal',
+                                opacity: 0.6,
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            Contacts
+                        </Text>
+                    </div>
                     <Text
                         fontStyle={{
-                            fontSize: 'sub',
+                            fontSize: 'normal',
                             fontWeight: 'normal',
                             opacity: 0.6,
                         }}
-                        style={{ cursor: 'pointer' }}
+                        style={{ marginTop: 10, cursor: 'pointer' }}
                     >
-                        Our Team
-                    </Text>
-                    <Text
-                        fontStyle={{
-                            fontSize: 'sub',
-                            fontWeight: 'normal',
-                            opacity: 0.6,
-                        }}
-                        style={{ cursor: 'pointer' }}
-                    >
-                        Blog
-                    </Text>
-                    <Text
-                        fontStyle={{
-                            fontSize: 'sub',
-                            fontWeight: 'normal',
-                            opacity: 0.6,
-                        }}
-                        style={{ cursor: 'pointer' }}
-                    >
-                        Contacts
+                        nuseum@nuseum-lab.com
                     </Text>
                 </div>
             </InformationBox>
