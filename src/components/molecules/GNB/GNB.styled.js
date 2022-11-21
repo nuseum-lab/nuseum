@@ -17,6 +17,6 @@ export const GNBGroup = styled.div`
 
 export const SlideButton = styled.span`
     @media all and (min-width: 1135px) {
-        display: none;
+        display: ${(props) => (props.isOpen ? null : 'none')};
     }
 `;
