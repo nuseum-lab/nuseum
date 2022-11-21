@@ -1,14 +1,9 @@
 import Text from '../../atom/Text/Text';
+import { Box, GNBGroup, SlideButton } from './GNB.styled';
 
-const GNB = () => {
+const GNB = ({ isOpen, setIsOpen }) => {
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-end'
-            }}
-        >
+        <Box>
             <div
                 style={{
                     display: 'flex',
@@ -24,22 +19,18 @@ const GNB = () => {
                     Sign Up
                 </Text>
             </div>
-            
-            <div
-                style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                }}
-            >    
+
+            <GNBGroup>
                 <Text
                     fontStyle={{
                         fontSize: 'menu',
                         fontWeight: 'sub',
                         opacity: 0.6,
                     }}
-                    style={{ cursor: 'pointer', padding: '20px 0 40px 40px',
-                }}
+                    style={{
+                        cursor: 'pointer',
+                        padding: '20px 0 40px 40px',
+                    }}
                 >
                     SHOP
                 </Text>
@@ -49,7 +40,10 @@ const GNB = () => {
                         fontWeight: 'sub',
                         opacity: 0.6,
                     }}
-                    style={{ cursor: 'pointer', padding: '20px 0 40px 40px' }}
+                    style={{
+                        cursor: 'pointer',
+                        padding: '20px 0 40px 40px',
+                    }}
                 >
                     RESTAURANT
                 </Text>
@@ -59,7 +53,10 @@ const GNB = () => {
                         fontWeight: 'sub',
                         opacity: 0.6,
                     }}
-                    style={{ cursor: 'pointer', padding: '20px 0 40px 40px'}}
+                    style={{
+                        cursor: 'pointer',
+                        padding: '20px 0 40px 40px',
+                    }}
                 >
                     DIARY
                 </Text>
@@ -69,7 +66,10 @@ const GNB = () => {
                         fontWeight: 'sub',
                         opacity: 0.6,
                     }}
-                    style={{ cursor: 'pointer', padding: '20px 0 40px 40px'}}
+                    style={{
+                        cursor: 'pointer',
+                        padding: '20px 0 40px 40px',
+                    }}
                 >
                     ME
                 </Text>
@@ -79,7 +79,10 @@ const GNB = () => {
                         fontWeight: 'sub',
                         opacity: 0.6,
                     }}
-                    style={{ cursor: 'pointer' , padding: '20px 0 40px 40px'}}
+                    style={{
+                        cursor: 'pointer',
+                        padding: '20px 0 40px 40px',
+                    }}
                 >
                     LIBRARY
                 </Text>
@@ -89,12 +92,26 @@ const GNB = () => {
                         fontWeight: 'sub',
                         opacity: 0.6,
                     }}
-                    style={{ cursor: 'pointer' , padding: '20px 0 40px 40px'}}
+                    style={{
+                        cursor: 'pointer',
+                        padding: '20px 0 40px 40px',
+                    }}
                 >
                     CURATOR
                 </Text>
-            </div>
-    </div>
+            </GNBGroup>
+            <SlideButton
+                style={{
+                    padding: '20px 0 40px 0',
+                    fontSize: 28,
+                    cursor: 'pointer',
+                }}
+                className='material-symbols-outlined'
+                onClick={() => setIsOpen((prev) => !prev)}
+            >
+                {isOpen ? 'close' : 'menu'}
+            </SlideButton>
+        </Box>
     );
 };
 
