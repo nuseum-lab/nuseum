@@ -16,3 +16,12 @@ export const Box = styled.div`
     padding: ${(props) => (props.isOpen ? '0 64px' : null)};
     box-sizing: border-box;
 `;
+
+export const MenuBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 400px;
+    padding: 0 64px;
+`;

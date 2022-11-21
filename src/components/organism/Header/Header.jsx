@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 import Text from '../../atom/Text/Text';
 import GNB from '../../molecules/GNB';
-import { Box } from './Header.styled';
+import { Box, MenuBox } from './Header.styled';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,70 @@ const Header = () => {
                         height: '100vh',
                         backgroundColor: colorPalette.whiteOrange,
                     }}
-                ></div>
+                >
+                    <MenuBox>
+                        <Text
+                            fontStyle={{
+                                fontSize: 'normal',
+                                fontWeight: 'sub',
+                                opacity: 0.6,
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            SHOP
+                        </Text>
+                        <Text
+                            fontStyle={{
+                                fontSize: 'normal',
+                                fontWeight: 'sub',
+                                opacity: 0.6,
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            RESTAURANT
+                        </Text>
+                        <Text
+                            fontStyle={{
+                                fontSize: 'normal',
+                                fontWeight: 'sub',
+                                opacity: 0.6,
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            DIARY
+                        </Text>
+                        <Text
+                            fontStyle={{
+                                fontSize: 'normal',
+                                fontWeight: 'sub',
+                                opacity: 0.6,
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            ME
+                        </Text>
+                        <Text
+                            fontStyle={{
+                                fontSize: 'normal',
+                                fontWeight: 'sub',
+                                opacity: 0.6,
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            LIBRARY
+                        </Text>
+                        <Text
+                            fontStyle={{
+                                fontSize: 'normal',
+                                fontWeight: 'sub',
+                                opacity: 0.6,
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            CURATOR
+                        </Text>
+                    </MenuBox>
+                </div>
             ) : null}
         </Box>
     );
