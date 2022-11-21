@@ -14,13 +14,12 @@ export const SectionImage = styled.img`
 `;
 
 export const InformationBox = styled.div`
-    width: 100%;
-    height: 100px;
-    margin-top: 100px;
+    width: calc(100% + 128px);
+    margin: 0 -64px;
+    padding: 0 64px 70px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    /* margin-bottom: 70px; */
 `;
 
 export const Img = styled.img`
