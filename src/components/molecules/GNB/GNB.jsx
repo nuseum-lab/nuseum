@@ -20,87 +20,90 @@ const GNB = ({ isOpen, setIsOpen }) => {
                 </Text>
             </div>
 
-            <GNBGroup>
-                <Text
-                    fontStyle={{
-                        fontSize: 'menu',
-                        fontWeight: 'sub',
-                        opacity: 0.6,
-                    }}
-                    style={{
-                        cursor: 'pointer',
-                        padding: '20px 0 40px 40px',
-                    }}
-                >
-                    SHOP
-                </Text>
-                <Text
-                    fontStyle={{
-                        fontSize: 'menu',
-                        fontWeight: 'sub',
-                        opacity: 0.6,
-                    }}
-                    style={{
-                        cursor: 'pointer',
-                        padding: '20px 0 40px 40px',
-                    }}
-                >
-                    RESTAURANT
-                </Text>
-                <Text
-                    fontStyle={{
-                        fontSize: 'menu',
-                        fontWeight: 'sub',
-                        opacity: 0.6,
-                    }}
-                    style={{
-                        cursor: 'pointer',
-                        padding: '20px 0 40px 40px',
-                    }}
-                >
-                    DIARY
-                </Text>
-                <Text
-                    fontStyle={{
-                        fontSize: 'menu',
-                        fontWeight: 'sub',
-                        opacity: 0.6,
-                    }}
-                    style={{
-                        cursor: 'pointer',
-                        padding: '20px 0 40px 40px',
-                    }}
-                >
-                    ME
-                </Text>
-                <Text
-                    fontStyle={{
-                        fontSize: 'menu',
-                        fontWeight: 'sub',
-                        opacity: 0.6,
-                    }}
-                    style={{
-                        cursor: 'pointer',
-                        padding: '20px 0 40px 40px',
-                    }}
-                >
-                    LIBRARY
-                </Text>
-                <Text
-                    fontStyle={{
-                        fontSize: 'menu',
-                        fontWeight: 'sub',
-                        opacity: 0.6,
-                    }}
-                    style={{
-                        cursor: 'pointer',
-                        padding: '20px 0 40px 40px',
-                    }}
-                >
-                    CURATOR
-                </Text>
-            </GNBGroup>
+            {isOpen ? null : (
+                <GNBGroup>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'menu',
+                            fontWeight: 'sub',
+                            opacity: 0.6,
+                        }}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '20px 0 40px 40px',
+                        }}
+                    >
+                        SHOP
+                    </Text>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'menu',
+                            fontWeight: 'sub',
+                            opacity: 0.6,
+                        }}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '20px 0 40px 40px',
+                        }}
+                    >
+                        RESTAURANT
+                    </Text>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'menu',
+                            fontWeight: 'sub',
+                            opacity: 0.6,
+                        }}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '20px 0 40px 40px',
+                        }}
+                    >
+                        DIARY
+                    </Text>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'menu',
+                            fontWeight: 'sub',
+                            opacity: 0.6,
+                        }}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '20px 0 40px 40px',
+                        }}
+                    >
+                        ME
+                    </Text>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'menu',
+                            fontWeight: 'sub',
+                            opacity: 0.6,
+                        }}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '20px 0 40px 40px',
+                        }}
+                    >
+                        LIBRARY
+                    </Text>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'menu',
+                            fontWeight: 'sub',
+                            opacity: 0.6,
+                        }}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '20px 0 40px 40px',
+                        }}
+                    >
+                        CURATOR
+                    </Text>
+                </GNBGroup>
+            )}
             <SlideButton
+                isOpen={isOpen}
                 style={{
                     padding: '20px 0 40px 0',
                     fontSize: 28,
