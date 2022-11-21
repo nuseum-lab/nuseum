@@ -3,6 +3,12 @@ import { colorPalette } from '../../../lib/styles/colorPalette';
 
 export const Box = styled.div`
     width: 100%;
+    min-height: 10vh;
+    background : #FAF8F6;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    padding: 0 64px;
     display: flex;
     flex-direction: row;
     align-items: center;

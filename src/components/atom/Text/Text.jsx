@@ -12,6 +12,8 @@ export default styled.p`
     bottom: ${(props) => props?.fontStyle?.bottom};
     &:hover {
         opacity: ${(props) => props?.fontStyle?.opacity};
+        text-shadow: ${(props) => props?.fontStyle?.textShadow};
+        text-decoration: ${(props) => props?.fontStyle?.textDecoration};
     }
     @media all and (max-width: 1135px) and (min-width: 600px) {
         font-size: ${(props) => fontSize[props?.fontStyle?.fontSize] - 4}px;

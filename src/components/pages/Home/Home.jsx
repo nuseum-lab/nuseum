@@ -316,7 +316,13 @@ const Home = () => {
                 </div>
             </Section>
 
-            <InformationBox>
+            <InformationBox
+                style={{
+                    height: 300,
+                    position: 'relative',
+                    background: '#FAF8F6',
+                }}
+            >
                 <img src={footerLogo} alt='footer' height='80px' />
                 <div
                     style={{
