@@ -1,14 +1,9 @@
 import Text from '../../atom/Text/Text';
+import { Box, GNBGroup, SlideButton } from './GNB.styled';
 
-const GNB = () => {
+const GNB = ({ isOpen, setIsOpen }) => {
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-end'
-            }}
-        >
+        <Box>
             <div
                 style={{
                     display: 'flex',
@@ -24,77 +19,102 @@ const GNB = () => {
                     Sign Up
                 </Text>
             </div>
-            
-            <div
+
+            {isOpen ? null : (
+                <GNBGroup>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'menu',
+                            fontWeight: 'sub',
+                            opacity: 0.6,
+                        }}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '20px 0 40px 40px',
+                        }}
+                    >
+                        SHOP
+                    </Text>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'menu',
+                            fontWeight: 'sub',
+                            opacity: 0.6,
+                        }}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '20px 0 40px 40px',
+                        }}
+                    >
+                        RESTAURANT
+                    </Text>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'menu',
+                            fontWeight: 'sub',
+                            opacity: 0.6,
+                        }}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '20px 0 40px 40px',
+                        }}
+                    >
+                        DIARY
+                    </Text>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'menu',
+                            fontWeight: 'sub',
+                            opacity: 0.6,
+                        }}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '20px 0 40px 40px',
+                        }}
+                    >
+                        ME
+                    </Text>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'menu',
+                            fontWeight: 'sub',
+                            opacity: 0.6,
+                        }}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '20px 0 40px 40px',
+                        }}
+                    >
+                        LIBRARY
+                    </Text>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'menu',
+                            fontWeight: 'sub',
+                            opacity: 0.6,
+                        }}
+                        style={{
+                            cursor: 'pointer',
+                            padding: '20px 0 40px 40px',
+                        }}
+                    >
+                        CURATOR
+                    </Text>
+                </GNBGroup>
+            )}
+            <SlideButton
+                isOpen={isOpen}
                 style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
+                    padding: '20px 0 40px 0',
+                    fontSize: 28,
+                    cursor: 'pointer',
                 }}
-            >    
-                <Text
-                    fontStyle={{
-                        fontSize: 'menu',
-                        fontWeight: 'sub',
-                        opacity: 0.6,
-                    }}
-                    style={{ cursor: 'pointer', padding: '20px 0 40px 40px',
-                }}
-                >
-                    SHOP
-                </Text>
-                <Text
-                    fontStyle={{
-                        fontSize: 'menu',
-                        fontWeight: 'sub',
-                        opacity: 0.6,
-                    }}
-                    style={{ cursor: 'pointer', padding: '20px 0 40px 40px' }}
-                >
-                    RESTAURANT
-                </Text>
-                <Text
-                    fontStyle={{
-                        fontSize: 'menu',
-                        fontWeight: 'sub',
-                        opacity: 0.6,
-                    }}
-                    style={{ cursor: 'pointer', padding: '20px 0 40px 40px'}}
-                >
-                    DIARY
-                </Text>
-                <Text
-                    fontStyle={{
-                        fontSize: 'menu',
-                        fontWeight: 'sub',
-                        opacity: 0.6,
-                    }}
-                    style={{ cursor: 'pointer', padding: '20px 0 40px 40px'}}
-                >
-                    ME
-                </Text>
-                <Text
-                    fontStyle={{
-                        fontSize: 'menu',
-                        fontWeight: 'sub',
-                        opacity: 0.6,
-                    }}
-                    style={{ cursor: 'pointer' , padding: '20px 0 40px 40px'}}
-                >
-                    LIBRARY
-                </Text>
-                <Text
-                    fontStyle={{
-                        fontSize: 'menu',
-                        fontWeight: 'sub',
-                        opacity: 0.6,
-                    }}
-                    style={{ cursor: 'pointer' , padding: '20px 0 40px 40px'}}
-                >
-                    CURATOR
-                </Text>
-            </div>
-    </div>
+                className='material-symbols-outlined'
+                onClick={() => setIsOpen((prev) => !prev)}
+            >
+                {isOpen ? 'close' : 'menu'}
+            </SlideButton>
+        </Box>
     );
 };
 
