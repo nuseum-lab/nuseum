@@ -6,7 +6,13 @@ import mockup from '../../../lib/assets/mockup.png';
 import Section from '../../atom/Section/Section';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 import Text from '../../atom/Text/Text';
-import { ImageBox, InformationBox, SectionImage } from './Home.styled';
+import {
+    ImageBox,
+    Img,
+    InformationBox,
+    SectionImage,
+    ServiceDescriptionBox,
+} from './Home.styled';
 import section1 from '../../../lib/assets/section1.png';
 import section2 from '../../../lib/assets/section2.png';
 import section3 from '../../../lib/assets/section3.png';
@@ -247,26 +253,8 @@ const Home = () => {
                         justifyContent: 'flex-end',
                     }}
                 >
-                    <img
-                        style={{
-                            position: 'absolute',
-                            left: 64,
-                            height: 600,
-                        }}
-                        src={section5}
-                        alt='section5'
-                    />
-                    <div
-                        style={{
-                            backgroundColor: colorPalette.blue,
-                            zIndex: 1,
-                            width: '50%',
-                            padding: '190px 30px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'space-between',
-                        }}
-                    >
+                    <Img src={section5} alt='section5' />
+                    <ServiceDescriptionBox>
                         <Text
                             fontStyle={{
                                 fontWeight: 'primary',
@@ -294,7 +282,7 @@ const Home = () => {
                             개인맞춤영양 솔루션을 개발 중에 있습니다. 추후
                             NUSEUM의 주요 서비스 예입니다.
                         </Text>
-                    </div>
+                    </ServiceDescriptionBox>
                 </div>
                 <img src={logo} style={{ width: '80%' }} alt='logo' />
             </Section>
