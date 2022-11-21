@@ -12,5 +12,7 @@ export default styled.p`
     bottom: ${(props) => props?.fontStyle?.bottom};
     &:hover {
         opacity: ${(props) => props?.fontStyle?.opacity};
+        text-shadow: ${(props) => props?.fontStyle?.textShadow};
+        text-decoration: ${(props) => props?.fontStyle?.textDecoration};
     }
 `;
