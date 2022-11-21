@@ -6,7 +6,14 @@ import mockup from '../../../lib/assets/mockup.png';
 import Section from '../../atom/Section/Section';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 import Text from '../../atom/Text/Text';
-import { ImageBox, InformationBox, SectionImage } from './Home.styled';
+import {
+    ImageBox,
+    Img,
+    InformationBox,
+    SectionImage,
+    SectionTextBox,
+    ServiceDescriptionBox,
+} from './Home.styled';
 import section1 from '../../../lib/assets/section1.png';
 import section2 from '../../../lib/assets/section2.png';
 import section3 from '../../../lib/assets/section3.png';
@@ -113,19 +120,14 @@ const Home = () => {
 
             <Section bgColor={colorPalette.whiteOrange}>
                 <ImageBox>
-                    <SectionImage src={section1} alt='man' />
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            width: '30%',
-                        }}
-                    >
+                    <SectionImage src={section1} alt='section1' />
+                    <SectionTextBox>
                         <Text
                             fontStyle={{
                                 fontSize: 'sub',
                                 fontWeight: 'logo',
                             }}
+                            style={{ textAlign: 'left' }}
                         >
                             NUSEUM 1.
                         </Text>
@@ -135,23 +137,18 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
+                            style={{ textAlign: 'left' }}
                         >
-                            “나" 또는 “내가 돌보고 있는 소중한 사람"이 피해야 할
-                            그리고 선택해야 할 영양성분과 관련 최상위의
-                            맞춤식품을 알려드립니다.​
+                            “나" 또는 “내가 돌보고 있는 소중한 사람"이{'\n'}
+                            피해야 할 그리고 선택해야 할 영양성분과 {'\n'} 관련
+                            최상위의 맞춤식품을 알려드립니다.​
                         </Text>
-                    </div>
+                    </SectionTextBox>
                 </ImageBox>
             </Section>
             <Section bgColor={colorPalette.whiteOrange}>
-                <ImageBox>
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            width: '30%',
-                        }}
-                    >
+                <ImageBox reverse={true}>
+                    <SectionTextBox>
                         <Text
                             fontStyle={{
                                 fontSize: 'sub',
@@ -169,22 +166,24 @@ const Home = () => {
                             }}
                             style={{ textAlign: 'right' }}
                         >
-                            뉴지엄은 Shop을 통해 관련 우수한 제품을 쉽게 찾고
+                            뉴지엄은 Shop을 통해 {'\n'}
+                            관련 우수한 제품을 쉽게 찾고 {'\n'}
                             개인맞춤영양을 실천할 수 있도록 돕습니다.​
                         </Text>
-                    </div>
+                    </SectionTextBox>
                     <SectionImage src={section2} alt='section2' />
                 </ImageBox>
             </Section>
             <Section bgColor={colorPalette.whiteOrange}>
                 <ImageBox>
                     <SectionImage src={section3} alt='section3' />
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <SectionTextBox>
                         <Text
                             fontStyle={{
                                 fontSize: 'sub',
                                 fontWeight: 'logo',
                             }}
+                            style={{ textAlign: 'left' }}
                         >
                             NUSEUM 3.
                         </Text>
@@ -194,16 +193,17 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
+                            style={{ textAlign: 'left' }}
                         >
                             뉴지엄은 Restaurant을 통해{'\n'} 나에게 필요한
                             최상위의 메뉴와 식당을 연결해 드립니다.
                         </Text>
-                    </div>
+                    </SectionTextBox>
                 </ImageBox>
             </Section>
             <Section bgColor={colorPalette.whiteOrange}>
-                <ImageBox>
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <ImageBox reverse={true}>
+                    <SectionTextBox>
                         <Text
                             fontStyle={{
                                 fontSize: 'sub',
@@ -225,10 +225,11 @@ const Home = () => {
                             디지털헬스케어 산업계에 “먹는 부분”을{'\n'} 담당하기
                             위해 성장하고 있습니다.​
                         </Text>
-                    </div>
+                    </SectionTextBox>
                     <SectionImage src={section4} alt='section4' />
                 </ImageBox>
             </Section>
+
             <Section
                 style={{
                     padding: '100px 64px',
@@ -247,26 +248,8 @@ const Home = () => {
                         justifyContent: 'flex-end',
                     }}
                 >
-                    <img
-                        style={{
-                            position: 'absolute',
-                            left: 64,
-                            height: 600,
-                        }}
-                        src={section5}
-                        alt='section5'
-                    />
-                    <div
-                        style={{
-                            backgroundColor: colorPalette.blue,
-                            zIndex: 1,
-                            width: '50%',
-                            padding: '190px 30px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'space-between',
-                        }}
-                    >
+                    <Img src={section5} alt='section5' />
+                    <ServiceDescriptionBox>
                         <Text
                             fontStyle={{
                                 fontWeight: 'primary',
@@ -294,7 +277,7 @@ const Home = () => {
                             개인맞춤영양 솔루션을 개발 중에 있습니다. 추후
                             NUSEUM의 주요 서비스 예입니다.
                         </Text>
-                    </div>
+                    </ServiceDescriptionBox>
                 </div>
                 <img src={logo} style={{ width: '80%' }} alt='logo' />
             </Section>
@@ -318,7 +301,10 @@ const Home = () => {
                 >
                     <Text
                         style={{ color: 'white' }}
-                        fontStyle={{ fontSize: 'logo', fontWeight: 'primary' }}
+                        fontStyle={{
+                            fontSize: 'logo',
+                            fontWeight: 'primary',
+                        }}
                     >
                         Ready to get started?
                     </Text>
@@ -329,7 +315,14 @@ const Home = () => {
                     </Button>
                 </div>
             </Section>
-            <InformationBox>
+
+            <InformationBox
+                style={{
+                    height: 300,
+                    position: 'relative',
+                    background: '#FAF8F6',
+                }}
+            >
                 <img src={footerLogo} alt='footer' height='80px' />
                 <div
                     style={{

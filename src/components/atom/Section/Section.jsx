@@ -6,4 +6,7 @@ export default styled.div`
     position: relative;
     left: 0;
     margin: 0 -64px;
+    @media all and (max-width: 599px) {
+        flex-direction: ${(props) => (props?.column ? 'column' : 'row')};
+    }
 `;

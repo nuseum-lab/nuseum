@@ -13,6 +13,7 @@ const Header = () => {
                     fontSize: 'logo',
                     fontWeight: 'logo',
                 }}
+                style={{textShadow: '0px 3px 3px rgb(0 0 0 /20%'}}
             >
                 NUSEUM
             </Text>
@@ -28,6 +29,7 @@ const Header = () => {
                         zIndex: 999,
                         width: '100vw',
                         height: '100vh',
+                        paddingTop: '50px',
                         backgroundColor: colorPalette.whiteOrange,
                     }}
                 >
@@ -36,7 +38,9 @@ const Header = () => {
                             fontStyle={{
                                 fontSize: 'normal',
                                 fontWeight: 'sub',
-                                opacity: 0.6,
+                                opacity: 1,
+                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                textDecoration: '2px solid underline black'
                             }}
                             style={{ cursor: 'pointer' }}
                         >
@@ -46,7 +50,9 @@ const Header = () => {
                             fontStyle={{
                                 fontSize: 'normal',
                                 fontWeight: 'sub',
-                                opacity: 0.6,
+                                opacity: 1,
+                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                textDecoration: '2px solid underline black'
                             }}
                             style={{ cursor: 'pointer' }}
                         >
@@ -56,7 +62,9 @@ const Header = () => {
                             fontStyle={{
                                 fontSize: 'normal',
                                 fontWeight: 'sub',
-                                opacity: 0.6,
+                                opacity: 1,
+                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                textDecoration: '2px solid underline black'
                             }}
                             style={{ cursor: 'pointer' }}
                         >
@@ -66,7 +74,9 @@ const Header = () => {
                             fontStyle={{
                                 fontSize: 'normal',
                                 fontWeight: 'sub',
-                                opacity: 0.6,
+                                opacity: 1,
+                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                textDecoration: '2px solid underline black'
                             }}
                             style={{ cursor: 'pointer' }}
                         >
@@ -76,7 +86,9 @@ const Header = () => {
                             fontStyle={{
                                 fontSize: 'normal',
                                 fontWeight: 'sub',
-                                opacity: 0.6,
+                                opacity: 1,
+                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                textDecoration: '2px solid underline black'
                             }}
                             style={{ cursor: 'pointer' }}
                         >
@@ -86,7 +98,9 @@ const Header = () => {
                             fontStyle={{
                                 fontSize: 'normal',
                                 fontWeight: 'sub',
-                                opacity: 0.6,
+                                opacity: 1,
+                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                textDecoration: '2px solid underline black'
                             }}
                             style={{ cursor: 'pointer' }}
                         >

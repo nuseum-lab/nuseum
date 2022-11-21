@@ -8,15 +8,17 @@ const Image = ({ imgObject, type }) => {
     if (type === 'main') {
         style.objectFit = 'cover';
         style.width = '100%';
-        style.height = '720px';
+        style.position = 'fixed';
+        style.height = '100%';
         style.zIndex = 0;
     }
 
     return type === 'main' ? (
-        <div style={{ height: 720}}>
+        <div style={{ height: '100vh'}}>
             <div
                 style={{
                     width: '100%',
+                    height: '100%',
                     position: 'absolute',
                     right: 0,
                     overflow: 'hidden',
@@ -29,26 +31,26 @@ const Image = ({ imgObject, type }) => {
                     display: 'flex',
                     flexDirection: 'column',
                     position: 'relative',
-                    bottom: '-64%',
+                    top: '70vh',
                 }}
             >
                 <Text
                     fontStyle={{
-                        fontSize: 'subtitle',
-                        fontWeight: 'primary',
-                        color: 'white',
+                        fontSize: 'main_title',
+                        fontWeight: 'light',
+                        color: 'white',                        
                     }}
-                    style={{lineHeight: '1.3'}}
+                    style={{textShadow: '0 0 30px black'}}
                 >
                     Your Museum of
                 </Text>
                 <Text
                     fontStyle={{
-                        fontSize: 'subtitle',
-                        fontWeight: 'primary',
+                        fontSize: 'main_title',
+                        fontWeight: 'light',
                         color: 'white',
                     }}
-                    style={{lineHeight: '1.3'}}
+                    style={{textShadow: '0 0 10px black'}}
                 >
                     Nutrient Physiology & Pharmacology
                 </Text>
