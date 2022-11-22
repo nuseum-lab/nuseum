@@ -295,7 +295,7 @@ const Home = () => {
                         </Text>
                     </ServiceDescriptionBox>
                 </div>
-                <img src={logo} style={{ width: '80%' }} alt='logo' />
+                <img src={logo} style={{ width: '80%', maxWidth: '1190px' }} alt='logo' />
             </Section>
             <Section
                 bgColor={'#101112'}
