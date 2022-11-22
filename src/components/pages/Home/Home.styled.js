@@ -7,10 +7,11 @@ export const ImageBox = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0 64px;
+    margin: 25px 0;
 `;
 
 export const SectionImage = styled.img`
-    width: 50%;
+    width: 55%;
 `;
 
 export const InformationBox = styled.div`
@@ -23,10 +24,8 @@ export const InformationBox = styled.div`
 `;
 
 export const Img = styled.img`
-    position: absolute;
-    left: 64px;
-    height: 600px;
-
+    width: 75%;
+    border-radius: 5px;
     @media all and (max-width: 1135px) and (min-width: 600px) {
         height: 500px;
     }
@@ -39,7 +38,9 @@ export const ServiceDescriptionBox = styled.div`
     background-color: ${colorPalette.blue};
     z-index: 1;
     width: 50%;
-    padding: 190px 30px;
+    margin-left: -20%;
+    border-radius: 5px;
+    padding: 150px 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
