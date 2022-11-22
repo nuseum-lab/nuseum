@@ -31,31 +31,31 @@ const Image = ({ imgObject, type }) => {
                     display: 'flex',
                     flexDirection: 'column',
                     position: 'relative',
-                    top: '70vh',
+                    top: '72vh',
                 }}
             >
                 <Text
                     fontStyle={{
                         fontSize: 'main_title',
-                        fontWeight: 'light',
+                        fontWeight: 'normal',
                         color: 'white',                        
                     }}
-                    style={{textShadow: '0 0 30px black'}}
+                    style={{textShadow: '0 0 10px black', lineHeight: 1.1}}
                 >
                     Your Museum of
                 </Text>
                 <Text
                     fontStyle={{
                         fontSize: 'main_title',
-                        fontWeight: 'light',
+                        fontWeight: 'normal',
                         color: 'white',
                     }}
-                    style={{textShadow: '0 0 10px black'}}
+                    style={{textShadow: '0 0 10px black', lineHeight: 1.1}}
                 >
                     Nutrient Physiology & Pharmacology
                 </Text>
                 <Button style={{ marginTop: 30, fontSize: fontSize.button }}>
-                    EXPORE NUSEUM
+                    EXPLORE NUSEUM
                 </Button>
             </div>
         </div>
