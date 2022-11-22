@@ -6,6 +6,7 @@ import mockup from '../../../lib/assets/mockup.png';
 import Section from '../../atom/Section/Section';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 import Text from '../../atom/Text/Text';
+import { motion } from 'framer-motion';
 import {
     ImageBox,
     Img,
@@ -48,7 +49,7 @@ const Home = () => {
                         }}
                         style={{
                             textDecoration: 'underline',
-                            marginBottom: '30px'
+                            marginBottom: '30px',
                         }}
                         as='span'
                     >
@@ -58,7 +59,7 @@ const Home = () => {
                         fontStyle={{
                             fontWeight: 'black',
                         }}
-                        style={{fontSize: '60px'}}
+                        style={{ fontSize: '60px' }}
                     >
                         NUSEUM
                     </Text>
@@ -68,7 +69,7 @@ const Home = () => {
                             fontSize: 'subtitle',
                             fontWeight: 'black',
                         }}
-                        style={{marginBottom: '30px'}}
+                        style={{ marginBottom: '30px' }}
                     >
                         당신의 영양생리약리 박물관에서 {'\n'}무엇을 먹어야
                         하는지 알려주는 큐레이션 서비스
@@ -79,7 +80,11 @@ const Home = () => {
                             fontSize: 'normal',
                             fontWeight: 'normal',
                         }}
-                        style={{ width: '60%', marginBottom: '16px', lineHeight: 1.4 }}
+                        style={{
+                            width: '60%',
+                            marginBottom: '16px',
+                            lineHeight: 1.4,
+                        }}
                     >
                         서울대학교 영양생리약리연구실 창업팀 NUSEUM은 영양약리,
                         인체생리 지식을 기반으로 개인이 무엇을 먹고 있는지
@@ -92,7 +97,7 @@ const Home = () => {
                             fontSize: 'normal',
                             fontWeight: 'normal',
                         }}
-                        style={{ width: '60%', lineHeight: 1.4  }}
+                        style={{ width: '60%', lineHeight: 1.4 }}
                     >
                         NUSEUM은 생리학, 약리학, 독성학, 식품학, 영양학 분야에서
                         18년 이상 연구한 대표자의 경험을 바탕으로 "올바르게 먹기
@@ -111,21 +116,27 @@ const Home = () => {
                             height: '100%',
                         }}
                     >
-                        <img
+                        <motion.img
                             src={mockup}
-                            style={{ position: 'relatve', top: -50 }}
+                            style={{
+                                position: 'relatve',
+                                top: -50,
+                                marginTop: 10,
+                            }}
                             alt=''
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 1 }}
                         />
                     </div>
                 </div>
             </Section>
 
-            <Section bgColor={colorPalette.whiteOrange}
-                style={{flexDirection:'column', padding: '100px 0'}}
+            <Section
+                bgColor={colorPalette.whiteOrange}
+                style={{ flexDirection: 'column', padding: '100px 0' }}
             >
-                <ImageBox
-                    style={{justifyContent: 'flex-start'}}
-                >
+                <ImageBox style={{ justifyContent: 'flex-start' }}>
                     <SectionImage src={section1} alt='man' />
                     <SectionTextBox
                         style={{
@@ -137,7 +148,7 @@ const Home = () => {
                                 fontSize: 'subtitle',
                                 fontWeight: 'black',
                             }}
-                            style={{marginBottom: '16px', textAlign: 'left' }}
+                            style={{ marginBottom: '16px', textAlign: 'left' }}
                         >
                             NUSEUM 1.
                         </Text>
@@ -155,9 +166,7 @@ const Home = () => {
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
-                <ImageBox reverse={true}
-                    style={{justifyContent: 'flex-end'}}
-                >
+                <ImageBox reverse={true} style={{ justifyContent: 'flex-end' }}>
                     <SectionTextBox
                         style={{
                             marginRight: '30px',
@@ -187,18 +196,19 @@ const Home = () => {
                     </SectionTextBox>
                     <SectionImage src={section2} alt='section2' />
                 </ImageBox>
-                <ImageBox
-                    style={{justifyContent: 'flex-start'}}
-                >
+                <ImageBox style={{ justifyContent: 'flex-start' }}>
                     <SectionImage src={section3} alt='section3' />
-                    <SectionTextBox style={{ 
-                        marginLeft: '30px'}}>
+                    <SectionTextBox
+                        style={{
+                            marginLeft: '30px',
+                        }}
+                    >
                         <Text
                             fontStyle={{
                                 fontSize: 'subtitle',
                                 fontWeight: 'black',
                             }}
-                            style={{marginBottom: '16px', textAlign: 'left' }}
+                            style={{ marginBottom: '16px', textAlign: 'left' }}
                         >
                             NUSEUM 3.
                         </Text>
@@ -215,11 +225,8 @@ const Home = () => {
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
-                <ImageBox reverse={true}
-                    style={{justifyContent: 'flex-end'}}
-                >
-                    <SectionTextBox
-                        style={{marginRight: '30px' }}>
+                <ImageBox reverse={true} style={{ justifyContent: 'flex-end' }}>
+                    <SectionTextBox style={{ marginRight: '30px' }}>
                         <Text
                             fontStyle={{
                                 fontSize: 'subtitle',
