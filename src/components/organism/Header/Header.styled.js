@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 
-export const Box = styled.div`
+export const Box = styled(motion.div)`
     width: 100%;
     min-height: 10vh;
     box-shadow: 0 0 30px #00000021;
