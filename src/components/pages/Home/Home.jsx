@@ -29,7 +29,7 @@ const Home = () => {
         <Layout>
             <Header />
             <Image type='main' imgObject={main} />
-            <Section style={{ height: 600 }} bgColor={colorPalette.lightPink}>
+            <Section style={{ height: 680 }} bgColor={colorPalette.lightPink}>
                 <div
                     style={{
                         width: '100%',
@@ -38,16 +38,17 @@ const Home = () => {
                         paddingBottom: 100,
                         display: 'flex',
                         flexDirection: 'column',
-                        justifyContent: 'space-between',
+                        justifyContent: 'center',
                     }}
                 >
                     <Text
                         fontStyle={{
                             fontWeight: 'primary',
-                            fontSize: 'normal',
+                            fontSize: 'sub',
                         }}
                         style={{
                             textDecoration: 'underline',
+                            marginBottom: '30px'
                         }}
                         as='span'
                     >
@@ -55,18 +56,19 @@ const Home = () => {
                     </Text>
                     <Text
                         fontStyle={{
-                            fontWeight: 'primary',
-                            fontSize: 'logo',
+                            fontWeight: 'black',
                         }}
+                        style={{fontSize: '60px'}}
                     >
                         NUSEUM
                     </Text>
                     <Text
                         fontStyle={{
                             whiteSpace: 'pre-line',
-                            fontSize: 'sub',
-                            fontWeight: 'primary',
+                            fontSize: 'subtitle',
+                            fontWeight: 'black',
                         }}
+                        style={{marginBottom: '30px'}}
                     >
                         당신의 영양생리약리 박물관에서 {'\n'}무엇을 먹어야
                         하는지 알려주는 큐레이션 서비스
@@ -77,7 +79,7 @@ const Home = () => {
                             fontSize: 'normal',
                             fontWeight: 'normal',
                         }}
-                        style={{ width: '50%' }}
+                        style={{ width: '60%', marginBottom: '16px', lineHeight: 1.4 }}
                     >
                         서울대학교 영양생리약리연구실 창업팀 NUSEUM은 영양약리,
                         인체생리 지식을 기반으로 개인이 무엇을 먹고 있는지
@@ -90,7 +92,7 @@ const Home = () => {
                             fontSize: 'normal',
                             fontWeight: 'normal',
                         }}
-                        style={{ width: '50%' }}
+                        style={{ width: '60%', lineHeight: 1.4  }}
                     >
                         NUSEUM은 생리학, 약리학, 독성학, 식품학, 영양학 분야에서
                         18년 이상 연구한 대표자의 경험을 바탕으로 "올바르게 먹기
@@ -104,7 +106,7 @@ const Home = () => {
                             position: 'absolute',
                             right: 0,
                             top: 0,
-                            width: '45%',
+                            maxWidth: '45%',
                             overflow: 'hidden',
                             height: '100%',
                         }}
@@ -118,16 +120,24 @@ const Home = () => {
                 </div>
             </Section>
 
-            <Section bgColor={colorPalette.whiteOrange}>
-                <ImageBox>
-                    <SectionImage src={section1} alt='section1' />
-                    <SectionTextBox>
+            <Section bgColor={colorPalette.whiteOrange}
+                style={{flexDirection:'column', padding: '100px 0'}}
+            >
+                <ImageBox
+                    style={{justifyContent: 'flex-start'}}
+                >
+                    <SectionImage src={section1} alt='man' />
+                    <SectionTextBox
+                        style={{
+                            marginLeft: '30px',
+                        }}
+                    >
                         <Text
                             fontStyle={{
-                                fontSize: 'sub',
-                                fontWeight: 'logo',
+                                fontSize: 'subtitle',
+                                fontWeight: 'black',
                             }}
-                            style={{ textAlign: 'left' }}
+                            style={{marginBottom: '16px', textAlign: 'left' }}
                         >
                             NUSEUM 1.
                         </Text>
@@ -145,16 +155,20 @@ const Home = () => {
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
-            </Section>
-            <Section bgColor={colorPalette.whiteOrange}>
-                <ImageBox reverse={true}>
-                    <SectionTextBox>
+                <ImageBox reverse={true}
+                    style={{justifyContent: 'flex-end'}}
+                >
+                    <SectionTextBox
+                        style={{
+                            marginRight: '30px',
+                        }}
+                    >
                         <Text
                             fontStyle={{
-                                fontSize: 'sub',
-                                fontWeight: 'logo',
+                                fontSize: 'subtitle',
+                                fontWeight: 'black',
                             }}
-                            style={{ textAlign: 'right' }}
+                            style={{ textAlign: 'right', marginBottom: '16px' }}
                         >
                             NUSEUM 2.
                         </Text>
@@ -173,17 +187,18 @@ const Home = () => {
                     </SectionTextBox>
                     <SectionImage src={section2} alt='section2' />
                 </ImageBox>
-            </Section>
-            <Section bgColor={colorPalette.whiteOrange}>
-                <ImageBox>
+                <ImageBox
+                    style={{justifyContent: 'flex-start'}}
+                >
                     <SectionImage src={section3} alt='section3' />
-                    <SectionTextBox>
+                    <SectionTextBox style={{ 
+                        marginLeft: '30px'}}>
                         <Text
                             fontStyle={{
-                                fontSize: 'sub',
-                                fontWeight: 'logo',
+                                fontSize: 'subtitle',
+                                fontWeight: 'black',
                             }}
-                            style={{ textAlign: 'left' }}
+                            style={{marginBottom: '16px', textAlign: 'left' }}
                         >
                             NUSEUM 3.
                         </Text>
@@ -200,16 +215,17 @@ const Home = () => {
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
-            </Section>
-            <Section bgColor={colorPalette.whiteOrange}>
-                <ImageBox reverse={true}>
-                    <SectionTextBox>
+                <ImageBox reverse={true}
+                    style={{justifyContent: 'flex-end'}}
+                >
+                    <SectionTextBox
+                        style={{marginRight: '30px' }}>
                         <Text
                             fontStyle={{
-                                fontSize: 'sub',
-                                fontWeight: 'logo',
+                                fontSize: 'subtitle',
+                                fontWeight: 'black',
                             }}
-                            style={{ textAlign: 'right' }}
+                            style={{ textAlign: 'right', marginBottom: '16px' }}
                         >
                             NUSEUM 4.
                         </Text>
@@ -232,7 +248,7 @@ const Home = () => {
 
             <Section
                 style={{
-                    padding: '100px 64px',
+                    padding: '100px 64px 100px 0',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -242,7 +258,7 @@ const Home = () => {
             >
                 <div
                     style={{
-                        padding: '100px 64px',
+                        padding: '100px 0px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'flex-end',
@@ -265,7 +281,7 @@ const Home = () => {
                         </Text>
                         <Text
                             fontStyle={{
-                                fontWeight: 'normal',
+                                fontWeight: 'light',
                                 fontSize: 'normal',
                             }}
                             style={{ color: 'white', lineHeight: 1.5 }}
@@ -284,7 +300,7 @@ const Home = () => {
             <Section
                 bgColor={'#101112'}
                 style={{
-                    height: 370,
+                    height: 400,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -311,7 +327,7 @@ const Home = () => {
                     <Button
                         style={{ marginTop: 30, fontSize: fontSize.button }}
                     >
-                        EXPORE NUSEUM
+                        EXPLORE NUSEUM
                     </Button>
                 </div>
             </Section>
@@ -336,12 +352,12 @@ const Home = () => {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            width: 400,
+                            width: 360,
                         }}
                     >
                         <Text
                             fontStyle={{
-                                fontSize: 'sub',
+                                fontSize: 'menu',
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
@@ -351,7 +367,7 @@ const Home = () => {
                         </Text>
                         <Text
                             fontStyle={{
-                                fontSize: 'sub',
+                                fontSize: 'menu',
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
@@ -361,7 +377,7 @@ const Home = () => {
                         </Text>
                         <Text
                             fontStyle={{
-                                fontSize: 'sub',
+                                fontSize: 'menu',
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
@@ -372,7 +388,7 @@ const Home = () => {
                     </div>
                     <Text
                         fontStyle={{
-                            fontSize: 'normal',
+                            fontSize: 'menu',
                             fontWeight: 'normal',
                             opacity: 0.6,
                         }}
