@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 import Section from '../../atom/Section/Section';
 import Text from '../../atom/Text/Text';
-export const ImageBox = styled.div`
+export const ImageBox = styled(motion.div).attrs({
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    transition: { duration: 0.5 },
+    viewport: { amount: 0.4, once: true },
+})`
     width: 100%;
     max-width: 1928px;
     display: flex;
@@ -19,7 +24,7 @@ export const ImageBox = styled.div`
     }
 `;
 
-export const SectionImage = styled.img`
+export const SectionImage = styled(motion.img)`
     width: 50%;
     @media all and (max-width: 599px) {
         width: 100%;
