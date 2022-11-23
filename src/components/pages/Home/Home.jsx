@@ -15,7 +15,9 @@ import {
     SecondSectionWrapper,
     SectionImage,
     SectionTextBox,
+    ServiceDescription,
     ServiceDescriptionBox,
+    ServiceDescriptionImg,
 } from './Home.styled';
 import section1 from '../../../lib/assets/section1.png';
 import section2 from '../../../lib/assets/section2.png';
@@ -260,7 +262,7 @@ const Home = () => {
 
             <Section
                 style={{
-                    padding: '100px 64px 100px 0',
+                    padding: '100px 0',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -268,25 +270,11 @@ const Home = () => {
                 }}
                 bgColor={colorPalette.lightBlue}
             >
-                <div
-                    style={{
-                        padding: '100px 0px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'flex-end',
-                    }}
-                >
-                    <div
-                        style={{
-                            minHeight: '85vh',
-                            width: '75%',
-                            overflow: 'hidden',
-                            position: 'relative',
-                            borderRadius: '5px',
-                        }}
-                    >
+                <ServiceDescription>
+                    <ServiceDescriptionImg>
                         <Img src={section5} alt='section5' />
-                    </div>
+                    </ServiceDescriptionImg>
+
                     <ServiceDescriptionBox>
                         <Text
                             fontStyle={{
@@ -316,10 +304,10 @@ const Home = () => {
                             NUSEUM의 주요 서비스 예입니다.
                         </Text>
                     </ServiceDescriptionBox>
-                </div>
+                </ServiceDescription>
                 <img
                     src={logo}
-                    style={{ width: '80%', maxWidth: '1190px' }}
+                    style={{ width: '90%', maxWidth: '1190px' }}
                     alt='logo'
                 />
             </Section>
@@ -371,6 +359,7 @@ const Home = () => {
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'flex-end',
+                        width: '100%'
                     }}
                 >
                     <div

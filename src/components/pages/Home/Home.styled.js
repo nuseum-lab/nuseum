@@ -18,7 +18,11 @@ export const ImageBox = styled(motion.div).attrs({
     padding: 0 64px;
     margin: 25px auto;
 
+    @media all and (min-width: 600px) and (max-width: 1135px) {
+        padding: 0 36px;
+    }
     @media all and (max-width: 599px) {
+        padding: 0 16px;
         flex-direction: ${(props) =>
             props?.reverse ? 'column-reverse' : 'column'};
     }
@@ -26,6 +30,8 @@ export const ImageBox = styled(motion.div).attrs({
 
 export const SectionImage = styled(motion.img)`
     width: 50%;
+    min-height: 50vh;
+    object-fit: cover;
     @media all and (max-width: 599px) {
         width: 100%;
     }
@@ -54,6 +60,14 @@ export const InformationBox = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    @media all and (max-width: 600px) {
+        width: calc(100% + 32px);
+        margin: 0 -16px;
+        padding: 36px 16px 20px;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
 `;
 
 export const SecondSectionWrapper = styled.div`
@@ -67,13 +81,13 @@ export const SecondSectionWrapper = styled.div`
     align-items: center;
     @media all and (max-width: 600px) {
         padding-left: 0;
+        padding-bottom: 0;
         div {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            padding: 20px;
         }
         ${Text} {
             width: 80% !important;
@@ -89,24 +103,27 @@ export const SectionWithIndex = styled(Section)`
 
 export const Img = styled.img`
     width: 106%;
+    height: 100%;
     object-fit: cover;
     min-height: 50vh;
     position: absolute;
     top: 0;
     right: 0;
     border-radius: 5px;
-    @media all and (max-width: 1135px) and (min-width: 600px) {
-        height: 500px;
-    }
-    @media all and (max-width: 599px) {
-        height: 300px;
-    }
 `;
 
 export const MockupImg = styled(motion.img)`
     position: relative;
     top: -50px;
     margin-top: 10px;
+    @media all and (max-width: 599px) {
+        top: 0;
+        height: 50vh;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        margin-top: -20px;
+    }
 `;
 export const MockupWrapper = styled.div`
     position: absolute;
@@ -117,11 +134,35 @@ export const MockupWrapper = styled.div`
     height: 100%;
     @media all and (max-width: 599px) {
         position: static;
-        max-width: 80%;
+        max-width: 100%;
         height: 80%;
     }
 `;
 
+export const ServiceDescriptionImg = styled.div`
+    min-height: 85vh;
+    width: 75%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    @media all and (max-width: 599px) {
+        min-height: 60vh;
+        width: calc(100% + 32px);
+    }
+`
+export const ServiceDescription = styled.div`
+    padding: 100px 64px 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @media all and (min-width: 600px) and (max-width: 1135px) {
+        padding: 100px 36px 100px 0;
+    }
+    @media all and (max-width: 599px) {
+        padding: 50px 16px;
+        flex-direction: column;
+    }
+`
 export const ServiceDescriptionBox = styled.div`
     background-color: ${colorPalette.blue};
     z-index: 1;
@@ -136,6 +177,11 @@ export const ServiceDescriptionBox = styled.div`
         padding: 120px 30px;
     }
     @media all and (max-width: 599px) {
-        padding: 60px 30px;
+        padding: 60px 20px;
+        align-items: center;
+        width: 90%;
+        margin-left:0;
+        margin-top: -20%;
+        text-align: center;
     }
 `;
