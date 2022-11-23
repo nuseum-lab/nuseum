@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 import Section from '../../atom/Section/Section';
@@ -50,7 +51,30 @@ export const InformationBox = styled.div`
     justify-content: space-between;
 `;
 
-export const SectionGroup = styled.div``;
+export const SecondSectionWrapper = styled.div`
+    width: 100%;
+    padding-top: 100px;
+    padding-left: 64px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media all and (max-width: 600px) {
+        padding-left: 0;
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        ${Text} {
+            width: 80% !important;
+        }
+    }
+`;
 
 export const SectionWithIndex = styled(Section)`
     @media all and (max-width: 599px) {
@@ -63,14 +87,33 @@ export const Img = styled.img`
     object-fit: cover;
     min-height: 50vh;
     position: absolute;
-    top:0;
-    right:0;
+    top: 0;
+    right: 0;
     border-radius: 5px;
     @media all and (max-width: 1135px) and (min-width: 600px) {
         height: 500px;
     }
     @media all and (max-width: 599px) {
         height: 300px;
+    }
+`;
+
+export const MockupImg = styled(motion.img)`
+    position: relative;
+    top: -50px;
+    margin-top: 10px;
+`;
+export const MockupWrapper = styled.div`
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 45%;
+    overflow: hidden;
+    height: 100%;
+    @media all and (max-width: 599px) {
+        position: static;
+        max-width: 80%;
+        height: 80%;
     }
 `;
 

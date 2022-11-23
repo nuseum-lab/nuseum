@@ -15,4 +15,7 @@ export const Img = styled(motion.img)`
     @media all and (max-width: 599px) {
         object-position: -40rem 0;
     }
+    @media all and (max-width: 400px) {
+        object-position: -60rem 0;
+    }
 `;
