@@ -1,19 +1,24 @@
 import Image from '../../atom/Image/Image';
 import Header from '../../organism/Header/Header';
 import Layout from '../Layout';
-import main from '../../../lib/assets/MAIN.png';
+import background from '../../../lib/assets/background.png';
 import mockup from '../../../lib/assets/mockup.png';
 import Section from '../../atom/Section/Section';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 import Text from '../../atom/Text/Text';
-import { motion } from 'framer-motion';
 import {
+    ContactBox,
     ImageBox,
     Img,
     InformationBox,
+    MockupImg,
+    MockupWrapper,
+    SecondSectionWrapper,
     SectionImage,
     SectionTextBox,
+    ServiceDescription,
     ServiceDescriptionBox,
+    ServiceDescriptionImg,
 } from './Home.styled';
 import section1 from '../../../lib/assets/section1.png';
 import section2 from '../../../lib/assets/section2.png';
@@ -29,107 +34,93 @@ const Home = () => {
     return (
         <Layout>
             <Header />
-            <Image type='main' imgObject={main} />
-            <Section style={{ height: 680 }} bgColor={colorPalette.lightPink}>
-                <div
-                    style={{
-                        width: '100%',
-                        paddingTop: 100,
-                        paddingLeft: 64,
-                        paddingBottom: 100,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                    }}
-                >
-                    <Text
-                        fontStyle={{
-                            fontWeight: 'primary',
-                            fontSize: 'sub',
-                        }}
-                        style={{
-                            textDecoration: 'underline',
-                            marginBottom: '30px',
-                        }}
-                        as='span'
-                    >
-                        ABOUT US
-                    </Text>
-                    <Text
-                        fontStyle={{
-                            fontWeight: 'black',
-                        }}
-                        style={{ fontSize: '60px' }}
-                    >
-                        NUSEUM
-                    </Text>
-                    <Text
-                        fontStyle={{
-                            whiteSpace: 'pre-line',
-                            fontSize: 'subtitle',
-                            fontWeight: 'black',
-                        }}
-                        style={{ marginBottom: '30px' }}
-                    >
-                        당신의 영양생리약리 박물관에서 {'\n'}무엇을 먹어야
-                        하는지 알려주는 큐레이션 서비스
-                    </Text>
-                    <Text
-                        fontStyle={{
-                            whiteSpace: 'pre-line',
-                            fontSize: 'normal',
-                            fontWeight: 'normal',
-                        }}
-                        style={{
-                            width: '60%',
-                            marginBottom: '16px',
-                            lineHeight: 1.4,
-                        }}
-                    >
-                        서울대학교 영양생리약리연구실 창업팀 NUSEUM은 영양약리,
-                        인체생리 지식을 기반으로 개인이 무엇을 먹고 있는지
-                        이해하게 하고, 무엇을 먹어야 하는지 알려주고, 이를 쉽게
-                        구매 또는 실천할 수 있도록 돕는 플랫폼을 구현합니다.
-                    </Text>
-                    <Text
-                        fontStyle={{
-                            whiteSpace: 'pre-line',
-                            fontSize: 'normal',
-                            fontWeight: 'normal',
-                        }}
-                        style={{ width: '60%', lineHeight: 1.4 }}
-                    >
-                        NUSEUM은 생리학, 약리학, 독성학, 식품학, 영양학 분야에서
-                        18년 이상 연구한 대표자의 경험을 바탕으로 "올바르게 먹기
-                        위한 정보"를 제공하고, 개인에게 맞추어진 건강한 식이를
-                        실천할 수 있도록 돕는 디지털 시대의 혁신적인
-                        개인맞춤영양관리를 구현하고자 성장하고 있습니다.
-                    </Text>
-
-                    <div
-                        style={{
-                            position: 'absolute',
-                            right: 0,
-                            top: 0,
-                            maxWidth: '45%',
-                            overflow: 'hidden',
-                            height: '100%',
-                        }}
-                    >
-                        <motion.img
-                            src={mockup}
-                            style={{
-                                position: 'relatve',
-                                top: -50,
-                                marginTop: 10,
+            <Image type='main' imgObject={background} />
+            <Section
+                style={{
+                    minHeight: 680,
+                    marginTop: '50px',
+                }}
+                bgColor={colorPalette.lightPink}
+            >
+                <SecondSectionWrapper>
+                    <div>
+                        <Text
+                            fontStyle={{
+                                fontWeight: 'primary',
+                                fontSize: 'sub',
                             }}
+                            style={{
+                                textDecoration: 'underline',
+                                marginBottom: '30px',
+                            }}
+                            as='span'
+                        >
+                            ABOUT US
+                        </Text>
+                        <Text
+                            fontStyle={{
+                                fontWeight: 'black',
+                                fontSize: 'primary',
+                            }}
+                        >
+                            NUSEUM
+                        </Text>
+                        <Text
+                            fontStyle={{
+                                whiteSpace: 'pre-line',
+                                fontSize: 'subtitle',
+                                fontWeight: 'black',
+                            }}
+                            style={{ marginBottom: '30px', width: '60%' }}
+                        >
+                            당신의 영양생리약리 박물관에서 무엇을 먹어야 하는지
+                            알려주는 큐레이션 서비스
+                        </Text>
+                        <Text
+                            fontStyle={{
+                                whiteSpace: 'pre-line',
+                                fontSize: 'normal',
+                                fontWeight: 'normal',
+                            }}
+                            style={{
+                                width: '60%',
+                                marginBottom: '16px',
+                                lineHeight: 1.4,
+                            }}
+                        >
+                            서울대학교 영양생리약리연구실 창업팀 NUSEUM은
+                            영양약리, 인체생리 지식을 기반으로 개인이 무엇을
+                            먹고 있는지 이해하게 하고, 무엇을 먹어야 하는지
+                            알려주고, 이를 쉽게 구매 또는 실천할 수 있도록 돕는
+                            플랫폼을 구현합니다.
+                        </Text>
+                        <Text
+                            fontStyle={{
+                                whiteSpace: 'pre-line',
+                                fontSize: 'normal',
+                                fontWeight: 'normal',
+                            }}
+                            style={{ width: '60%', lineHeight: 1.4 }}
+                        >
+                            NUSEUM은 생리학, 약리학, 독성학, 식품학, 영양학
+                            분야에서 18년 이상 연구한 대표자의 경험을 바탕으로
+                            "올바르게 먹기 위한 정보"를 제공하고, 개인에게
+                            맞추어진 건강한 식이를 실천할 수 있도록 돕는 디지털
+                            시대의 혁신적인 개인맞춤영양관리를 구현하고자
+                            성장하고 있습니다.
+                        </Text>
+                    </div>
+
+                    <MockupWrapper>
+                        <MockupImg
+                            src={mockup}
                             alt=''
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 1 }}
                         />
-                    </div>
-                </div>
+                    </MockupWrapper>
+                </SecondSectionWrapper>
             </Section>
 
             <Section
@@ -138,19 +129,23 @@ const Home = () => {
             >
                 <ImageBox style={{ justifyContent: 'flex-start' }}>
                     <SectionImage src={section1} alt='man' />
-                    <SectionTextBox
-                        style={{
-                            marginLeft: '30px',
-                        }}
-                    >
+                    <SectionTextBox>
                         <Text
                             fontStyle={{
                                 fontSize: 'subtitle',
                                 fontWeight: 'black',
                             }}
-                            style={{ marginBottom: '16px', textAlign: 'left' }}
+                            style={{ marginBottom: '16px' }}
                         >
-                            NUSEUM 1.
+                            NUSEUM{' '}
+                            <span
+                                style={{
+                                    fontWeight: 900,
+                                    fontFamily: 'initial',
+                                }}
+                            >
+                                1
+                            </span>
                         </Text>
                         <Text
                             fontStyle={{
@@ -158,7 +153,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ textAlign: 'left' }}
                         >
                             “나" 또는 “내가 돌보고 있는 소중한 사람"이{'\n'}
                             피해야 할 그리고 선택해야 할 영양성분과 {'\n'} 관련
@@ -167,19 +161,24 @@ const Home = () => {
                     </SectionTextBox>
                 </ImageBox>
                 <ImageBox reverse={true} style={{ justifyContent: 'flex-end' }}>
-                    <SectionTextBox
-                        style={{
-                            marginRight: '30px',
-                        }}
-                    >
+                    <SectionTextBox>
                         <Text
                             fontStyle={{
                                 fontSize: 'subtitle',
                                 fontWeight: 'black',
                             }}
-                            style={{ textAlign: 'right', marginBottom: '16px' }}
+                            style={{ marginBottom: '16px' }}
                         >
-                            NUSEUM 2.
+                            NUSEUM{' '}
+                            <span
+                                style={{
+                                    fontWeight: 900,
+                                    fontFamily: 'initial',
+                                }}
+                            >
+                                {' '}
+                                2
+                            </span>
                         </Text>
                         <Text
                             fontStyle={{
@@ -187,7 +186,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ textAlign: 'right' }}
                         >
                             뉴지엄은 Shop을 통해 {'\n'}
                             관련 우수한 제품을 쉽게 찾고 {'\n'}
@@ -198,19 +196,23 @@ const Home = () => {
                 </ImageBox>
                 <ImageBox style={{ justifyContent: 'flex-start' }}>
                     <SectionImage src={section3} alt='section3' />
-                    <SectionTextBox
-                        style={{
-                            marginLeft: '30px',
-                        }}
-                    >
+                    <SectionTextBox>
                         <Text
                             fontStyle={{
                                 fontSize: 'subtitle',
                                 fontWeight: 'black',
                             }}
-                            style={{ marginBottom: '16px', textAlign: 'left' }}
+                            style={{ marginBottom: '16px' }}
                         >
-                            NUSEUM 3.
+                            NUSEUM{' '}
+                            <span
+                                style={{
+                                    fontWeight: 900,
+                                    fontFamily: 'initial',
+                                }}
+                            >
+                                3{' '}
+                            </span>
                         </Text>
                         <Text
                             fontStyle={{
@@ -218,7 +220,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ textAlign: 'left' }}
                         >
                             뉴지엄은 Restaurant을 통해{'\n'} 나에게 필요한
                             최상위의 메뉴와 식당을 연결해 드립니다.
@@ -226,15 +227,23 @@ const Home = () => {
                     </SectionTextBox>
                 </ImageBox>
                 <ImageBox reverse={true} style={{ justifyContent: 'flex-end' }}>
-                    <SectionTextBox style={{ marginRight: '30px' }}>
+                    <SectionTextBox>
                         <Text
                             fontStyle={{
                                 fontSize: 'subtitle',
                                 fontWeight: 'black',
                             }}
-                            style={{ textAlign: 'right', marginBottom: '16px' }}
+                            style={{ marginBottom: '16px' }}
                         >
-                            NUSEUM 4.
+                            NUSEUM{' '}
+                            <span
+                                style={{
+                                    fontWeight: 900,
+                                    fontFamily: 'initial',
+                                }}
+                            >
+                                4
+                            </span>
                         </Text>
                         <Text
                             fontStyle={{
@@ -242,7 +251,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ textAlign: 'right' }}
                         >
                             뉴지엄은 최신의 과학지식을 기반으로 하며,{'\n'}
                             디지털헬스케어 산업계에 “먹는 부분”을{'\n'} 담당하기
@@ -255,7 +263,7 @@ const Home = () => {
 
             <Section
                 style={{
-                    padding: '100px 64px 100px 0',
+                    padding: '100px 0',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -263,15 +271,11 @@ const Home = () => {
                 }}
                 bgColor={colorPalette.lightBlue}
             >
-                <div
-                    style={{
-                        padding: '100px 0px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'flex-end',
-                    }}
-                >
-                    <Img src={section5} alt='section5' />
+                <ServiceDescription>
+                    <ServiceDescriptionImg>
+                        <Img src={section5} alt='section5' />
+                    </ServiceDescriptionImg>
+
                     <ServiceDescriptionBox>
                         <Text
                             fontStyle={{
@@ -301,8 +305,17 @@ const Home = () => {
                             NUSEUM의 주요 서비스 예입니다.
                         </Text>
                     </ServiceDescriptionBox>
-                </div>
-                <img src={logo} style={{ width: '80%', maxWidth: '1190px' }} alt='logo' />
+                </ServiceDescription>
+                <img
+                    src={logo}
+                    style={{
+                        width: '90%',
+                        maxWidth: '1190px',
+                        display: 'block',
+                        margin: '0 auto',
+                    }}
+                    alt='logo'
+                />
             </Section>
             <Section
                 bgColor={'#101112'}
@@ -341,69 +354,76 @@ const Home = () => {
 
             <InformationBox
                 style={{
-                    height: 300,
+                    minHeight: 300,
                     position: 'relative',
                     background: '#FAF8F6',
                 }}
             >
                 <img src={footerLogo} alt='footer' height='80px' />
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'flex-end',
-                    }}
-                >
+                <ContactBox>
                     <div
                         style={{
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            width: 360,
+                            marginBottom: 10,
                         }}
                     >
                         <Text
                             fontStyle={{
-                                fontSize: 'menu',
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
-                            style={{ cursor: 'pointer' }}
+                            style={{
+                                cursor: 'pointer',
+                                marginRight: 20,
+                                fontSize: '16px',
+                            }}
                         >
                             Our Team
                         </Text>
                         <Text
                             fontStyle={{
-                                fontSize: 'menu',
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
-                            style={{ cursor: 'pointer' }}
+                            style={{
+                                cursor: 'pointer',
+                                marginRight: 20,
+                                fontSize: '16px',
+                            }}
                         >
-                            Blog
+                            Instagram
                         </Text>
                         <Text
                             fontStyle={{
-                                fontSize: 'menu',
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
-                            style={{ cursor: 'pointer' }}
+                            style={{
+                                cursor: 'pointer',
+                                marginRight: 20,
+                                fontSize: '16px',
+                            }}
                         >
                             Contacts
                         </Text>
                     </div>
+
                     <Text
                         fontStyle={{
-                            fontSize: 'menu',
                             fontWeight: 'normal',
                             opacity: 0.6,
                         }}
-                        style={{ marginTop: 10, cursor: 'pointer' }}
+                        style={{
+                            cursor: 'pointer',
+
+                            fontSize: '16px',
+                        }}
                     >
                         nuseum@nuseum-lab.com
                     </Text>
-                </div>
+                </ContactBox>
             </InformationBox>
         </Layout>
     );

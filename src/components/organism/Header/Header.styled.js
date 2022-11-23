@@ -22,6 +22,9 @@ export const Box = styled(motion.div)`
     background-color: ${colorPalette.whiteOrange};
     padding: ${(props) => (props.isOpen ? '0 64px' : null)};
     box-sizing: border-box;
+    @media all and (max-width: 599px) {
+        padding: 0 32px;
+    }
 `;
 
 export const MenuBox = styled.div`

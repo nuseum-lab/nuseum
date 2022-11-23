@@ -19,6 +19,15 @@ export default styled.p`
         font-size: ${(props) => fontSize[props?.fontStyle?.fontSize] - 4}px;
     }
     @media all and (max-width: 599px) {
-        font-size: ${(props) => fontSize[props?.fontStyle?.fontSize] - 6}px;
+        font-size: ${(props) => {
+            if (
+                props?.fontStyle?.fontSize === 'logo' ||
+                props?.fontStyle?.fontSize === 'primary'
+            ) {
+                return fontSize[props?.fontStyle?.fontSize] - 20;
+            } else {
+                return fontSize[props?.fontStyle?.fontSize] - 6;
+            }
+        }}px;
     }
 `;

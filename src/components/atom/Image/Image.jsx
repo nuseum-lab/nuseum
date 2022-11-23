@@ -1,8 +1,18 @@
 import { fontSize } from '../../../lib/styles/fontSize';
 import Button from '../Button';
 import Text from '../Text/Text';
+import man from '../../../lib/assets/man.png';
+import woman from '../../../lib/assets/woman.png';
+import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { Img } from './Image.styled';
 
 const Image = ({ imgObject, type }) => {
+    const [photo, setPhoto] = useState(true);
+    setInterval(() => {
+        setPhoto((prev) => !prev);
+    }, 4000);
+
     let style = {};
 
     if (type === 'main') {
@@ -14,7 +24,7 @@ const Image = ({ imgObject, type }) => {
     }
 
     return type === 'main' ? (
-        <div style={{ height: '100vh'}}>
+        <div style={{ height: '100vh' }}>
             <div
                 style={{
                     width: '100%',
@@ -25,22 +35,46 @@ const Image = ({ imgObject, type }) => {
                 }}
             >
                 <img style={{ ...style }} src={imgObject} alt='' />
+                <AnimatePresence>
+                    {photo ? (
+                        <Img
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 1 }}
+                            src={man}
+                            alt=''
+                        />
+                    ) : null}
+                </AnimatePresence>
+                <AnimatePresence>
+                    {!photo ? (
+                        <Img
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 1 }}
+                            src={woman}
+                            alt=''
+                        />
+                    ) : null}
+                </AnimatePresence>
             </div>
             <div
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
                     position: 'relative',
-                    top: '72vh',
+                    top: '74vh',
                 }}
             >
                 <Text
                     fontStyle={{
                         fontSize: 'main_title',
                         fontWeight: 'normal',
-                        color: 'white',                        
+                        color: 'white',
                     }}
-                    style={{textShadow: '0 0 10px black', lineHeight: 1.1}}
+                    style={{ textShadow: '0 0 10px black', lineHeight: 1.1 }}
                 >
                     Your Museum of
                 </Text>
@@ -50,7 +84,7 @@ const Image = ({ imgObject, type }) => {
                         fontWeight: 'normal',
                         color: 'white',
                     }}
-                    style={{textShadow: '0 0 10px black', lineHeight: 1.1}}
+                    style={{ textShadow: '0 0 10px black', lineHeight: 1.1 }}
                 >
                     Nutrient Physiology & Pharmacology
                 </Text>

@@ -3,7 +3,7 @@ export const fontSize = {
     logo: 50,
     sub: 28,
     subtitle: 32,
-    main_title: 44,
+    main_title: 40,
     normal: 20,
     menu: 18,
     button: 14,
