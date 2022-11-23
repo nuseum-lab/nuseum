@@ -376,7 +376,7 @@ const Home = () => {
                             }}
                             style={{
                                 cursor: 'pointer',
-                                marginRight: 20,
+                                marginLeft: 20,
                                 fontSize: '16px',
                             }}
                         >
@@ -389,7 +389,7 @@ const Home = () => {
                             }}
                             style={{
                                 cursor: 'pointer',
-                                marginRight: 20,
+                                marginLeft: 20,
                                 fontSize: '16px',
                             }}
                         >
@@ -402,7 +402,7 @@ const Home = () => {
                             }}
                             style={{
                                 cursor: 'pointer',
-                                marginRight: 20,
+                                marginLeft: 20,
                                 fontSize: '16px',
                             }}
                         >
@@ -417,7 +417,6 @@ const Home = () => {
                         }}
                         style={{
                             cursor: 'pointer',
-
                             fontSize: '16px',
                         }}
                     >
