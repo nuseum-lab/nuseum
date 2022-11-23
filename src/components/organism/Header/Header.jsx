@@ -70,6 +70,34 @@ const Header = () => {
                                     }}
                                     style={{ cursor: 'pointer' }}
                                 >
+                                    LOGIN
+                                </Text>
+                                <Text
+                                    fontStyle={{
+                                        fontSize: 'normal',
+                                        fontWeight: 'sub',
+                                        opacity: 1,
+                                        textShadow:
+                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                        textDecoration:
+                                            '2px solid underline black',
+                                    }}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    SIGN UP
+                                </Text>
+                                <Text
+                                    fontStyle={{
+                                        fontSize: 'normal',
+                                        fontWeight: 'sub',
+                                        opacity: 1,
+                                        textShadow:
+                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                        textDecoration:
+                                            '2px solid underline black',
+                                    }}
+                                    style={{ cursor: 'pointer' }}
+                                >
                                     SHOP
                                 </Text>
                                 <Text
