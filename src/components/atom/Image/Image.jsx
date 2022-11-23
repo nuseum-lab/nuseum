@@ -5,7 +5,7 @@ import man from '../../../lib/assets/man.png';
 import woman from '../../../lib/assets/woman.png';
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { motion } from 'framer-motion';
+import { Img } from './Image.styled';
 
 const Image = ({ imgObject, type }) => {
     const [photo, setPhoto] = useState(true);
@@ -37,27 +37,25 @@ const Image = ({ imgObject, type }) => {
                 <img style={{ ...style }} src={imgObject} alt='' />
                 <AnimatePresence>
                     {photo ? (
-                        <motion.img
+                        <Img
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 1 }}
                             src={man}
                             alt=''
-                            style={{ ...style }}
                         />
                     ) : null}
                 </AnimatePresence>
                 <AnimatePresence>
                     {!photo ? (
-                        <motion.img
+                        <Img
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 1 }}
                             src={woman}
                             alt=''
-                            style={{ ...style }}
                         />
                     ) : null}
                 </AnimatePresence>
