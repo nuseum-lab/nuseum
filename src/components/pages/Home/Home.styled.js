@@ -67,6 +67,13 @@ export const InformationBox = styled.div`
         align-items: flex-start;
         justify-content: space-evenly;
         flex-direction: column;
+        /* =======
+    @media all and (max-width: 599px) {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 64px;
+>>>>>>> Stashed changes */
     }
 `;
 
@@ -149,7 +156,7 @@ export const ServiceDescriptionImg = styled.div`
         min-height: 60vh;
         width: calc(100% + 32px);
     }
-`
+`;
 export const ServiceDescription = styled.div`
     padding: 100px 64px 100px 0;
     display: flex;
@@ -162,7 +169,7 @@ export const ServiceDescription = styled.div`
         padding: 50px 16px;
         flex-direction: column;
     }
-`
+`;
 export const ServiceDescriptionBox = styled.div`
     background-color: ${colorPalette.blue};
     z-index: 1;
@@ -173,15 +180,27 @@ export const ServiceDescriptionBox = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     @media all and (max-width: 1135px) and (min-width: 600px) {
         padding: 120px 30px;
+        padding-right: 50px;
     }
     @media all and (max-width: 599px) {
         padding: 60px 20px;
         align-items: center;
         width: 90%;
-        margin-left:0;
+        margin-left: 0;
         margin-top: -20%;
         text-align: center;
+    }
+`;
+
+export const ContactBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media all and (max-width: 599px) {
+        align-items: flex-start;
     }
 `;

@@ -7,6 +7,7 @@ import Section from '../../atom/Section/Section';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 import Text from '../../atom/Text/Text';
 import {
+    ContactBox,
     ImageBox,
     Img,
     InformationBox,
@@ -59,8 +60,8 @@ const Home = () => {
                         <Text
                             fontStyle={{
                                 fontWeight: 'black',
+                                fontSize: 'primary',
                             }}
-                            style={{ fontSize: '60px' }}
                         >
                             NUSEUM
                         </Text>
@@ -307,7 +308,12 @@ const Home = () => {
                 </ServiceDescription>
                 <img
                     src={logo}
-                    style={{ width: '90%', maxWidth: '1190px' }}
+                    style={{
+                        width: '90%',
+                        maxWidth: '1190px',
+                        display: 'block',
+                        margin: '0 auto',
+                    }}
                     alt='logo'
                 />
             </Section>
@@ -348,25 +354,19 @@ const Home = () => {
 
             <InformationBox
                 style={{
-                    height: 300,
+                    minHeight: 300,
                     position: 'relative',
                     background: '#FAF8F6',
                 }}
             >
                 <img src={footerLogo} alt='footer' height='80px' />
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'flex-end',
-                        width: '100%'
-                    }}
-                >
+                <ContactBox>
                     <div
                         style={{
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
+                            marginBottom: 10,
                         }}
                     >
                         <Text
@@ -376,7 +376,7 @@ const Home = () => {
                             }}
                             style={{
                                 cursor: 'pointer',
-                                padding: '10px 0 10px 20px',
+                                marginRight: 20,
                                 fontSize: '16px',
                             }}
                         >
@@ -389,7 +389,7 @@ const Home = () => {
                             }}
                             style={{
                                 cursor: 'pointer',
-                                padding: '10px 0 10px 20px',
+                                marginRight: 20,
                                 fontSize: '16px',
                             }}
                         >
@@ -402,13 +402,14 @@ const Home = () => {
                             }}
                             style={{
                                 cursor: 'pointer',
-                                padding: '10px 0 10px 20px',
+                                marginRight: 20,
                                 fontSize: '16px',
                             }}
                         >
                             Contacts
                         </Text>
                     </div>
+
                     <Text
                         fontStyle={{
                             fontWeight: 'normal',
@@ -416,13 +417,13 @@ const Home = () => {
                         }}
                         style={{
                             cursor: 'pointer',
-                            padding: '4px 0 10px 20px',
+
                             fontSize: '16px',
                         }}
                     >
                         nuseum@nuseum-lab.com
                     </Text>
-                </div>
+                </ContactBox>
             </InformationBox>
         </Layout>
     );
