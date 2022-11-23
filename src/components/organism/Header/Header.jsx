@@ -37,7 +37,6 @@ const Header = () => {
                             fontSize: 'logo',
                             fontWeight: 'black',
                         }}
-                        style={{ textShadow: '0px 3px 3px rgb(0 0 0 /20%' }}
                     >
                         NUSEUM
                     </Text>

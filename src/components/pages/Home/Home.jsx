@@ -30,7 +30,7 @@ const Home = () => {
         <Layout>
             <Header />
             <Image type='main' imgObject={main} />
-            <Section style={{ height: 680 }} bgColor={colorPalette.lightPink}>
+            <Section style={{ height: 680, marginTop: '50px' }} bgColor={colorPalette.lightPink}>
                 <div
                     style={{
                         width: '100%',
@@ -138,19 +138,15 @@ const Home = () => {
             >
                 <ImageBox style={{ justifyContent: 'flex-start' }}>
                     <SectionImage src={section1} alt='man' />
-                    <SectionTextBox
-                        style={{
-                            marginLeft: '30px',
-                        }}
-                    >
+                    <SectionTextBox>
                         <Text
                             fontStyle={{
                                 fontSize: 'subtitle',
                                 fontWeight: 'black',
                             }}
-                            style={{ marginBottom: '16px', textAlign: 'left' }}
+                            style={{ marginBottom: '16px'}}
                         >
-                            NUSEUM 1.
+                            NUSEUM <span style={{fontWeight: 900, fontFamily: 'initial'}}>1</span>
                         </Text>
                         <Text
                             fontStyle={{
@@ -158,7 +154,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ textAlign: 'left' }}
                         >
                             “나" 또는 “내가 돌보고 있는 소중한 사람"이{'\n'}
                             피해야 할 그리고 선택해야 할 영양성분과 {'\n'} 관련
@@ -167,19 +162,15 @@ const Home = () => {
                     </SectionTextBox>
                 </ImageBox>
                 <ImageBox reverse={true} style={{ justifyContent: 'flex-end' }}>
-                    <SectionTextBox
-                        style={{
-                            marginRight: '30px',
-                        }}
-                    >
+                    <SectionTextBox>
                         <Text
                             fontStyle={{
                                 fontSize: 'subtitle',
                                 fontWeight: 'black',
                             }}
-                            style={{ textAlign: 'right', marginBottom: '16px' }}
+                            style={{marginBottom: '16px' }}
                         >
-                            NUSEUM 2.
+                            NUSEUM <span style={{fontWeight: 900, fontFamily: 'initial'}}> 2</span>
                         </Text>
                         <Text
                             fontStyle={{
@@ -187,7 +178,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ textAlign: 'right' }}
                         >
                             뉴지엄은 Shop을 통해 {'\n'}
                             관련 우수한 제품을 쉽게 찾고 {'\n'}
@@ -198,19 +188,15 @@ const Home = () => {
                 </ImageBox>
                 <ImageBox style={{ justifyContent: 'flex-start' }}>
                     <SectionImage src={section3} alt='section3' />
-                    <SectionTextBox
-                        style={{
-                            marginLeft: '30px',
-                        }}
-                    >
+                    <SectionTextBox>
                         <Text
                             fontStyle={{
                                 fontSize: 'subtitle',
                                 fontWeight: 'black',
                             }}
-                            style={{ marginBottom: '16px', textAlign: 'left' }}
+                            style={{ marginBottom: '16px'}}
                         >
-                            NUSEUM 3.
+                            NUSEUM <span style={{fontWeight: 900, fontFamily: 'initial'}}>3 </span>
                         </Text>
                         <Text
                             fontStyle={{
@@ -218,7 +204,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ textAlign: 'left' }}
                         >
                             뉴지엄은 Restaurant을 통해{'\n'} 나에게 필요한
                             최상위의 메뉴와 식당을 연결해 드립니다.
@@ -226,15 +211,15 @@ const Home = () => {
                     </SectionTextBox>
                 </ImageBox>
                 <ImageBox reverse={true} style={{ justifyContent: 'flex-end' }}>
-                    <SectionTextBox style={{ marginRight: '30px' }}>
+                    <SectionTextBox>
                         <Text
                             fontStyle={{
                                 fontSize: 'subtitle',
                                 fontWeight: 'black',
                             }}
-                            style={{ textAlign: 'right', marginBottom: '16px' }}
+                            style={{marginBottom: '16px' }}
                         >
-                            NUSEUM 4.
+                            NUSEUM <span style={{fontWeight: 900, fontFamily: 'initial'}}>4</span>
                         </Text>
                         <Text
                             fontStyle={{
@@ -242,7 +227,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ textAlign: 'right' }}
                         >
                             뉴지엄은 최신의 과학지식을 기반으로 하며,{'\n'}
                             디지털헬스케어 산업계에 “먹는 부분”을{'\n'} 담당하기
@@ -271,7 +255,8 @@ const Home = () => {
                         justifyContent: 'flex-end',
                     }}
                 >
-                    <Img src={section5} alt='section5' />
+                    <div style={{minHeight: '85vh', width: '75%', overflow: 'hidden',position: 'relative', borderRadius: '5px'}}
+                        ><Img src={section5} alt='section5' /></div>
                     <ServiceDescriptionBox>
                         <Text
                             fontStyle={{
@@ -359,47 +344,42 @@ const Home = () => {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            width: 360,
                         }}
                     >
                         <Text
                             fontStyle={{
-                                fontSize: 'menu',
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
-                            style={{ cursor: 'pointer' }}
+                            style={{ cursor: 'pointer', padding:'10px 0 10px 20px', fontSize:'16px' }}
                         >
                             Our Team
                         </Text>
                         <Text
                             fontStyle={{
-                                fontSize: 'menu',
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
-                            style={{ cursor: 'pointer' }}
+                            style={{ cursor: 'pointer' , padding:'10px 0 10px 20px', fontSize:'16px'}}
                         >
-                            Blog
+                            Instagram
                         </Text>
                         <Text
                             fontStyle={{
-                                fontSize: 'menu',
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
-                            style={{ cursor: 'pointer' }}
+                            style={{ cursor: 'pointer' , padding:'10px 0 10px 20px', fontSize:'16px'}}
                         >
                             Contacts
                         </Text>
                     </div>
                     <Text
                         fontStyle={{
-                            fontSize: 'menu',
                             fontWeight: 'normal',
                             opacity: 0.6,
                         }}
-                        style={{ marginTop: 10, cursor: 'pointer' }}
+                        style={{cursor: 'pointer' , padding:'4px 0 10px 20px', fontSize:'16px'}}
                     >
                         nuseum@nuseum-lab.com
                     </Text>

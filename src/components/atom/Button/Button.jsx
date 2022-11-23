@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default styled.button`
     width: 220px;
-    height: 50px;
+    height: 54px;
     background-color: white;
     color: black;
     position: relative;
