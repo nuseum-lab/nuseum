@@ -1,7 +1,7 @@
 import Image from '../../atom/Image/Image';
 import Header from '../../organism/Header/Header';
 import Layout from '../Layout';
-import main from '../../../lib/assets/MAIN.png';
+import background from '../../../lib/assets/background.png';
 import mockup from '../../../lib/assets/mockup.png';
 import Section from '../../atom/Section/Section';
 import { colorPalette } from '../../../lib/styles/colorPalette';
@@ -29,7 +29,7 @@ const Home = () => {
     return (
         <Layout>
             <Header />
-            <Image type='main' imgObject={main} />
+            <Image type='main' imgObject={background} />
             <Section style={{ height: 680, marginTop: '50px' }} bgColor={colorPalette.lightPink}>
                 <div
                     style={{
@@ -287,7 +287,11 @@ const Home = () => {
                         </Text>
                     </ServiceDescriptionBox>
                 </div>
-                <img src={logo} style={{ width: '80%', maxWidth: '1190px' }} alt='logo' />
+                <img
+                    src={logo}
+                    style={{ width: '80%', maxWidth: '1190px' }}
+                    alt='logo'
+                />
             </Section>
             <Section
                 bgColor={'#101112'}
