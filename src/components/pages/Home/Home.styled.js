@@ -4,12 +4,13 @@ import Section from '../../atom/Section/Section';
 import Text from '../../atom/Text/Text';
 export const ImageBox = styled.div`
     width: 100%;
+    max-width: 1928px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0 64px;
-    margin: 25px 0;
+    margin: 25px auto;
 
     @media all and (max-width: 599px) {
         flex-direction: ${(props) =>
@@ -28,6 +29,8 @@ export const SectionTextBox = styled.div`
     width: 80%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     @media all and (max-width: 599px) {
         margin: 30px 0;
     }
@@ -56,7 +59,12 @@ export const SectionWithIndex = styled(Section)`
 `;
 
 export const Img = styled.img`
-    width: 75%;
+    width: 106%;
+    object-fit: cover;
+    min-height: 50vh;
+    position: absolute;
+    top:0;
+    right:0;
     border-radius: 5px;
     @media all and (max-width: 1135px) and (min-width: 600px) {
         height: 500px;

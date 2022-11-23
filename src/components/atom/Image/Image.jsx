@@ -65,7 +65,7 @@ const Image = ({ imgObject, type }) => {
                     display: 'flex',
                     flexDirection: 'column',
                     position: 'relative',
-                    top: '72vh',
+                    top: '74vh',
                 }}
             >
                 <Text
