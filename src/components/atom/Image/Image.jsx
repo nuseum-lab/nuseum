@@ -5,7 +5,7 @@ import man from '../../../lib/assets/man.png';
 import woman from '../../../lib/assets/woman.png';
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { Img, ImgTitle } from './Image.styled';
+import { Img, ImgTitle   } from './Image.styled';
 
 const Image = ({ imgObject, type }) => {
     const [photo, setPhoto] = useState(true);

@@ -412,7 +412,7 @@ const Home = () => {
                                 fontSize: '16px',
                             }}
                         >
-                            Contacts
+                            Blog
                         </Text>
                     </div>
 
