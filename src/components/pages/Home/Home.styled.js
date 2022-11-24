@@ -31,6 +31,8 @@ export const ImageBox = styled(motion.div).attrs({
 export const SectionImage = styled(motion.img)`
     width: 50%;
     min-height: 50vh;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0px #c8c1ba;
     object-fit: cover;
     @media all and (max-width: 599px) {
         width: 100%;
@@ -111,25 +113,29 @@ export const SectionWithIndex = styled(Section)`
 export const Img = styled.img`
     width: 106%;
     height: 100%;
+    margin-right: 8%;
     object-fit: cover;
     min-height: 50vh;
     position: absolute;
     top: 0;
     right: 0;
     border-radius: 5px;
+    @media all and (max-width: 1024px){
+        margin-right: 0;
+    }
 `;
 
 export const MockupImg = styled(motion.img)`
     position: relative;
-    top: -50px;
     margin-top: 10px;
+    height: 100%;
     @media all and (max-width: 599px) {
         top: 0;
-        height: 50vh;
+        height: 60vh !important;
         width: 100%;
         object-fit: cover;
         object-position: top;
-        margin-top: -20px;
+        margin-top: -50px;
     }
 `;
 export const MockupWrapper = styled.div`
@@ -163,7 +169,7 @@ export const ServiceDescription = styled.div`
     align-items: center;
     justify-content: flex-end;
     @media all and (min-width: 600px) and (max-width: 1135px) {
-        padding: 100px 36px 100px 0;
+        padding: 100px 32px 100px 0;
     }
     @media all and (max-width: 599px) {
         padding: 50px 16px;

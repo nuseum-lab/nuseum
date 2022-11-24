@@ -51,7 +51,8 @@ const Home = () => {
                             }}
                             style={{
                                 textDecoration: 'underline',
-                                marginBottom: '30px',
+                                marginBottom: '12px',
+                                display: 'inline-block'
                             }}
                             as='span'
                         >
@@ -401,17 +402,21 @@ const Home = () => {
                             Instagram
                         </Text>
                         <Text
+                            as='a'
+                            target='_blank'
+                            href='https://www.jiyoungkimlab.com/about'
                             fontStyle={{
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
                             style={{
                                 cursor: 'pointer',
-
                                 fontSize: '16px',
+                                textDecoration: 'none',
+                                color: 'black'
                             }}
                         >
-                            Contacts
+                            Blog
                         </Text>
                     </div>
 

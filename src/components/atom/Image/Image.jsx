@@ -5,7 +5,7 @@ import man from '../../../lib/assets/man.png';
 import woman from '../../../lib/assets/woman.png';
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { Img } from './Image.styled';
+import { Img, ImgTitle   } from './Image.styled';
 
 const Image = ({ imgObject, type }) => {
     const [photo, setPhoto] = useState(true);
@@ -66,14 +66,7 @@ const Image = ({ imgObject, type }) => {
                     ) : null}
                 </AnimatePresence>
             </div>
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    position: 'relative',
-                    top: '74vh',
-                }}
-            >
+            <ImgTitle>
                 <Text
                     fontStyle={{
                         fontSize: 'main_title',
@@ -97,7 +90,7 @@ const Image = ({ imgObject, type }) => {
                 <Button style={{ marginTop: 30, fontSize: fontSize.button }}>
                     EXPLORE NUSEUM
                 </Button>
-            </div>
+            </ImgTitle>
         </div>
     ) : null;
 };

@@ -47,11 +47,11 @@ const Header = () => {
                         <div
                             style={{
                                 position: 'fixed',
-                                top: 100,
+                                top: '10vh',
                                 left: 0,
                                 zIndex: 999,
                                 width: '100vw',
-                                height: '100vh',
+                                height: '90vh',
                                 paddingTop: '50px',
                                 backgroundColor: colorPalette.whiteOrange,
                             }}
