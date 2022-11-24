@@ -21,8 +21,11 @@ export const Box = styled(motion.div)`
     background-color: ${colorPalette.whiteOrange};
     padding: ${(props) => (props.isOpen ? '0 64px' : null)};
     box-sizing: border-box;
-    @media all and (max-width: 599px) {
+    @media all and (min-width: 600px) and (max-width: 1135px) {
         padding: 0 32px;
+    }
+    @media all and (max-width: 599px) {
+        padding: 0 16px;
     }
 `;
 
