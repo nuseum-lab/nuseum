@@ -1,6 +1,6 @@
 import Router from './router';
 import { createGlobalStyle } from 'styled-components';
-import Footer from './components/atom/Footer/Footer';
+import {Footer,FooterWrap} from './components/atom/Footer/Footer';
 import ReactDOM from 'react-dom';
 import { colorPalette } from './lib/styles/colorPalette';
 import Text from './components/atom/Text/Text';
@@ -151,30 +151,33 @@ function App() {
             <Router />
             {ReactDOM.createPortal(
                 <Footer>
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            width: '30%',
-                        }}
-                    >
-                        <Text
-                            fontStyle={{
-                                fontWeight: 'normal',
-                                fontSize: 'button',
+                    <FooterWrap>
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                width: '50%',
+                                float: 'left',
                             }}
                         >
-                            08826) 서울특별시 관악구 관악로 1. 서울대학교
-                            관악캠퍼스 IBK커뮤니케이션센터(64동) 1층 IBK창공
-                            서울대캠프 NUSEUM
-                        </Text>
-                    </div>
-                    <Text
-                        fontStyle={{ fontSize: 'button', fontWeight: 'normal' }}
-                    >
-                        © 2022 NUSEUM. All rights reserved.
-                    </Text>
+                            <Text
+                                fontStyle={{
+                                    fontWeight: 'normal',
+                                    fontSize: 'button',
+                                }}
+                            >
+                                08826) 서울특별시 관악구 관악로 1. 서울대학교
+                                관악캠퍼스 IBK커뮤니케이션센터(64동) 1층 IBK창공
+                                서울대캠프 NUSEUM
+                            </Text>
+                        </div>
+                            <Text
+                                fontStyle={{ fontSize: 'button', fontWeight: 'normal' }}style={{textAlign:'right', width: '50%'}}
+                            >
+                                © 2022 NUSEUM. All rights reserved.
+                            </Text>
+                    </FooterWrap>
                 </Footer>,
                 document.querySelector('#footer')
             )}

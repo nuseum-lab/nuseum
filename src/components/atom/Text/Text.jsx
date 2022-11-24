@@ -25,7 +25,13 @@ export default styled.p`
                 props?.fontStyle?.fontSize === 'primary'
             ) {
                 return fontSize[props?.fontStyle?.fontSize] - 20;
-            } else {
+            } 
+            else if(
+                props?.fontStyle?.fontSize === 'main_title'
+            ){
+                return fontSize[props?.fontStyle?.fontSize] - 10;
+            }
+            else {
                 return fontSize[props?.fontStyle?.fontSize] - 6;
             }
         }}px;

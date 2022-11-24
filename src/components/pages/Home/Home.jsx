@@ -29,8 +29,10 @@ import logo from '../../../lib/assets/logo.png';
 import Button from '../../atom/Button';
 import footerLogo from '../../../lib/assets/footer-logo.png';
 import { fontSize } from '../../../lib/styles/fontSize';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const navigate = useNavigate();
     return (
         <Layout>
             <Header />
@@ -51,7 +53,8 @@ const Home = () => {
                             }}
                             style={{
                                 textDecoration: 'underline',
-                                marginBottom: '30px',
+                                marginBottom: '12px',
+                                display: 'inline-block',
                             }}
                             as='span'
                         >
@@ -345,6 +348,7 @@ const Home = () => {
                         Ready to get started?
                     </Text>
                     <Button
+                        onClick={() => navigate('/question')}
                         style={{ marginTop: 30, fontSize: fontSize.button }}
                     >
                         EXPLORE NUSEUM
@@ -367,6 +371,7 @@ const Home = () => {
                             justifyContent: 'space-between',
                             alignItems: 'center',
                             marginBottom: 10,
+                            width: 280,
                         }}
                     >
                         <Text
@@ -376,37 +381,45 @@ const Home = () => {
                             }}
                             style={{
                                 cursor: 'pointer',
-                                marginLeft: 20,
+
                                 fontSize: '16px',
                             }}
                         >
                             Our Team
                         </Text>
                         <Text
+                            as='a'
+                            target='_blank'
+                            href='https://instagram.com/nuseum_official?igshid=YWJhMjlhZTc='
                             fontStyle={{
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
                             style={{
                                 cursor: 'pointer',
-                                marginLeft: 20,
                                 fontSize: '16px',
+                                textDecoration: 'none',
+                                color: 'black',
                             }}
                         >
                             Instagram
                         </Text>
                         <Text
+                            as='a'
+                            target='_blank'
+                            href='https://www.jiyoungkimlab.com/about'
                             fontStyle={{
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
                             style={{
                                 cursor: 'pointer',
-                                marginLeft: 20,
                                 fontSize: '16px',
+                                textDecoration: 'none',
+                                color: 'black',
                             }}
                         >
-                            Contacts
+                            Blog
                         </Text>
                     </div>
 

@@ -1,18 +1,12 @@
 import { fontSize } from '../../../lib/styles/fontSize';
 import Button from '../Button';
 import Text from '../Text/Text';
-import man from '../../../lib/assets/man.png';
 import woman from '../../../lib/assets/woman.png';
-import { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import { Img } from './Image.styled';
+import { Img, ImgTitle } from './Image.styled';
+import { useNavigate } from 'react-router-dom';
 
 const Image = ({ imgObject, type }) => {
-    const [photo, setPhoto] = useState(true);
-    setInterval(() => {
-        setPhoto((prev) => !prev);
-    }, 4000);
-
+    const navigate = useNavigate();
     let style = {};
 
     if (type === 'main') {
@@ -35,39 +29,10 @@ const Image = ({ imgObject, type }) => {
                 }}
             >
                 <img style={{ ...style }} src={imgObject} alt='' />
-                <AnimatePresence>
-                    {photo ? (
-                        <Img
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 1 }}
-                            src={man}
-                            alt=''
-                        />
-                    ) : null}
-                </AnimatePresence>
-                <AnimatePresence>
-                    {!photo ? (
-                        <Img
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 1 }}
-                            src={woman}
-                            alt=''
-                        />
-                    ) : null}
-                </AnimatePresence>
+
+                <Img src={woman} alt='' />
             </div>
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    position: 'relative',
-                    top: '74vh',
-                }}
-            >
+            <ImgTitle>
                 <Text
                     fontStyle={{
                         fontSize: 'main_title',
@@ -88,10 +53,13 @@ const Image = ({ imgObject, type }) => {
                 >
                     Nutrient Physiology & Pharmacology
                 </Text>
-                <Button style={{ marginTop: 30, fontSize: fontSize.button }}>
+                <Button
+                    onClick={() => navigate('/question')}
+                    style={{ marginTop: 30, fontSize: fontSize.button }}
+                >
                     EXPLORE NUSEUM
                 </Button>
-            </div>
+            </ImgTitle>
         </div>
     ) : null;
 };
