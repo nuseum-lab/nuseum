@@ -367,6 +367,7 @@ const Home = () => {
                             justifyContent: 'space-between',
                             alignItems: 'center',
                             marginBottom: 10,
+                            width: 280,
                         }}
                     >
                         <Text
@@ -376,21 +377,25 @@ const Home = () => {
                             }}
                             style={{
                                 cursor: 'pointer',
-                                marginLeft: 20,
+
                                 fontSize: '16px',
                             }}
                         >
                             Our Team
                         </Text>
                         <Text
+                            as='a'
+                            target='_blank'
+                            href='https://instagram.com/nuseum_official?igshid=YWJhMjlhZTc='
                             fontStyle={{
                                 fontWeight: 'normal',
                                 opacity: 0.6,
                             }}
                             style={{
                                 cursor: 'pointer',
-                                marginLeft: 20,
                                 fontSize: '16px',
+                                textDecoration: 'none',
+                                color: 'black',
                             }}
                         >
                             Instagram
@@ -402,7 +407,7 @@ const Home = () => {
                             }}
                             style={{
                                 cursor: 'pointer',
-                                marginLeft: 20,
+
                                 fontSize: '16px',
                             }}
                         >

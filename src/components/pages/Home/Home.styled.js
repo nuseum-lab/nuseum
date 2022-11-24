@@ -199,7 +199,6 @@ export const ContactBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
     @media all and (max-width: 599px) {
         align-items: flex-start;
     }
