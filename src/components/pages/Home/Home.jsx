@@ -51,7 +51,8 @@ const Home = () => {
                             }}
                             style={{
                                 textDecoration: 'underline',
-                                marginBottom: '30px',
+                                marginBottom: '12px',
+                                display: 'inline-block'
                             }}
                             as='span'
                         >

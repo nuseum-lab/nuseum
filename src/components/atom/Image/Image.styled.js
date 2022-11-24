@@ -14,7 +14,17 @@ export const Img = styled(motion.img)`
         object-position: right;
         height: 80%;
     }
-    @media all and (max-width: 400px) {
-        height: 60%;
+    @media all and (max-width: 599px) {
+        height: 70%;
     }
 `;
+export const ImgTitle = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 74vh;
+    @media all and (max-width: 599px) {
+        top: 70vh;
+    }
+`
+    

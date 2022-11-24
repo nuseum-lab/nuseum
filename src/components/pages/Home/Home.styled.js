@@ -31,6 +31,8 @@ export const ImageBox = styled(motion.div).attrs({
 export const SectionImage = styled(motion.img)`
     width: 50%;
     min-height: 50vh;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0px #c8c1ba;
     object-fit: cover;
     @media all and (max-width: 599px) {
         width: 100%;
