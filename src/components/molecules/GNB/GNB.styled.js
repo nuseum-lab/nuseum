@@ -37,3 +37,28 @@ export const UtilGroup = styled.div`
         display: none;
     }
 `;
+export const SubGroup = styled.div` 
+    display: none;
+    position: absolute;
+    width: 160px;
+    text-align: center;
+    padding-top: 40px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FAF8F6;
+    border-radius: 5px;
+    transition: 0.3s all ease;
+    a{
+        width: 100%;
+        padding: 10px;
+        padding-bottom: 20px;
+        font-weight: 300;
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+        font-weight: 600
+    }
+`

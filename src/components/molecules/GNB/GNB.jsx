@@ -1,7 +1,18 @@
 import Text from '../../atom/Text/Text';
-import { Box, GNBGroup, SlideButton, UtilGroup } from './GNB.styled';
+import { Box, GNBGroup, SlideButton, UtilGroup, SubGroup } from './GNB.styled';
 
 const GNB = ({ isOpen, setIsOpen }) => {
+    const SubShown = (e) =>{
+        if(e.currentTarget === e.target){
+           e.target.children[0].style.display = 'inline-block'; 
+        }
+        
+    }
+    const SubHide = (e) =>{
+       if(e.currentTarget === e.target){
+            e.target.children[0].style.display = 'none';
+        }
+    }
     return (
         <Box>
             <UtilGroup>
@@ -26,7 +37,7 @@ const GNB = ({ isOpen, setIsOpen }) => {
             </UtilGroup>
 
             {isOpen ? null : (
-                <GNBGroup>
+                <GNBGroup >
                     <Text
                         fontStyle={{
                             fontSize: 'menu',
@@ -37,10 +48,18 @@ const GNB = ({ isOpen, setIsOpen }) => {
                         }}
                         style={{
                             cursor: 'pointer',
-                            padding: '20px 0 40px 40px',
+                            padding: '20px 20px 40px 20px',
+                            position: 'relative',
                         }}
+                        onMouseOver={SubShown}
+                        onMouseLeave={SubHide}
                     >
                         SHOP
+                            <SubGroup>
+                                <a href="#">ME</a>
+                                <a>SIGNIFICANT<br></br>OTHER</a>
+                            </SubGroup>
+
                     </Text>
                     <Text
                         fontStyle={{
@@ -52,7 +71,7 @@ const GNB = ({ isOpen, setIsOpen }) => {
                         }}
                         style={{
                             cursor: 'pointer',
-                            padding: '20px 0 40px 40px',
+                            padding: '20px 20px 40px 20px',
                         }}
                     >
                         RESTAURANT
@@ -67,7 +86,7 @@ const GNB = ({ isOpen, setIsOpen }) => {
                         }}
                         style={{
                             cursor: 'pointer',
-                            padding: '20px 0 40px 40px',
+                            padding: '20px 20px 40px 20px',
                         }}
                     >
                         DIARY
@@ -82,7 +101,7 @@ const GNB = ({ isOpen, setIsOpen }) => {
                         }}
                         style={{
                             cursor: 'pointer',
-                            padding: '20px 0 40px 40px',
+                            padding: '20px 20px 40px 20px',
                         }}
                     >
                         ME
@@ -97,7 +116,7 @@ const GNB = ({ isOpen, setIsOpen }) => {
                         }}
                         style={{
                             cursor: 'pointer',
-                            padding: '20px 0 40px 40px',
+                            padding: '20px 20px 40px 20px',
                         }}
                     >
                         LIBRARY
@@ -112,7 +131,8 @@ const GNB = ({ isOpen, setIsOpen }) => {
                         }}
                         style={{
                             cursor: 'pointer',
-                            padding: '16px 0 40px 40px',
+                            padding: '20px 0px 40px 0px',
+                            marginLeft: '20px'
                         }}
                     >
                         CURATOR
