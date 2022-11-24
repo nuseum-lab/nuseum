@@ -1,18 +1,18 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Text from '../../atom/Text/Text';
-import { Box, GNBGroup, SlideButton, UtilGroup, SubGroup } from './GNB.styled';
+import {
+    Box,
+    GNBGroup,
+    SlideButton,
+    UtilGroup,
+    SubGroup,
+    GroupWrapper,
+} from './GNB.styled';
 
 const GNB = ({ isOpen, setIsOpen }) => {
-    const SubShown = (e) =>{
-        if(e.currentTarget === e.target){
-           e.target.children[0].style.display = 'inline-block'; 
-        }
-        
-    }
-    const SubHide = (e) =>{
-       if(e.currentTarget === e.target){
-            e.target.children[0].style.display = 'none';
-        }
-    }
+    const [subVisible, setSubVisible] = useState(false);
+    const [id, setId] = useState(0);
     return (
         <Box>
             <UtilGroup>
@@ -37,106 +37,215 @@ const GNB = ({ isOpen, setIsOpen }) => {
             </UtilGroup>
 
             {isOpen ? null : (
-                <GNBGroup >
-                    <Text
-                        fontStyle={{
-                            fontSize: 'menu',
-                            fontWeight: 'sub',
-                            opacity: 1,
-                            textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
-                            textDecoration: '2px solid underline black',
+                <GNBGroup>
+                    <GroupWrapper
+                        id={0}
+                        onMouseEnter={(e) => {
+                            setSubVisible(true);
+                            setId(e.currentTarget.id);
                         }}
-                        style={{
-                            cursor: 'pointer',
-                            padding: '20px 20px 40px 20px',
-                            position: 'relative',
+                        onMouseLeave={() => {
+                            setSubVisible(false);
                         }}
-                        onMouseOver={SubShown}
-                        onMouseLeave={SubHide}
                     >
-                        SHOP
+                        <Text
+                            fontStyle={{
+                                fontSize: 'menu',
+                                fontWeight: 'sub',
+                                opacity: 1,
+                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                textDecoration: '2px solid underline black',
+                            }}
+                            style={{
+                                cursor: 'pointer',
+                                padding: '20px 20px 40px 20px',
+                                position: 'relative',
+                            }}
+                        >
+                            SHOP
+                        </Text>
+                        {subVisible && id === '0' ? (
                             <SubGroup>
-                                <a href="#">ME</a>
-                                <a>SIGNIFICANT<br></br>OTHER</a>
+                                <Link href='#'>ME</Link>
+                                <Link style={{ whiteSpace: 'pre-line' }}>
+                                    SIGNIFICANT{'\n'}OTHER
+                                </Link>
                             </SubGroup>
-
-                    </Text>
-                    <Text
-                        fontStyle={{
-                            fontSize: 'menu',
-                            fontWeight: 'sub',
-                            opacity: 1,
-                            textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
-                            textDecoration: '2px solid underline black',
+                        ) : null}
+                    </GroupWrapper>
+                    <GroupWrapper
+                        onMouseEnter={(e) => {
+                            setSubVisible(true);
+                            setId(e.currentTarget.id);
                         }}
-                        style={{
-                            cursor: 'pointer',
-                            padding: '20px 20px 40px 20px',
+                        onMouseLeave={() => {
+                            setSubVisible(false);
                         }}
+                        id={1}
                     >
-                        RESTAURANT
-                    </Text>
-                    <Text
-                        fontStyle={{
-                            fontSize: 'menu',
-                            fontWeight: 'sub',
-                            opacity: 1,
-                            textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
-                            textDecoration: '2px solid underline black',
+                        <Text
+                            fontStyle={{
+                                fontSize: 'menu',
+                                fontWeight: 'sub',
+                                opacity: 1,
+                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                textDecoration: '2px solid underline black',
+                            }}
+                            style={{
+                                cursor: 'pointer',
+                                padding: '20px 20px 40px 20px',
+                            }}
+                        >
+                            RESTAURANT
+                        </Text>
+                        {subVisible && id === '1' ? (
+                            <SubGroup>
+                                <Link href='#'>ME</Link>
+                                <Link style={{ whiteSpace: 'pre-line' }}>
+                                    SIGNIFICANT{'\n'}OTHER
+                                </Link>
+                            </SubGroup>
+                        ) : null}
+                    </GroupWrapper>
+                    <GroupWrapper
+                        onMouseEnter={(e) => {
+                            setSubVisible(true);
+                            setId(e.currentTarget.id);
                         }}
-                        style={{
-                            cursor: 'pointer',
-                            padding: '20px 20px 40px 20px',
+                        onMouseLeave={() => {
+                            setSubVisible(false);
                         }}
+                        id={2}
                     >
-                        DIARY
-                    </Text>
-                    <Text
-                        fontStyle={{
-                            fontSize: 'menu',
-                            fontWeight: 'sub',
-                            opacity: 1,
-                            textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
-                            textDecoration: '2px solid underline black',
+                        <Text
+                            fontStyle={{
+                                fontSize: 'menu',
+                                fontWeight: 'sub',
+                                opacity: 1,
+                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                textDecoration: '2px solid underline black',
+                            }}
+                            style={{
+                                cursor: 'pointer',
+                                padding: '20px 20px 40px 20px',
+                            }}
+                        >
+                            DIARY
+                        </Text>
+                        {subVisible && id === '2' ? (
+                            <SubGroup>
+                                <Link href='#'>ME</Link>
+                                <Link style={{ whiteSpace: 'pre-line' }}>
+                                    SIGNIFICANT{'\n'}OTHER
+                                </Link>
+                            </SubGroup>
+                        ) : null}
+                    </GroupWrapper>
+                    <GroupWrapper
+                        onMouseEnter={(e) => {
+                            setSubVisible(true);
+                            setId(e.currentTarget.id);
                         }}
-                        style={{
-                            cursor: 'pointer',
-                            padding: '20px 20px 40px 20px',
+                        onMouseLeave={() => {
+                            setSubVisible(false);
                         }}
+                        id={3}
                     >
-                        ME
-                    </Text>
-                    <Text
-                        fontStyle={{
-                            fontSize: 'menu',
-                            fontWeight: 'sub',
-                            opacity: 1,
-                            textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
-                            textDecoration: '2px solid underline black',
+                        <Text
+                            fontStyle={{
+                                fontSize: 'menu',
+                                fontWeight: 'sub',
+                                opacity: 1,
+                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                textDecoration: '2px solid underline black',
+                            }}
+                            style={{
+                                cursor: 'pointer',
+                                padding: '20px 20px 40px 20px',
+                            }}
+                        >
+                            ME
+                        </Text>
+                        {subVisible && id === '3' ? (
+                            <SubGroup>
+                                <Link href='#'>ME</Link>
+                                <Link style={{ whiteSpace: 'pre-line' }}>
+                                    SIGNIFICANT{'\n'}OTHER
+                                </Link>
+                            </SubGroup>
+                        ) : null}
+                    </GroupWrapper>
+                    <GroupWrapper
+                        onMouseEnter={(e) => {
+                            console.log(e.currentTarget.id);
+                            setSubVisible(true);
+                            setId(e.currentTarget.id);
                         }}
-                        style={{
-                            cursor: 'pointer',
-                            padding: '20px 20px 40px 20px',
+                        onMouseLeave={() => {
+                            setSubVisible(false);
                         }}
+                        id={4}
                     >
-                        LIBRARY
-                    </Text>
-                    <Text
-                        fontStyle={{
-                            fontSize: 'menu',
-                            fontWeight: 'sub',
-                            opacity: 1,
-                            textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
-                            textDecoration: '2px solid underline black',
+                        <Text
+                            fontStyle={{
+                                fontSize: 'menu',
+                                fontWeight: 'sub',
+                                opacity: 1,
+                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                textDecoration: '2px solid underline black',
+                            }}
+                            style={{
+                                cursor: 'pointer',
+                                padding: '20px 20px 40px 20px',
+                            }}
+                        >
+                            LIBRARY
+                        </Text>
+                        {subVisible && id === '4' ? (
+                            <SubGroup>
+                                <Link href='#'>ME</Link>
+                                <Link style={{ whiteSpace: 'pre-line' }}>
+                                    SIGNIFICANT{'\n'}OTHER
+                                </Link>
+                            </SubGroup>
+                        ) : null}
+                    </GroupWrapper>
+                    <GroupWrapper
+                        onMouseEnter={(e) => {
+                            console.log(e.currentTarget.id);
+                            setSubVisible(true);
+                            setId(e.currentTarget.id);
                         }}
-                        style={{
-                            cursor: 'pointer',
-                            padding: '20px 0px 40px 0px',
-                            marginLeft: '20px'
+                        onMouseLeave={() => {
+                            setSubVisible(false);
                         }}
+                        id={5}
                     >
-                        CURATOR
-                    </Text>
+                        <Text
+                            fontStyle={{
+                                fontSize: 'menu',
+                                fontWeight: 'sub',
+                                opacity: 1,
+                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                textDecoration: '2px solid underline black',
+                            }}
+                            style={{
+                                cursor: 'pointer',
+                                padding: '20px 0px 40px 0px',
+                                marginLeft: '20px',
+                            }}
+                        >
+                            CURATOR
+                        </Text>
+                        {subVisible && id === '5' ? (
+                            <SubGroup>
+                                <Link href='#'>ME</Link>
+                                <Link style={{ whiteSpace: 'pre-line' }}>
+                                    SIGNIFICANT{'\n'}OTHER
+                                </Link>
+                            </SubGroup>
+                        ) : null}
+                    </GroupWrapper>
                 </GNBGroup>
             )}
 

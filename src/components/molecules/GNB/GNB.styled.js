@@ -37,19 +37,21 @@ export const UtilGroup = styled.div`
         display: none;
     }
 `;
-export const SubGroup = styled.div` 
-    display: none;
+export const GroupWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+export const SubGroup = styled.div`
     position: absolute;
     width: 160px;
     text-align: center;
     padding-top: 40px;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #FAF8F6;
+    top: 80px;
+    background-color: #faf8f6;
     border-radius: 5px;
     transition: 0.3s all ease;
-    a{
+    a {
         width: 100%;
         padding: 10px;
         padding-bottom: 20px;
@@ -58,7 +60,7 @@ export const SubGroup = styled.div`
         text-decoration: none;
         color: black;
     }
-    a:hover{
-        font-weight: 600
+    a:hover {
+        font-weight: 600;
     }
-`
+`;

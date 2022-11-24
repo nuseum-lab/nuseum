@@ -3,8 +3,10 @@ import Button from '../Button';
 import Text from '../Text/Text';
 import woman from '../../../lib/assets/woman.png';
 import { Img, ImgTitle } from './Image.styled';
+import { useNavigate } from 'react-router-dom';
 
 const Image = ({ imgObject, type }) => {
+    const navigate = useNavigate();
     let style = {};
 
     if (type === 'main') {
@@ -51,7 +53,10 @@ const Image = ({ imgObject, type }) => {
                 >
                     Nutrient Physiology & Pharmacology
                 </Text>
-                <Button style={{ marginTop: 30, fontSize: fontSize.button }}>
+                <Button
+                    onClick={() => navigate('/question')}
+                    style={{ marginTop: 30, fontSize: fontSize.button }}
+                >
                     EXPLORE NUSEUM
                 </Button>
             </ImgTitle>

@@ -5,12 +5,15 @@ import Header from '../../organism/Header/Header';
 import { GenderButton, Img, TextWrapper } from './Question.styled';
 import Text from '../../atom/Text/Text';
 import Input from '../../atom/Input/Input';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 import Button from '../../atom/Button';
 import { useNavigate } from 'react-router-dom';
 
 const Question = () => {
+    useEffect(() => {
+        window.scroll(0, 0);
+    }, []);
     const [gender, setGender] = useState(undefined);
     const [age, setAge] = useState(0);
     const navigate = useNavigate();

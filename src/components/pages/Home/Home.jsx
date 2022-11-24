@@ -29,8 +29,10 @@ import logo from '../../../lib/assets/logo.png';
 import Button from '../../atom/Button';
 import footerLogo from '../../../lib/assets/footer-logo.png';
 import { fontSize } from '../../../lib/styles/fontSize';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const navigate = useNavigate();
     return (
         <Layout>
             <Header />
@@ -52,7 +54,7 @@ const Home = () => {
                             style={{
                                 textDecoration: 'underline',
                                 marginBottom: '12px',
-                                display: 'inline-block'
+                                display: 'inline-block',
                             }}
                             as='span'
                         >
@@ -346,6 +348,7 @@ const Home = () => {
                         Ready to get started?
                     </Text>
                     <Button
+                        onClick={() => navigate('/question')}
                         style={{ marginTop: 30, fontSize: fontSize.button }}
                     >
                         EXPLORE NUSEUM
@@ -413,7 +416,7 @@ const Home = () => {
                                 cursor: 'pointer',
                                 fontSize: '16px',
                                 textDecoration: 'none',
-                                color: 'black'
+                                color: 'black',
                             }}
                         >
                             Blog
