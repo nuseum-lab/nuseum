@@ -9,4 +9,8 @@ export default styled.button`
     bottom: -80%;
     border-radius: 35px;
     border: none;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
 `;
