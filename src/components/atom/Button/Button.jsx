@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default styled.button`
     width: 220px;
     height: 54px;
-    background-color: white;
+    background-color: ${(props) => (props?.bgColor ? props.bgColor : 'white')};
     color: black;
     position: relative;
     bottom: -80%;
