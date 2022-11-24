@@ -9,5 +9,3 @@ export const fontSize = {
     button: 14,
     subtext: 12,
 };
-
-
