@@ -1,7 +1,6 @@
-import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const Img = styled(motion.img)`
+export const Img = styled.img`
     object-fit: cover;
     width: 100%;
     position: fixed;
@@ -18,6 +17,7 @@ export const Img = styled(motion.img)`
         height: 70%;
     }
 `;
+
 export const ImgTitle = styled.div`
     display: flex;
     flex-direction: column;
@@ -26,5 +26,4 @@ export const ImgTitle = styled.div`
     @media all and (max-width: 599px) {
         top: 70vh;
     }
-`
-    
+`;

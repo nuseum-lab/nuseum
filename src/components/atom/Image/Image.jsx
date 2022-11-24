@@ -1,24 +1,10 @@
 import { fontSize } from '../../../lib/styles/fontSize';
 import Button from '../Button';
 import Text from '../Text/Text';
-import man from '../../../lib/assets/man.png';
 import woman from '../../../lib/assets/woman.png';
-import { useEffect, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import { Img, ImgTitle   } from './Image.styled';
+import { Img, ImgTitle } from './Image.styled';
 
 const Image = ({ imgObject, type }) => {
-    const [photo, setPhoto] = useState(true);
-    useEffect(() => {
-        let id = setInterval(() => {
-            setPhoto((prev) => !prev);
-        }, 4000);
-
-        return () => {
-            clearInterval(id);
-        };
-    }, []);
-
     let style = {};
 
     if (type === 'main') {
@@ -41,30 +27,8 @@ const Image = ({ imgObject, type }) => {
                 }}
             >
                 <img style={{ ...style }} src={imgObject} alt='' />
-                <AnimatePresence>
-                    {photo ? (
-                        <Img
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 1 }}
-                            src={man}
-                            alt=''
-                        />
-                    ) : null}
-                </AnimatePresence>
-                <AnimatePresence>
-                    {!photo ? (
-                        <Img
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 1 }}
-                            src={woman}
-                            alt=''
-                        />
-                    ) : null}
-                </AnimatePresence>
+
+                <Img src={woman} alt='' />
             </div>
             <ImgTitle>
                 <Text
