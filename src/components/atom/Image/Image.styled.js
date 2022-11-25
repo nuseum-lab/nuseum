@@ -21,9 +21,7 @@ export const Img = styled.img`
 export const ImgTitle = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: relative;
-    top: 74vh;
-    @media all and (max-width: 599px) {
-        top: 70vh;
-    }
+    top: 65%;
 `;

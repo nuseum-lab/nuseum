@@ -1,7 +1,6 @@
 import { fontSize } from '../../../lib/styles/fontSize';
 import Button from '../Button';
 import Text from '../Text/Text';
-import woman from '../../../lib/assets/woman.png';
 import { Img, ImgTitle } from './Image.styled';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,33 +28,33 @@ const Image = ({ imgObject, type }) => {
                 }}
             >
                 <img style={{ ...style }} src={imgObject} alt='' />
-
-                <Img src={woman} alt='' />
             </div>
-            <ImgTitle>
+            <ImgTitle
+                style={{ backdropFilter : 'blur(1px)'}}
+            >
                 <Text
                     fontStyle={{
                         fontSize: 'main_title',
-                        fontWeight: 'normal',
+                        fontWeight: 'primary',
                         color: 'white',
                     }}
-                    style={{ textShadow: '0 0 10px black', lineHeight: 1.1 }}
+                    style={{ textShadow: '0 0 40px #5a280a', textAlign: 'center'}}
                 >
                     Your Museum of
                 </Text>
                 <Text
                     fontStyle={{
                         fontSize: 'main_title',
-                        fontWeight: 'normal',
+                        fontWeight: 'primary',
                         color: 'white',
                     }}
-                    style={{ textShadow: '0 0 10px black', lineHeight: 1.1 }}
+                    style={{ textShadow: '0 0 40px #5a280a', textAlign: 'center'}}
                 >
                     Nutrient Physiology & Pharmacology
                 </Text>
                 <Button
                     onClick={() => navigate('/question')}
-                    style={{ marginTop: 30, fontSize: fontSize.button }}
+                    style={{ marginTop: 30, fontSize: fontSize.button, background: '#5f4339', color: 'white',boxShadow: '0 0 10px #be9c91' }}
                 >
                     EXPLORE NUSEUM
                 </Button>
