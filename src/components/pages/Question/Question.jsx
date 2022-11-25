@@ -2,7 +2,16 @@ import Layout from '../Layout';
 import background from '../../../lib/assets/background.png';
 import woman from '../../../lib/assets/woman.png';
 import Header from '../../organism/Header/Header';
-import { GenderButton, Img, TextWrapper } from './Question.styled';
+import {
+    BackgroundImg,
+    BackgroundWrapper,
+    GenderButton,
+    Img,
+    ImgWrapper,
+    TextWrapper,
+    UtilLayout,
+    UtilWrapper,
+} from './Question.styled';
 import Text from '../../atom/Text/Text';
 import Input from '../../atom/Input/Input';
 import { useEffect, useState } from 'react';
@@ -20,32 +29,9 @@ const Question = () => {
     return (
         <Layout style={{ height: '100vh', width: '100vw', padding: 0 }}>
             <Header />
-            <div
-                style={{
-                    boxSizing: 'border-box',
-                    height: '100%',
-                    width: '100%',
-                    display: 'flex',
-                }}
-            >
-                <div
-                    style={{
-                        width: '50%',
-                        height: '100%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                    }}
-                >
-                    <div
-                        style={{
-                            height: '50%',
-                            width: '100%',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                        }}
-                    >
+            <BackgroundWrapper>
+                <UtilWrapper>
+                    <UtilLayout>
                         <TextWrapper style={{ height: 80, marginBottom: 60 }}>
                             <Text
                                 fontStyle={{
@@ -137,34 +123,14 @@ const Question = () => {
                         >
                             NEXT
                         </Button>
-                    </div>
-                </div>
-                <div
-                    style={{
-                        width: '50%',
-                        height: '100%',
-                        overflow: 'hidden',
-                        display: 'flex',
-                        alignItems: 'flex-end',
-                    }}
-                >
-                    <img
-                        src={background}
-                        alt='background'
-                        style={{
-                            display: 'block',
-                            boxSizing: 'border-box',
-                            objectFit: 'cover',
-                            width: '50%',
-                            height: '100%',
-                            zIndex: -1,
-                            position: 'absolute',
-                        }}
-                    />
+                    </UtilLayout>
+                </UtilWrapper>
+                <ImgWrapper>
+                    <BackgroundImg src={background} alt='background' />
 
                     <Img src={woman} alt='' />
-                </div>
-            </div>
+                </ImgWrapper>
+            </BackgroundWrapper>
         </Layout>
     );
 };
