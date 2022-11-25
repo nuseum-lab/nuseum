@@ -85,4 +85,5 @@ export const GenderButton = styled(Input)`
     &:active {
         opacity: 0.4;
     }
+    color: black;
 `;
