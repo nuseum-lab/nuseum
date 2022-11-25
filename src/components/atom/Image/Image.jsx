@@ -1,7 +1,7 @@
 import { fontSize } from '../../../lib/styles/fontSize';
 import Button from '../Button';
 import Text from '../Text/Text';
-import { Img, ImgTitle } from './Image.styled';
+import { ImgTitle } from './Image.styled';
 import { useNavigate } from 'react-router-dom';
 
 const Image = ({ imgObject, type }) => {
@@ -54,7 +54,7 @@ const Image = ({ imgObject, type }) => {
                 </Text>
                 <Button
                     onClick={() => navigate('/question')}
-                    style={{ marginTop: 30, fontSize: fontSize.button, background: '#5f4339', color: 'white',boxShadow: '0 0 10px #be9c91' }}
+                    style={{ marginTop: 30, fontSize: fontSize.button ,boxShadow: '0 0 10px #be9c91' }}
                 >
                     EXPLORE NUSEUM
                 </Button>
