@@ -14,6 +14,7 @@ export const FooterWrap = styled.div`
     margin: 0 auto;
     border-top: 1px solid black;
     display: flex;
+    flex-direction: column;
     padding-top: 20px;
     @media all and (max-width: 1135px) and (min-width: 600px) {
         width: calc(100% - 64px);

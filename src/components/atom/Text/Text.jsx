@@ -29,7 +29,7 @@ export default styled.p`
             else if(
                 props?.fontStyle?.fontSize === 'main_title'
             ){
-                return fontSize[props?.fontStyle?.fontSize] - 10;
+                return fontSize[props?.fontStyle?.fontSize] - 14;
             }
             else {
                 return fontSize[props?.fontStyle?.fontSize] - 6;

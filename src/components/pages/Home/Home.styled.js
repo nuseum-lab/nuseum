@@ -36,6 +36,7 @@ export const SectionImage = styled(motion.img)`
     object-fit: cover;
     @media all and (max-width: 599px) {
         width: 100%;
+        min-height: 30vh;
     }
 `;
 
@@ -46,7 +47,7 @@ export const SectionTextBox = styled.div`
     align-items: center;
     text-align: center;
     @media all and (max-width: 599px) {
-        margin: 30px 0;
+        margin: 20px 0;
     }
     ${Text} {
         &:first-child {
@@ -58,7 +59,7 @@ export const SectionTextBox = styled.div`
 export const InformationBox = styled.div`
     width: calc(100% + 128px);
     margin: 0 -64px;
-    padding: 0 64px 70px;
+    padding: 0 64px 40px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -131,11 +132,11 @@ export const MockupImg = styled(motion.img)`
     height: 100%;
     @media all and (max-width: 599px) {
         top: 0;
-        height: 60vh !important;
+        height: 50vh !important;
         width: 100%;
         object-fit: cover;
         object-position: top;
-        margin-top: -50px;
+        margin-top: -30px;
     }
 `;
 export const MockupWrapper = styled.div`
@@ -172,7 +173,7 @@ export const ServiceDescription = styled.div`
         padding: 100px 32px 100px 0;
     }
     @media all and (max-width: 599px) {
-        padding: 50px 16px;
+        padding: 20px 16px;
         flex-direction: column;
     }
 `;
@@ -192,7 +193,7 @@ export const ServiceDescriptionBox = styled.div`
         padding-right: 50px;
     }
     @media all and (max-width: 599px) {
-        padding: 60px 20px;
+        padding: 50px 20px;
         align-items: center;
         width: 90%;
         margin-left: 0;
