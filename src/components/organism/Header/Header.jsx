@@ -22,7 +22,7 @@ const Header = () => {
 
     return (
         <AnimatePresence>
-            {headerVisible ? (
+            {headerVisible || isOpen ? (
                 <Box
                     initial={{ y: -100 }}
                     exit={{ y: -200 }}
