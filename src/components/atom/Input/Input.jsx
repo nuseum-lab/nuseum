@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.input`
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 15px rgb(93 78 68 / 25%);
     border-radius: 10px;
     border: none;
     outline: none;
