@@ -21,7 +21,7 @@ const GNB = ({ isOpen, setIsOpen }) => {
                         fontSize: 'subtext',
                         fontWeight: 'normal',
                     }}
-                    style={{ padding: '12px 0' }}
+                    style={{ padding: '10px 0 6px' }}
                 >
                     Login
                 </Text>
@@ -30,7 +30,7 @@ const GNB = ({ isOpen, setIsOpen }) => {
                         fontSize: 'subtext',
                         fontWeight: 'normal',
                     }}
-                    style={{ padding: '12px 0' }}
+                    style={{ padding: '10px 0 6px' }}
                 >
                     Sign Up
                 </Text>
@@ -53,16 +53,14 @@ const GNB = ({ isOpen, setIsOpen }) => {
                                 fontSize: 'menu',
                                 fontWeight: 'sub',
                                 opacity: 1,
-                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                textDecoration: '2px solid underline black',
                             }}
                             style={{
                                 cursor: 'pointer',
-                                padding: '20px 20px 40px 20px',
+                                padding: '12px 20px 30px 20px',
                                 position: 'relative',
                             }}
                         >
-                            SHOP
+                            <Link>SHOP</Link>
                         </Text>
                         {subVisible && id === '0' ? (
                             <SubGroup>
@@ -88,15 +86,13 @@ const GNB = ({ isOpen, setIsOpen }) => {
                                 fontSize: 'menu',
                                 fontWeight: 'sub',
                                 opacity: 1,
-                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                textDecoration: '2px solid underline black',
                             }}
                             style={{
                                 cursor: 'pointer',
-                                padding: '20px 20px 40px 20px',
+                                padding: '12px 20px 30px 20px',
                             }}
                         >
-                            RESTAURANT
+                            <Link>RESTAURANT</Link>
                         </Text>
                         {subVisible && id === '1' ? (
                             <SubGroup>
@@ -122,15 +118,13 @@ const GNB = ({ isOpen, setIsOpen }) => {
                                 fontSize: 'menu',
                                 fontWeight: 'sub',
                                 opacity: 1,
-                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                textDecoration: '2px solid underline black',
                             }}
                             style={{
                                 cursor: 'pointer',
-                                padding: '20px 20px 40px 20px',
+                                padding: '12px 20px 30px 20px',
                             }}
                         >
-                            DIARY
+                            <Link>DIARY</Link>
                         </Text>
                         {subVisible && id === '2' ? (
                             <SubGroup>
@@ -156,15 +150,13 @@ const GNB = ({ isOpen, setIsOpen }) => {
                                 fontSize: 'menu',
                                 fontWeight: 'sub',
                                 opacity: 1,
-                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                textDecoration: '2px solid underline black',
                             }}
                             style={{
                                 cursor: 'pointer',
-                                padding: '20px 20px 40px 20px',
+                                padding: '12px 20px 30px 20px',
                             }}
                         >
-                            ME
+                            <Link>ME</Link>
                         </Text>
                         {subVisible && id === '3' ? (
                             <SubGroup>
@@ -191,15 +183,13 @@ const GNB = ({ isOpen, setIsOpen }) => {
                                 fontSize: 'menu',
                                 fontWeight: 'sub',
                                 opacity: 1,
-                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                textDecoration: '2px solid underline black',
                             }}
                             style={{
                                 cursor: 'pointer',
-                                padding: '20px 20px 40px 20px',
+                                padding: '12px 20px 30px 20px',
                             }}
                         >
-                            LIBRARY
+                            <Link>LIBRARY</Link>
                         </Text>
                         {subVisible && id === '4' ? (
                             <SubGroup>
@@ -226,16 +216,13 @@ const GNB = ({ isOpen, setIsOpen }) => {
                                 fontSize: 'menu',
                                 fontWeight: 'sub',
                                 opacity: 1,
-                                textShadow: 'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                textDecoration: '2px solid underline black',
                             }}
                             style={{
                                 cursor: 'pointer',
-                                padding: '20px 0px 40px 0px',
-                                marginLeft: '20px',
+                                padding: '12px 20px 30px 20px',
                             }}
                         >
-                            CURATOR
+                            <Link>CURATOR</Link>
                         </Text>
                         {subVisible && id === '5' ? (
                             <SubGroup>
@@ -245,6 +232,22 @@ const GNB = ({ isOpen, setIsOpen }) => {
                                 </Link>
                             </SubGroup>
                         ) : null}
+                    </GroupWrapper>
+                    <GroupWrapper>
+                        <Text
+                            fontStyle={{
+                                fontSize: 'menu',
+                                fontWeight: 'sub',
+                                opacity: 1,
+                            }}
+                            style={{
+                                cursor: 'pointer',
+                                padding: '12px 0px 30px 0px',
+                                marginLeft: '20px',
+                            }}
+                        >
+                            <Link>HISTORY</Link>
+                        </Text>
                     </GroupWrapper>
                 </GNBGroup>
             )}

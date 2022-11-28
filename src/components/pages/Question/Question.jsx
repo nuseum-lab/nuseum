@@ -27,17 +27,17 @@ const Question = () => {
     const [age, setAge] = useState(0);
     const navigate = useNavigate();
     return (
-        <Layout style={{ height: '100vh', width: '100vw', padding: 0 }}>
+        <Layout style={{width: '100%', padding: 0 }}>
             <Header />
             <BackgroundWrapper>
                 <UtilWrapper>
                     <UtilLayout>
-                        <TextWrapper style={{ height: 80, marginBottom: 60 }}>
+                        <TextWrapper>
                             <Text
                                 fontStyle={{
                                     fontWeight: 'primary',
                                     fontSize: 'subtitle',
-                                }}
+                                }}style={{marginBottom: '12px'}}
                             >
                                 QUESTION
                             </Text>
@@ -60,13 +60,11 @@ const Question = () => {
                             What's your age?
                         </Text>
                         <Input
-                            placeholder='나이를 입력해주세요 :)'
-                            onChange={(e) => setAge(e.target.value)}
-                            style={{ width: '40%', marginBottom: 10 }}
-                        />
+                            placeholder=''
+                            onChange={(e) => setAge(e.target.value)}/>
                         <div
                             style={{
-                                width: '40%',
+                                width: '50%',
                                 display: 'flex',
                                 justifyContent: 'space-between',
                             }}
@@ -89,7 +87,6 @@ const Question = () => {
                             <GenderButton
                                 as='button'
                                 style={{
-                                    width: '48%',
                                     backgroundColor: `${
                                         !gender && gender !== undefined
                                             ? colorPalette.lightPink
@@ -108,7 +105,7 @@ const Question = () => {
                                 fontSize: 'button',
                                 color: 'white',
                                 position: 'relative',
-                                top: 100,
+                                top: '15%',
                                 cursor: 'pointer',
                             }}
                             onClick={() =>

@@ -41,12 +41,22 @@ export const GroupWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    a{
+        color: black;
+        text-decoration: none;
+    }
+    :hover > p > a{
+        text-shadow: rgb(0 0 0 /20%) 1px 1px 1px;
+        text-decoration: 2px solid underline black;
+    }
 `;
 export const SubGroup = styled.div`
     position: absolute;
-    width: 160px;
+    width: 150px;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    box-shadow: 0px 4px 5px 0px rgb(0 0 0 /20%);
     top: 80px;
     background-color: #faf8f6;
     border-radius: 5px;
@@ -57,8 +67,6 @@ export const SubGroup = styled.div`
         padding-bottom: 20px;
         font-weight: 300;
         display: inline-block;
-        text-decoration: none;
-        color: black;
     }
     a:hover {
         font-weight: 600;

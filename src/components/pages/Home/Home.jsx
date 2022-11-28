@@ -1,7 +1,7 @@
 import Image from '../../atom/Image/Image';
 import Header from '../../organism/Header/Header';
 import Layout from '../Layout';
-import background from '../../../lib/assets/background.png';
+import background from '../../../lib/assets/background.jpg';
 import mockup from '../../../lib/assets/mockup.png';
 import Section from '../../atom/Section/Section';
 import { colorPalette } from '../../../lib/styles/colorPalette';
@@ -40,7 +40,6 @@ const Home = () => {
             <Section
                 style={{
                     minHeight: 680,
-                    marginTop: '50px',
                 }}
                 bgColor={colorPalette.lightPink}
             >
@@ -358,7 +357,7 @@ const Home = () => {
 
             <InformationBox
                 style={{
-                    minHeight: 300,
+                    minHeight: 250,
                     position: 'relative',
                     background: '#FAF8F6',
                 }}

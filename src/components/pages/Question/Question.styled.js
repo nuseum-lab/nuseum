@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colorPalette } from '../../../lib/styles/colorPalette';
 import Input from '../../atom/Input/Input';
 
 export const Img = styled.img`
@@ -10,7 +11,7 @@ export const Img = styled.img`
     @media all and (max-width: 1135px) and (min-width: 600px) {
         object-position: 70% 0;
     }
-    @media all and (max-width: 599px) {
+    @media all and (max-width: 768px) {
         width: 100%;
     }
 `;
@@ -22,7 +23,7 @@ export const BackgroundImg = styled.img`
     height: 100%;
     z-index: -1;
     position: absolute;
-    @media all and (max-width: 599px) {
+    @media all and (max-width: 768px) {
         width: 100%;
         height: 50%;
     }
@@ -34,18 +35,31 @@ export const UtilWrapper = styled.div`
     align-items: center;
     justify-content: center;
 
-    @media all and (max-width: 599px) {
+    @media all and (max-width: 768px) {
         width: 100%;
+        height: auto;
     }
 `;
 export const UtilLayout = styled.div`
-    height: 50%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media all and (max-width: 599px) {
-        height: 80%;
+    @media all and (max-width: 768px) {
+        height: auto;
+        padding: 50px 0;
+    }
+    input{
+        width: 50%;
+        margin-bottom: 12px;
+        @media all and (max-width: 599px) {
+            width: 70%;
+        }
+    }
+    div{
+        @media all and (max-width: 599px) {
+            width: 70% !important;
+        }
     }
 `;
 
@@ -56,18 +70,21 @@ export const ImgWrapper = styled.div`
     display: flex;
     align-items: flex-end;
 
-    @media all and (max-width: 599px) {
+    @media all and (max-width: 768px) {
         width: 100%;
+        height: auto;
+
     }
 `;
 
 export const BackgroundWrapper = styled.div`
     box-sizing: border-box;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     display: flex;
-    @media all and (max-width: 599px) {
+    @media all and (max-width: 768px) {
         flex-direction: column-reverse;
+        height: auto;   
     }
 `;
 
@@ -76,14 +93,24 @@ export const TextWrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 60px;
+    @media all and (max-width: 768px) {
+        margin-bottom: 30px;
+    }
 `;
 
 export const GenderButton = styled(Input)`
+    width: 48%;
+    color: black;
+    margin-bottom: 50px;
     &:hover {
-        opacity: 0.6;
+        opacity: 1;
+        background-color: ${colorPalette.lightPink} !important;
     }
     &:active {
-        opacity: 0.4;
+        opacity: 1;
+        background-color: ${colorPalette.lightPink} !important;
     }
-    color: black;
+    
+
 `;

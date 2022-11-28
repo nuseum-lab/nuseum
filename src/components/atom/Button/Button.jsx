@@ -10,7 +10,9 @@ export default styled.button`
     border-radius: 35px;
     border: none;
     cursor: pointer;
+    transition: 0.2s all ease;
     &:hover {
         opacity: 0.8;
+        font-weight: 900;
     }
 `;

@@ -157,7 +157,7 @@ function App() {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
-                                width: '50%',
+                                width: '100%',
                                 float: 'left',
                             }}
                         >
@@ -173,7 +173,7 @@ function App() {
                             </Text>
                         </div>
                             <Text
-                                fontStyle={{ fontSize: 'button', fontWeight: 'normal' }}style={{textAlign:'right', width: '50%'}}
+                                fontStyle={{ fontSize: 'button', fontWeight: 'normal' }}style={{width: '100%'}}
                             >
                                 © 2022 NUSEUM. All rights reserved.
                             </Text>
