@@ -22,5 +22,6 @@ export const ImgTitle = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
-    top: 65%;
+    top: 85%;
+    transform: translateY(-85%);
 `;

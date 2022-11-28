@@ -173,7 +173,7 @@ function App() {
                             </Text>
                         </div>
                             <Text
-                                fontStyle={{ fontSize: 'button', fontWeight: 'normal' }}style={{width: '100%'}}
+                                fontStyle={{ fontSize: 'button', fontWeight: 'normal' }}style={{width: '100%', marginTop: '4px'}}
                             >
                                 © 2022 NUSEUM. All rights reserved.
                             </Text>
