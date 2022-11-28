@@ -12,7 +12,7 @@ const Image = ({ imgObject, type }) => {
         style.objectFit = 'cover';
         style.width = '100%';
         style.position = 'fixed';
-        style.height = '100%';
+        style.height = '150%';
         style.zIndex = 0;
     }
 
