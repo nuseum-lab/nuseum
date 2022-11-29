@@ -4,6 +4,7 @@ export const fontSize = {
     main_title: 44,
     subtitle: 32,
     sub: 28,
+    mid: 24,
     normal: 20,
     menu: 16,
     button: 14,
