@@ -49,14 +49,14 @@ export const UtilLayout = styled.div`
         height: auto;
         padding: 50px 0;
     }
-    input{
+    input {
         width: 50%;
         margin-bottom: 12px;
         @media all and (max-width: 599px) {
             width: 70%;
         }
     }
-    div{
+    div {
         @media all and (max-width: 599px) {
             width: 70% !important;
         }
@@ -73,7 +73,6 @@ export const ImgWrapper = styled.div`
     @media all and (max-width: 768px) {
         width: 100%;
         height: auto;
-
     }
 `;
 
@@ -84,7 +83,7 @@ export const BackgroundWrapper = styled.div`
     display: flex;
     @media all and (max-width: 768px) {
         flex-direction: column-reverse;
-        height: auto;   
+        height: auto;
     }
 `;
 
@@ -102,7 +101,10 @@ export const TextWrapper = styled.div`
 export const GenderButton = styled(Input)`
     width: 48%;
     color: black;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    background-color: ${(props) =>
+        props.gender ? colorPalette.lightPink : 'white'};
     &:hover {
         opacity: 1;
         background-color: ${colorPalette.lightPink} !important;
@@ -111,6 +113,4 @@ export const GenderButton = styled(Input)`
         opacity: 1;
         background-color: ${colorPalette.lightPink} !important;
     }
-    
-
 `;

@@ -15,7 +15,6 @@ import {
 import Text from '../../atom/Text/Text';
 import Input from '../../atom/Input/Input';
 import { useEffect, useState } from 'react';
-import { colorPalette } from '../../../lib/styles/colorPalette';
 import Button from '../../atom/Button';
 import { useNavigate } from 'react-router-dom';
 
@@ -27,7 +26,7 @@ const Question = () => {
     const [age, setAge] = useState(0);
     const navigate = useNavigate();
     return (
-        <Layout style={{width: '100%', padding: 0 }}>
+        <Layout style={{ width: '100%', padding: 0 }}>
             <Header />
             <BackgroundWrapper>
                 <UtilWrapper>
@@ -37,7 +36,8 @@ const Question = () => {
                                 fontStyle={{
                                     fontWeight: 'primary',
                                     fontSize: 'subtitle',
-                                }}style={{marginBottom: '12px'}}
+                                }}
+                                style={{ marginBottom: '12px' }}
                             >
                                 QUESTION
                             </Text>
@@ -61,7 +61,8 @@ const Question = () => {
                         </Text>
                         <Input
                             placeholder=''
-                            onChange={(e) => setAge(e.target.value)}/>
+                            onChange={(e) => setAge(e.target.value)}
+                        />
                         <div
                             style={{
                                 width: '50%',
@@ -71,29 +72,16 @@ const Question = () => {
                         >
                             <GenderButton
                                 as='button'
-                                style={{
-                                    width: '48%',
-                                    cursor: 'pointer',
-                                    backgroundColor: `${
-                                        gender
-                                            ? colorPalette.lightPink
-                                            : 'white'
-                                    }`,
-                                }}
+                                gender={gender}
                                 onClick={() => setGender(true)}
                             >
                                 man
                             </GenderButton>
                             <GenderButton
                                 as='button'
-                                style={{
-                                    backgroundColor: `${
-                                        !gender && gender !== undefined
-                                            ? colorPalette.lightPink
-                                            : 'white'
-                                    }`,
-                                    cursor: 'pointer',
-                                }}
+                                gender={
+                                    gender === undefined ? undefined : !gender
+                                }
                                 onClick={() => setGender(false)}
                             >
                                 woman
