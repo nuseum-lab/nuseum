@@ -2,7 +2,7 @@ export const fontSize = {
     primary: 64,
     logo: 50,
     main_title: 44,
-    subtitle: 32,
+    sub_title: 32,
     sub: 28,
     mid: 24,
     normal: 20,
