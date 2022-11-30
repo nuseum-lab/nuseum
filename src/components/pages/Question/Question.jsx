@@ -6,6 +6,7 @@ import {
     BackgroundImg,
     BackgroundWrapper,
     GenderButton,
+    GenderButtonWrapper,
     Img,
     ImgWrapper,
     TextWrapper,
@@ -63,13 +64,7 @@ const Question = () => {
                             placeholder=''
                             onChange={(e) => setAge(e.target.value)}
                         />
-                        <div
-                            style={{
-                                width: '50%',
-                                display: 'flex',
-                                justifyContent: 'space-between',
-                            }}
-                        >
+                        <GenderButtonWrapper>
                             <GenderButton
                                 as='button'
                                 gender={gender}
@@ -86,7 +81,7 @@ const Question = () => {
                             >
                                 woman
                             </GenderButton>
-                        </div>
+                        </GenderButtonWrapper>
                         <Button
                             style={{
                                 bottom: 'auto',
