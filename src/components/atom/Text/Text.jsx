@@ -16,24 +16,16 @@ export default styled.p`
         text-decoration: ${(props) => props?.fontStyle?.textDecoration};
     }
     @media all and (max-width: 1135px) and (min-width: 600px) {
-        font-size: ${(props) => fontSize[props?.fontStyle?.fontSize] - 4}px;
+        font-size: ${(props) =>
+            Number(fontSize[props?.fontStyle?.fontSize]) - 4}px;
     }
     @media all and (max-width: 599px) {
-        font-size: ${(props) => {
-            if (
-                props?.fontStyle?.fontSize === 'logo' ||
-                props?.fontStyle?.fontSize === 'primary'
-            ) {
-                return fontSize[props?.fontStyle?.fontSize] - 20;
-            } 
-            else if(
-                props?.fontStyle?.fontSize === 'main_title'
-            ){
-                return fontSize[props?.fontStyle?.fontSize] - 14;
-            }
-            else {
-                return fontSize[props?.fontStyle?.fontSize] - 6;
-            }
-        }}px;
+        font-size: ${(props) =>
+            props?.fontStyle?.fontSize === 'logo' ||
+            props?.fontStyle?.fontSize === 'primary'
+                ? Number(fontSize[props?.fontStyle?.fontSize]) - 20
+                : props?.fontStyle?.fontSize === 'main_title'
+                ? Number(fontSize[props?.fontStyle?.fontSize]) - 14
+                : Number(fontSize[props?.fontStyle?.fontSize]) - 6}px;
     }
 `;
