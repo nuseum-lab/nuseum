@@ -48,6 +48,7 @@ export const UtilLayout = styled.div`
     @media all and (max-width: 768px) {
         height: auto;
         padding: 50px 0;
+        width: 80%;
     }
     input {
         width: 50%;
