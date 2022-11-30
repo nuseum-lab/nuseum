@@ -8,4 +8,10 @@ export default styled.input`
     padding: 20px 10px;
     font-size: 16px;
     text-align: center;
+    width: 50%;
+    margin-bottom: 12px;
+
+    @media all and (max-width: 768px) {
+        width: 70%;
+    }
 `;

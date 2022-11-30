@@ -18,7 +18,7 @@ ChartJS.register(
 );
 ChartJS.defaults.font.size = 8;
 
-const RadarGraph = ({ dateCount, data }) => {
+const RadarGraph = ({ dateCount, data, range }) => {
     let dataForRadar = {
         labels: [
             // 'A',
@@ -48,64 +48,96 @@ const RadarGraph = ({ dateCount, data }) => {
             {
                 label: '영양제 + 음식(%)',
                 data: [
-                    ((+data.dha_epa / (300 * dateCount)) * 100).toFixed(1) > 100
-                        ? 100
-                        : ((+data.dha_epa / (300 * dateCount)) * 100).toFixed(
-                              1
-                          ),
-                    ((+data.folic_acid / (180 * dateCount)) * 100).toFixed(1) >
-                    100
+                    (
+                        (+data.dha_epa / (range.dha_epa * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
                         ? 100
                         : (
-                              (+data.folic_acid / (180 * dateCount)) *
+                              (+data.dha_epa / (range.dha_epa * dateCount)) *
                               100
                           ).toFixed(1),
-                    ((+data.magnesium / (110 * dateCount)) * 100).toFixed(1) >
-                    100
-                        ? 100
-                        : ((+data.magnesium / (110 * dateCount)) * 100).toFixed(
-                              1
-                          ),
-                    ((+data.tryptophan / (100 * dateCount)) * 100).toFixed(1) >
-                    100
+                    (
+                        (+data.folic_acid / (range.folic_acid * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
                         ? 100
                         : (
-                              (+data.tryptophan / (100 * dateCount)) *
+                              (+data.folic_acid /
+                                  (range.folic_acid * dateCount)) *
                               100
                           ).toFixed(1),
-                    ((+data.vitamin_a / (300 * dateCount)) * 100).toFixed(1) >
-                    100
-                        ? 100
-                        : ((+data.vitamin_a / (300 * dateCount)) * 100).toFixed(
-                              1
-                          ),
-                    ((+data.dietary_fiber / (20 * dateCount)) * 100).toFixed(
-                        1
-                    ) > 100
+                    (
+                        (+data.magnesium / (range.magnesium * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
                         ? 100
                         : (
-                              (+data.dietary_fiber / (20 * dateCount)) *
+                              (+data.magnesium /
+                                  (range.magnesium * dateCount)) *
                               100
                           ).toFixed(1),
-                    ((+data.vitamin_b6 / (0.7 * dateCount)) * 100).toFixed(1) >
-                    100
+                    (
+                        (+data.tryptophan / (range.tryptophan * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
                         ? 100
                         : (
-                              (+data.vitamin_b6 / (0.7 * dateCount)) *
+                              (+data.tryptophan /
+                                  (range.tryptophan * dateCount)) *
                               100
                           ).toFixed(1),
-                    ((+data.vitamin_b12 / (1.1 * dateCount)) * 100).toFixed(1) >
-                    100
+                    (
+                        (+data.vitamin_a / (range.vitamin_a * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
                         ? 100
                         : (
-                              (+data.vitamin_b12 / (1.1 * dateCount)) *
+                              (+data.vitamin_a /
+                                  (range.vitamin_a * dateCount)) *
                               100
                           ).toFixed(1),
-                    ((+data.vitamin_d / (5 * dateCount)) * 100).toFixed(1) > 100
+                    (
+                        (+data.dietary_fiber /
+                            (range.dietary_fiber * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
                         ? 100
-                        : ((+data.vitamin_d / (5 * dateCount)) * 100).toFixed(
-                              1
-                          ),
+                        : (
+                              (+data.dietary_fiber /
+                                  (range.dietary_fiber * dateCount)) *
+                              100
+                          ).toFixed(1),
+                    (
+                        (+data.vitamin_b6 / (range.vitamin_b6 * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
+                        ? 100
+                        : (
+                              (+data.vitamin_b6 /
+                                  (range.vitamin_b6 * dateCount)) *
+                              100
+                          ).toFixed(1),
+                    (
+                        (+data.vitamin_b12 / (range.vitamin_b12 * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
+                        ? 100
+                        : (
+                              (+data.vitamin_b12 /
+                                  (range.vitamin_b12 * dateCount)) *
+                              100
+                          ).toFixed(1),
+                    (
+                        (+data.vitamin_d / (range.vitamin_d * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
+                        ? 100
+                        : (
+                              (+data.vitamin_d /
+                                  (range.vitamin_d * dateCount)) *
+                              100
+                          ).toFixed(1),
                 ],
                 fill: true,
                 backgroundColor: 'rgba(190, 197, 198, 0.6)',

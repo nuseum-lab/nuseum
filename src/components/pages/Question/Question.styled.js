@@ -29,7 +29,7 @@ export const BackgroundImg = styled.img`
     }
 `;
 export const UtilWrapper = styled.div`
-    width: 50%;
+    width: 45%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -48,18 +48,7 @@ export const UtilLayout = styled.div`
     @media all and (max-width: 768px) {
         height: auto;
         padding: 50px 0;
-    }
-    input {
-        width: 50%;
-        margin-bottom: 12px;
-        @media all and (max-width: 599px) {
-            width: 70%;
-        }
-    }
-    div {
-        @media all and (max-width: 599px) {
-            width: 70% !important;
-        }
+        width: 80%;
     }
 `;
 
@@ -82,9 +71,11 @@ export const BackgroundWrapper = styled.div`
     width: 100%;
     display: flex;
     @media all and (max-width: 768px) {
-        flex-direction: column-reverse;
+        flex-direction: ${(props) =>
+            props.reverse ? 'column' : 'column-reverse'};
         height: auto;
     }
+    justify-content: space-between;
 `;
 
 export const TextWrapper = styled.div`
@@ -98,7 +89,7 @@ export const TextWrapper = styled.div`
     }
 `;
 
-export const GenderButton = styled(Input)`
+export const GenderButton = styled(Input).attrs({ as: 'button' })`
     width: 48%;
     color: black;
     margin-bottom: 30px;
@@ -112,5 +103,14 @@ export const GenderButton = styled(Input)`
     &:active {
         opacity: 1;
         background-color: ${colorPalette.lightPink} !important;
+    }
+`;
+export const GenderButtonWrapper = styled.div`
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+
+    @media all and (max-width: 768px) {
+        width: 70%;
     }
 `;
