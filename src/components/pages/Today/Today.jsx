@@ -42,7 +42,7 @@ const Today = () => {
     return (
         <Layout style={{ width: '100%', padding: 0 }}>
             <Header />
-            <BackgroundWrapper>
+            <BackgroundWrapper reverse={true}>
                 <ImgWrapper
                     style={{
                         alignItems: 'center',
