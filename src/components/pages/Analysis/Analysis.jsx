@@ -115,10 +115,8 @@ const Analysis = () => {
                     오늘의 식이 분석 결과입니다 :)
                 </Text>
             </Title>
-            <BackgroundWrapper
-                style={{ height: 'auto', justifyContent: 'space-around' }}
-            >
-                <UtilWrapper style={{ alignItems: 'flex-start', width: '40%' }}>
+            <BackgroundWrapper style={{ height: 'auto' }}>
+                <UtilWrapper style={{ alignItems: 'flex-start' }}>
                     <UtilLayout style={{ marginTop: 50, marginBottom: 50 }}>
                         <Text
                             fontStyle={{
@@ -142,7 +140,7 @@ const Analysis = () => {
                     style={{
                         height: 'inherit',
                         alignItems: 'flex-start',
-                        width: '40%',
+                        // width: '40%',
                     }}
                 >
                     <UtilLayout

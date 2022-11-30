@@ -19,7 +19,6 @@ export const PointLayout = styled.div`
     flex-direction: column;
     justify-content: space-around;
     @media all and (max-width: 768px) {
-        width: 80%;
         padding-top: 30px;
     }
 `;
@@ -51,7 +50,10 @@ export const Point = styled.div`
 export const PointImg = styled.img`
     width: 40%;
     @media all and (max-width: 768px) {
-        width: 30%;
+        width: 45%;
         margin-bottom: 10px;
+    }
+    @media all and (max-width: 620px) {
+        width: 60%;
     }
 `;
