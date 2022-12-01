@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import background from '../../../lib/assets/question-background.png';
 import search from '../../../lib/assets/search.png';
-import { fontSize } from '../../../lib/styles/fontSize';
 import Button from '../../atom/Button';
 import Input from '../../atom/Input/Input';
 import Text from '../../atom/Text/Text';
@@ -22,7 +21,7 @@ import { SearchBar, SelectButton, SelectButtonWrapper } from './Today.styled';
 const Today = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location.state);
+
     const [selected, setSelected] = useState({
         breakfast: false,
         lunch: false,
@@ -275,6 +274,14 @@ const Today = () => {
                                 cursor: 'pointer',
                             }}
                             bgColor='#5D4E44'
+                            onClick={() =>
+                                navigate('/analysis', {
+                                    state: {
+                                        gender: location.state.gender,
+                                        age: location.state.age,
+                                    },
+                                })
+                            }
                         >
                             분석하기
                         </Button>
