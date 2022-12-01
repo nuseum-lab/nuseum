@@ -17,7 +17,7 @@ import {
     UtilLayout,
     UtilWrapper,
 } from '../Question/Question.styled';
-import { SelectButton, SelectButtonWrapper } from './Today.styled';
+import { SearchBar, SelectButton, SelectButtonWrapper } from './Today.styled';
 
 const Today = () => {
     const navigate = useNavigate();
@@ -107,25 +107,6 @@ const Today = () => {
                                 ) : null
                             )}
                         </TextWrapper>
-                        <Button
-                            style={{
-                                marginTop: 30,
-                                fontSize: fontSize.button,
-                                position: 'absolute',
-                                bottom: 30,
-                                display: 'block',
-                            }}
-                            onClick={() =>
-                                navigate('/analysis', {
-                                    state: {
-                                        age: location.state.age,
-                                        gender: location.state.gender,
-                                    },
-                                })
-                            }
-                        >
-                            분석하기
-                        </Button>
                     </UtilLayout>
 
                     <BackgroundImg src={background} alt='background' />
@@ -240,15 +221,7 @@ const Today = () => {
                         >
                             찾고 싶은 음식을 검색해주세요.
                         </Text>
-                        <div
-                            style={{
-                                width: '80%',
-                                display: 'flex',
-                                flexDirection: 'row',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                            }}
-                        >
+                        <SearchBar>
                             <Input
                                 style={{
                                     width: '80%',
@@ -288,11 +261,23 @@ const Today = () => {
                                     width: 20,
                                     height: 20,
                                     position: 'relative',
-                                    objectPosition: null,
                                     right: 40,
                                 }}
                             />
-                        </div>
+                        </SearchBar>
+                        <Button
+                            style={{
+                                bottom: 'auto',
+                                fontSize: 'button',
+                                color: 'white',
+                                position: 'relative',
+                                top: 30,
+                                cursor: 'pointer',
+                            }}
+                            bgColor='#5D4E44'
+                        >
+                            분석하기
+                        </Button>
                     </UtilLayout>
                 </UtilWrapper>
             </BackgroundWrapper>
