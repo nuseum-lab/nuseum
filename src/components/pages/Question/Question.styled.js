@@ -10,9 +10,13 @@ export const Img = styled.img`
 
     @media all and (max-width: 1135px) and (min-width: 600px) {
         object-position: 70% 0;
+        position: absolute;
+        height: 40%;
     }
-    @media all and (max-width: 768px) {
+    @media all and (max-width: 600px) {
         width: 100%;
+        height: 40%;
+        position: absolute;
     }
 `;
 export const BackgroundImg = styled.img`
@@ -26,6 +30,7 @@ export const BackgroundImg = styled.img`
     @media all and (max-width: 768px) {
         width: 100%;
         height: 50%;
+        position: absolute;
     }
 `;
 export const UtilWrapper = styled.div`
@@ -48,7 +53,7 @@ export const UtilLayout = styled.div`
     @media all and (max-width: 768px) {
         height: auto;
         padding: 50px 0;
-        width: 80%;
+        width: 100%;
     }
 `;
 
@@ -61,7 +66,7 @@ export const ImgWrapper = styled.div`
 
     @media all and (max-width: 768px) {
         width: 100%;
-        height: auto;
+        height: 50vh;
     }
 `;
 
@@ -89,7 +94,7 @@ export const TextWrapper = styled.div`
     }
 `;
 
-export const GenderButton = styled(Input).attrs({ as: 'button' })`
+export const GenderButton = styled(Input)`
     width: 48%;
     color: black;
     margin-bottom: 30px;
