@@ -41,7 +41,7 @@ export const SectionImage = styled(motion.img)`
 `;
 
 export const SectionTextBox = styled.div`
-    width: 80%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
