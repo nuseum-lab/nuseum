@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import background from '../../../lib/assets/question-background.png';
@@ -16,11 +17,19 @@ import {
     UtilLayout,
     UtilWrapper,
 } from '../Question/Question.styled';
-import { SearchBar, SelectButton, SelectButtonWrapper } from './Today.styled';
+import SearchNutritionBox from './components/SearchNutritionBox';
+import {
+    SearchBar,
+    SearchResultBox,
+    SelectButton,
+    SelectButtonWrapper,
+} from './Today.styled';
 
 const Today = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const [result, setResult] = useState([]);
+    const [openId, setOpenId] = useState(null);
 
     const [selected, setSelected] = useState({
         breakfast: false,
@@ -238,6 +247,15 @@ const Today = () => {
                                     }
 
                                     if (e.key === 'Enter') {
+                                        axios
+                                            .get(`/food/?search=${food}`)
+                                            .then((response) => {
+                                                console.log(response.data);
+                                                setResult([
+                                                    ...response.data.results,
+                                                ]);
+                                            })
+                                            .catch((err) => console.log(err));
                                         for (let key in selected) {
                                             if (selected[key]) {
                                                 setFoodList((prev) => {
@@ -285,6 +303,33 @@ const Today = () => {
                         >
                             분석하기
                         </Button>
+                        <SearchResultBox>
+                            {result.map((item) => (
+                                <>
+                                    <Text
+                                        style={{
+                                            textAlign: 'left',
+                                            width: '100%',
+                                            lineHeight: 1.5,
+                                            borderBottom:
+                                                '1px solid rgba(0,0,0,0.5) ',
+                                            margin: '10px 0',
+                                            cursor: 'pointer',
+                                        }}
+                                        key={item.id}
+                                        onClick={() => {
+                                            setOpenId(item.id);
+                                        }}
+                                    >
+                                        {item.name}
+                                    </Text>
+                                    <SearchNutritionBox
+                                        openid={openId}
+                                        item={item}
+                                    />
+                                </>
+                            ))}
+                        </SearchResultBox>
                     </UtilLayout>
                 </UtilWrapper>
             </BackgroundWrapper>
