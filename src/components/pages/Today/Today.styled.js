@@ -29,3 +29,11 @@ export const SearchBar = styled.div`
         width: 100%;
     }
 `;
+export const SearchResultBox = styled.div`
+    width: 80%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 60px;
+`;
