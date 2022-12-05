@@ -15,6 +15,7 @@ import {
     MockupWrapper,
     SecondSectionWrapper,
     SectionImage,
+    Strong,
     SectionTextBox,
     ServiceDescription,
     ServiceDescriptionBox,
@@ -25,7 +26,7 @@ import section2 from '../../../lib/assets/section2.png';
 import section3 from '../../../lib/assets/section3.png';
 import section4 from '../../../lib/assets/section4.png';
 import section5 from '../../../lib/assets/section5.png';
-import logo from '../../../lib/assets/logo.png';
+import gray_logo from '../../../lib/assets/gray_logo.png';
 import Button from '../../atom/Button';
 import footerLogo from '../../../lib/assets/footer-logo.png';
 import { fontSize } from '../../../lib/styles/fontSize';
@@ -70,7 +71,7 @@ const Home = () => {
                         <Text
                             fontStyle={{
                                 whiteSpace: 'pre-line',
-                                fontSize: 'subtitle',
+                                fontSize: 'sub_title',
                                 fontWeight: 'black',
                             }}
                             style={{ marginBottom: '30px', width: '60%' }}
@@ -87,7 +88,6 @@ const Home = () => {
                             style={{
                                 width: '60%',
                                 marginBottom: '16px',
-                                lineHeight: 1.4,
                             }}
                         >
                             서울대학교 영양생리약리연구실 창업팀 NUSEUM은
@@ -102,13 +102,13 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ width: '60%', lineHeight: 1.4 }}
+                            style={{ width: '60%'}}
                         >
                             NUSEUM은 생리학, 약리학, 독성학, 식품학, 영양학
                             분야에서 18년 이상 연구한 대표자의 경험을 바탕으로
-                            "올바르게 먹기 위한 정보"를 제공하고, 개인에게
+                            <Strong>"올바르게 먹기 위한 정보"</Strong>를 제공하고, 개인에게
                             맞추어진 건강한 식이를 실천할 수 있도록 돕는 디지털
-                            시대의 혁신적인 개인맞춤영양관리를 구현하고자
+                            시대의 혁신적인 <Strong>개인맞춤영양관리</Strong>를 구현하고자
                             성장하고 있습니다.
                         </Text>
                     </div>
@@ -134,7 +134,7 @@ const Home = () => {
                     <SectionTextBox>
                         <Text
                             fontStyle={{
-                                fontSize: 'subtitle',
+                                fontSize: 'sub_title',
                                 fontWeight: 'black',
                             }}
                             style={{ marginBottom: '16px' }}
@@ -156,9 +156,9 @@ const Home = () => {
                                 fontWeight: 'normal',
                             }}
                         >
-                            “나" 또는 “내가 돌보고 있는 소중한 사람"이{'\n'}
+                            <Strong>“나" </Strong>또는 <Strong>“내가 돌보고 있는 소중한 사람"</Strong>이{'\n'}
                             피해야 할 그리고 선택해야 할 영양성분과 {'\n'} 관련
-                            최상위의 맞춤식품을 알려드립니다.​
+                            최상위의 <Strong>맞춤식품</Strong>을 알려드립니다.​
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
@@ -166,7 +166,7 @@ const Home = () => {
                     <SectionTextBox>
                         <Text
                             fontStyle={{
-                                fontSize: 'subtitle',
+                                fontSize: 'sub_title',
                                 fontWeight: 'black',
                             }}
                             style={{ marginBottom: '16px' }}
@@ -191,7 +191,7 @@ const Home = () => {
                         >
                             뉴지엄은 Shop을 통해 {'\n'}
                             관련 우수한 제품을 쉽게 찾고 {'\n'}
-                            개인맞춤영양을 실천할 수 있도록 돕습니다.​
+                            <Strong>개인맞춤영양</Strong>을 실천할 수 있도록 돕습니다.​
                         </Text>
                     </SectionTextBox>
                     <SectionImage src={section2} alt='section2' />
@@ -201,7 +201,7 @@ const Home = () => {
                     <SectionTextBox>
                         <Text
                             fontStyle={{
-                                fontSize: 'subtitle',
+                                fontSize: 'sub_title',
                                 fontWeight: 'black',
                             }}
                             style={{ marginBottom: '16px' }}
@@ -224,7 +224,7 @@ const Home = () => {
                             }}
                         >
                             뉴지엄은 Restaurant을 통해{'\n'} 나에게 필요한
-                            최상위의 메뉴와 식당을 연결해 드립니다.
+                            <Strong>최상위의 메뉴</Strong>와 <Strong>식당</Strong>을 연결해 드립니다.
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
@@ -232,7 +232,7 @@ const Home = () => {
                     <SectionTextBox>
                         <Text
                             fontStyle={{
-                                fontSize: 'subtitle',
+                                fontSize: 'sub_title',
                                 fontWeight: 'black',
                             }}
                             style={{ marginBottom: '16px' }}
@@ -255,7 +255,7 @@ const Home = () => {
                             }}
                         >
                             뉴지엄은 최신의 과학지식을 기반으로 하며,{'\n'}
-                            디지털헬스케어 산업계에 “먹는 부분”을{'\n'} 담당하기
+                            <Strong>디지털헬스케어</Strong> 산업계에 <Strong>“먹는 부분”</Strong>을{'\n'} 담당하기
                             위해 성장하고 있습니다.​
                         </Text>
                     </SectionTextBox>
@@ -309,14 +309,14 @@ const Home = () => {
                     </ServiceDescriptionBox>
                 </ServiceDescription>
                 <img
-                    src={logo}
+                    src={gray_logo}
                     style={{
                         width: '90%',
                         maxWidth: '1190px',
                         display: 'block',
                         margin: '0 auto',
                     }}
-                    alt='logo'
+                    alt='gray_logo'
                 />
             </Section>
             <Section

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { colorPalette } from '../../../lib/styles/colorPalette';
+import { fontSize } from '../../../lib/styles/fontSize';
 import Section from '../../atom/Section/Section';
 import Text from '../../atom/Text/Text';
 export const ImageBox = styled(motion.div).attrs({
@@ -16,7 +17,7 @@ export const ImageBox = styled(motion.div).attrs({
     justify-content: center;
     align-items: center;
     padding: 0 64px;
-    margin: 25px auto;
+    margin: 0px auto;
 
     @media all and (min-width: 600px) and (max-width: 1135px) {
         padding: 0 36px;
@@ -31,7 +32,6 @@ export const ImageBox = styled(motion.div).attrs({
 export const SectionImage = styled(motion.img)`
     width: 50%;
     min-height: 50vh;
-    border-radius: 5px;
     box-shadow: 0 4px 8px 0px #c8c1ba;
     object-fit: cover;
     @media all and (max-width: 599px) {
@@ -41,7 +41,7 @@ export const SectionImage = styled(motion.img)`
 `;
 
 export const SectionTextBox = styled.div`
-    width: 80%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,6 +111,19 @@ export const SectionWithIndex = styled(Section)`
     }
 `;
 
+export const Strong = styled.span`
+    font-weight: 700;
+    font-size: ${fontSize.strong}px;
+
+    @media all and (max-width: 1135px) and (min-width: 600px) {
+        font-size: ${fontSize.strong - 4}px;
+    }
+    @media all and (max-width: 599px){
+        font-size: ${fontSize.strong - 6}px;
+    }
+
+`
+
 export const Img = styled.img`
     width: 106%;
     height: 100%;
@@ -120,7 +133,6 @@ export const Img = styled.img`
     position: absolute;
     top: 0;
     right: 0;
-    border-radius: 5px;
     @media all and (max-width: 1024px){
         margin-right: 0;
     }
@@ -158,7 +170,6 @@ export const ServiceDescriptionImg = styled.div`
     width: 75%;
     overflow: hidden;
     position: relative;
-    border-radius: 5px;
     @media all and (max-width: 599px) {
         min-height: 60vh;
         width: calc(100% + 32px);
