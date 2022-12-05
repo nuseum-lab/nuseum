@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 .env
 .vercel
+
+_wildcard.example.com+2-key.pem
+_wildcard.example.com+2.pem
