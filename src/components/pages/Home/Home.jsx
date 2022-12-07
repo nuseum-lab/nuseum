@@ -223,8 +223,7 @@ const Home = () => {
                                 fontWeight: 'normal',
                             }}
                         >
-                            뉴지엄은 Restaurant을 통해{'\n'} 나에게 필요한
-                            <Strong>최상위의 메뉴</Strong>와 <Strong>식당</Strong>을 연결해 드립니다.
+                            뉴지엄은 Restaurant을 통해{'\n'} 나에게 필요한 <Strong>최상위의 메뉴</Strong>와 <Strong>식당</Strong>을 연결해 드립니다.
                         </Text>
                     </SectionTextBox>
                 </ImageBox>

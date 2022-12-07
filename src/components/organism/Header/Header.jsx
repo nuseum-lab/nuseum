@@ -3,9 +3,30 @@ import { useEffect, useState } from 'react';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 import Text from '../../atom/Text/Text';
 import GNB from '../../molecules/GNB';
-import { Box, MenuBox } from './Header.styled';
+import { Box, MenuBox, SubGroupMobile } from './Header.styled';
+import {Link} from 'react-router-dom';
+import { GroupWrapper } from '../../molecules/GNB/GNB.styled';
 
 const Header = () => {
+    const [subVisibleMobile, setSubVisibleMobile] = useState(false);
+    const [id, setIdMobile] = useState(0);
+    
+    function OpenSubGroup(xid){
+        if(subVisibleMobile){
+            if(xid !== id){
+                setIdMobile(xid)
+            }
+            else{
+                setSubVisibleMobile(false)
+                setIdMobile(0);
+            }
+                
+        }else{
+            setSubVisibleMobile(true);
+            setIdMobile(xid);
+        }
+    }
+
     const [isOpen, setIsOpen] = useState(false);
     const { scrollY } = useScroll();
 
@@ -19,6 +40,7 @@ const Header = () => {
             }
         });
     }, [scrollY]);
+
 
     return (
         <AnimatePresence>
@@ -67,108 +89,180 @@ const Header = () => {
                                         textDecoration:
                                             '2px solid underline black',
                                     }}
-                                    style={{ cursor: 'pointer' }}
+                                    style={{ cursor: 'pointer'}}
                                 >
-                                    LOGIN
+                                    LOGIN / SIGN UP
                                 </Text>
+                                <GroupWrapper style={{alignItems:'flex-start'}}>
+                                    <Text
+                                        id={0}
+                                        onClick={(e)=>OpenSubGroup(e.currentTarget.id)}
+                                        fontStyle={{
+                                            fontSize: 'normal',
+                                            fontWeight: 'sub',
+                                            opacity: 1,
+                                            textShadow:
+                                                'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                            textDecoration:
+                                                '2px solid underline black',
+                                        }}
+                                        style={{ cursor: 'pointer', 
+                                        textDecoration: id ==='0' ? '2px solid underline black' : '',
+                                        fontWeight: id === '0' ? 700 : ''}}
+                                    >
+                                        SHOP
+                                    </Text>
+                                        {subVisibleMobile && id === '0' ? (
+                                            <SubGroupMobile>
+                                                <Link href='#'>ME</Link>
+                                                <Link href='#'>SIGNIFICANT OHER</Link>
+                                            </SubGroupMobile>
+                                        ) : null }
+                                </GroupWrapper>  
+                                <GroupWrapper style={{alignItems:'flex-start'}}>
+                                    <Text
+                                        id={1}
+                                        onClick={(e)=>OpenSubGroup(e.currentTarget.id)}
+                                        fontStyle={{
+                                            fontSize: 'normal',
+                                            fontWeight: 'sub',
+                                            opacity: 1,
+                                            textShadow:
+                                                'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                            textDecoration:
+                                                '2px solid underline black',
+                                        }}
+                                        style={{ cursor: 'pointer', 
+                                        textDecoration: id ==='1' ? '2px solid underline black' : '',
+                                        fontWeight: id === '1' ? 700 : ''}}
+                                    >
+                                        RESTAURANT
+                                    </Text>
+                                        {subVisibleMobile && id === '1' ? (
+                                            <SubGroupMobile>
+                                                <Link>ME</Link>
+                                                <Link>SIGNIFICANT OHER</Link>
+                                            </SubGroupMobile>
+                                        ) : null }
+                                </GroupWrapper>
+                                <GroupWrapper style={{alignItems:'flex-start'}}>
+                                    <Text                                    
+                                        id={2}
+                                        onClick={(e)=>OpenSubGroup(e.currentTarget.id)}
+                                        fontStyle={{
+                                            fontSize: 'normal',
+                                            fontWeight: 'sub',
+                                            opacity: 1,
+                                            textShadow:
+                                                'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                            textDecoration:
+                                                '2px solid underline black',
+                                        }}
+                                        style={{ cursor: 'pointer', 
+                                        textDecoration: id ==='2' ? '2px solid underline black' : '',
+                                        fontWeight: id === '2' ? 700 : ''}}
+                                    >
+                                        DIARY
+                                    </Text>
+                                        {subVisibleMobile && id === '2' ? (
+                                                <SubGroupMobile>
+                                                    <Link href='#'>ME</Link>
+                                                    <Link href='#'>SIGNIFICANT OHER</Link>
+                                                </SubGroupMobile>
+                                            ) : null }
+                                </GroupWrapper>
+                                <GroupWrapper style={{alignItems:'flex-start'}}>
+                                    <Text
+                                        id={3}
+                                        onClick={(e)=>OpenSubGroup(e.currentTarget.id)}
+                                        fontStyle={{
+                                            fontSize: 'normal',
+                                            fontWeight: 'sub',
+                                            opacity: 1,
+                                            textShadow:
+                                                'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                            textDecoration:
+                                                '2px solid underline black',
+                                        }}
+                                        style={{ cursor: 'pointer', 
+                                        textDecoration: id ==='3' ? '2px solid underline black' : '',
+                                        fontWeight: id === '3' ? 700 : ''}}
+                                    >
+                                        ME
+                                    </Text>
+                                        {subVisibleMobile && id === '3' ? (
+                                            <SubGroupMobile>
+                                                <Link href='#'>ME</Link>
+                                                <Link href='#'>SIGNIFICANT OHER</Link>
+                                            </SubGroupMobile>
+                                        ) : null }
+                                </GroupWrapper>
+                                <GroupWrapper style={{alignItems:'flex-start'}}>
+                                    <Text
+                                        id={4}
+                                        onClick={(e)=>OpenSubGroup(e.currentTarget.id)}
+                                        fontStyle={{
+                                            fontSize: 'normal',
+                                            fontWeight: 'sub',
+                                            opacity: 1,
+                                            textShadow:
+                                                'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                            textDecoration:
+                                                '2px solid underline black',
+                                        }}
+                                        style={{ cursor: 'pointer', 
+                                        textDecoration: id ==='4' ? '2px solid underline black' : '',
+                                        fontWeight: id === '4' ? 700 : ''}}
+                                    >
+                                        LIBRARY
+                                    </Text>
+                                    {subVisibleMobile && id === '4' ? (
+                                            <SubGroupMobile>
+                                                <Link href='#'>ME</Link>
+                                                <Link href='#'>SIGNIFICANT OHER</Link>
+                                            </SubGroupMobile>
+                                        ) : null }
+                                </GroupWrapper>
+                                <GroupWrapper style={{alignItems:'flex-start'}}>
+                                    <Text
+                                        id={5}
+                                        onClick={(e)=>OpenSubGroup(e.currentTarget.id)}
+                                        fontStyle={{
+                                            fontSize: 'normal',
+                                            fontWeight: 'sub',
+                                            opacity: 1,
+                                            textShadow:
+                                                'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                            textDecoration:
+                                                '2px solid underline black',
+                                        }}
+                                        style={{ cursor: 'pointer', 
+                                        textDecoration: id ==='5' ? '2px solid underline black' : '',
+                                        fontWeight: id === '5' ? 700 : ''}}
+                                    >
+                                        CURATOR
+                                    </Text>
+                                        {subVisibleMobile && id === '5' ? (
+                                            <SubGroupMobile>
+                                                <Link href='#'>ME</Link>
+                                                <Link href='#'>SIGNIFICANT OHER</Link>
+                                            </SubGroupMobile>
+                                        ) : null }
+                                </GroupWrapper>
                                 <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    SIGN UP
-                                </Text>
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    SHOP
-                                </Text>
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    RESTAURANT
-                                </Text>
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    DIARY
-                                </Text>
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    ME
-                                </Text>
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    LIBRARY
-                                </Text>
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    CURATOR
-                                </Text>
+                                        fontStyle={{
+                                            fontSize: 'normal',
+                                            fontWeight: 'sub',
+                                            opacity: 1,
+                                            textShadow:
+                                                'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                            textDecoration:
+                                                '2px solid underline black',
+                                        }}
+                                        style={{ cursor: 'pointer' }}
+                                    >
+                                        HISTORY
+                                    </Text>
                             </MenuBox>
                         </div>
                     ) : null}
