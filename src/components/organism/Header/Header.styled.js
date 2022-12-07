@@ -34,6 +34,20 @@ export const MenuBox = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    height: 400px;
+    max-height: 100%;
     padding: 0 64px;
+    p{
+        padding: 15px 0;
+    }
 `;
+
+export const SubGroupMobile = styled.div`
+    padding-bottom: 10px;
+    a{
+        display: block;
+        padding: 10px 10px;
+        text-decoration: none;
+        color: black;
+
+    }
+`
