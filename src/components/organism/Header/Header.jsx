@@ -57,7 +57,7 @@ const Header = () => {
                             }}
                         >
                             <MenuBox>
-                                <Text
+                                {/* <Text
                                     fontStyle={{
                                         fontSize: 'normal',
                                         fontWeight: 'sub',
@@ -84,7 +84,8 @@ const Header = () => {
                                     style={{ cursor: 'pointer' }}
                                 >
                                     SIGN UP
-                                </Text>
+                                </Text> */}
+
                                 <Text
                                     fontStyle={{
                                         fontSize: 'normal',
@@ -168,6 +169,20 @@ const Header = () => {
                                     style={{ cursor: 'pointer' }}
                                 >
                                     CURATOR
+                                </Text>
+                                <Text
+                                    fontStyle={{
+                                        fontSize: 'normal',
+                                        fontWeight: 'sub',
+                                        opacity: 1,
+                                        textShadow:
+                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                        textDecoration:
+                                            '2px solid underline black',
+                                    }}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    LANGUAGE
                                 </Text>
                             </MenuBox>
                         </div>
