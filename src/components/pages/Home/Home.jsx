@@ -125,11 +125,11 @@ const Home = () => {
                             Based on over 18 years of experience in physiology,
                             pharmacology, toxicology, food science, and
                             nutrition, NUSEUM is growing to provide{' '}
-                            <Strong>information to eat properly</Strong>
-                            and implement{' '}
+                            <Strong>information to eat properly</Strong> and
+                            implement{' '}
                             <Strong>
                                 innovative personalized nutrition management
-                            </Strong>
+                            </Strong>{' '}
                             in the digital age to help individuals practice a
                             healthy diet.
                         </Text>
@@ -297,9 +297,9 @@ const Home = () => {
                             <Strong>“먹는 부분”</Strong>을{'\n'} 담당하기 위해
                             성장하고 있습니다. */}
                             NUSEUM is based on the latest scientific knowledge
-                            {'\n'} and is growing to take on the
+                            {'\n'} and is growing to take on the{' '}
                             <Strong>Eating Part</Strong> of the{' '}
-                            <Strong>digital healthcare industry.</Strong>
+                            <Strong>digital healthcare industry.</Strong>{' '}
                         </Text>
                     </SectionTextBox>
                     <SectionImage src={section4} alt='section4' />
