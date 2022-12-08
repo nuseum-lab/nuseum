@@ -182,13 +182,13 @@ const Home = () => {
                             <Strong>“내가 돌보고 있는 소중한 사람"</Strong>이
                             {'\n'}
                             피해야 할 그리고 선택해야 할 영양성분과 {'\n'} 관련
-                            최상위의 <Strong>맞춤식품</Strong>을 알려드립니다.​ */}
+                            최상위의 <Strong>맞춤식품</Strong>을 알려드립니다. */}
                             Here are some of the best personalized foods that
                             {'\n'}
                             <Strong>I</Strong> or{' '}
                             <Strong>the precious person I care for</Strong>
                             {'\n'}
-                            should avoid and choose from.​
+                            should avoid and choose from.
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
