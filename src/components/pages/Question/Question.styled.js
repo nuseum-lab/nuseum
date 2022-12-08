@@ -55,6 +55,9 @@ export const UtilLayout = styled.div`
         padding: 50px 0;
         width: 100%;
     }
+    ::-webkit-scrollbar {
+        display: none;
+      }
 `;
 
 export const ImgWrapper = styled.div`

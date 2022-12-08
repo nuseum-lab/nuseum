@@ -6,6 +6,8 @@ import mockup from '../../../lib/assets/mockup.png';
 import Section from '../../atom/Section/Section';
 import { colorPalette } from '../../../lib/styles/colorPalette';
 import Text from '../../atom/Text/Text';
+import { Footer, FooterWrap } from '../../atom/Footer/Footer';
+
 import {
     ContactBox,
     ImageBox,
@@ -20,6 +22,7 @@ import {
     ServiceDescription,
     ServiceDescriptionBox,
     ServiceDescriptionImg,
+    FooterTop,
 } from './Home.styled';
 import section1 from '../../../lib/assets/section1.png';
 import section2 from '../../../lib/assets/section2.png';
@@ -75,7 +78,7 @@ const Home = () => {
                             fontStyle={{
                                 whiteSpace: 'pre-line',
                                 fontSize: 'sub_title',
-                                fontWeight: 'black',
+                                fontWeight: 'primary',
                             }}
                             style={{ marginBottom: '30px', width: '60%' }}
                         >
@@ -174,7 +177,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ width: '60%', textAlign: 'justify' }}
                         >
                             {/* <Strong>“나" </Strong>또는{' '}
                             <Strong>“내가 돌보고 있는 소중한 사람"</Strong>이
@@ -213,7 +215,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ width: '60%', textAlign: 'justify' }}
                         >
                             {/* 뉴지엄은 Shop을 통해 {'\n'}
                             관련 우수한 제품을 쉽게 찾고 {'\n'}
@@ -251,7 +252,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ width: '60%', textAlign: 'justify' }}
                         >
                             {/* 뉴지엄은 Restaurant을 통해{'\n'} 나에게 필요한
                             <Strong>최상위의 메뉴</Strong>와{' '}
@@ -286,7 +286,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ width: '60%', textAlign: 'justify' }}
                         >
                             {/* 뉴지엄은 최신의 과학지식을 기반으로 하며,{'\n'}
                             <Strong>디지털헬스케어</Strong> 산업계에{' '}
@@ -401,85 +400,124 @@ const Home = () => {
 
             <InformationBox
                 style={{
-                    minHeight: 250,
+                    minHeight: 350,
                     position: 'relative',
                     background: '#FAF8F6',
                 }}
             >
-                <img src={footerLogo} alt='footer' height='80px' />
-                <ContactBox>
-                    <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            marginBottom: 10,
-                            width: 280,
-                        }}
-                    >
-                        <Text
-                            fontStyle={{
-                                fontWeight: 'normal',
-                                opacity: 0.6,
-                            }}
+                <FooterTop>
+                    <img src={footerLogo} alt='footer' height='80px' />
+                    <ContactBox>
+                        <div
                             style={{
-                                cursor: 'pointer',
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                marginBottom: 10,
+                                width: 280,
+                                maxWidth: '100%'
+                            }}
+                        >
+                            <Text
+                                fontStyle={{
+                                    fontWeight: 'normal',
+                                    opacity: 0.6,
+                                }}
+                                style={{
+                                    cursor: 'pointer',
 
-                                fontSize: '16px',
-                            }}
-                        >
-                            Our Team
-                        </Text>
-                        <Text
-                            as='a'
-                            target='_blank'
-                            href='https://instagram.com/nuseum_official?igshid=YWJhMjlhZTc='
-                            fontStyle={{
-                                fontWeight: 'normal',
-                                opacity: 0.6,
-                            }}
-                            style={{
-                                cursor: 'pointer',
-                                fontSize: '16px',
-                                textDecoration: 'none',
-                                color: 'black',
-                            }}
-                        >
-                            Instagram
-                        </Text>
-                        <Text
-                            as='a'
-                            target='_blank'
-                            href='https://www.jiyoungkimlab.com/about'
-                            fontStyle={{
-                                fontWeight: 'normal',
-                                opacity: 0.6,
-                            }}
-                            style={{
-                                cursor: 'pointer',
-                                fontSize: '16px',
-                                textDecoration: 'none',
-                                color: 'black',
-                            }}
-                        >
-                            Blog
-                        </Text>
-                    </div>
+                                    fontSize: '16px',
+                                }}
+                            >
+                                Our Team
+                            </Text>
+                            <Text
+                                as='a'
+                                target='_blank'
+                                href='https://instagram.com/nuseum_official?igshid=YWJhMjlhZTc='
+                                fontStyle={{
+                                    fontWeight: 'normal',
+                                    opacity: 0.6,
+                                }}
+                                style={{
+                                    cursor: 'pointer',
+                                    fontSize: '16px',
+                                    textDecoration: 'none',
+                                    color: 'black',
+                                }}
+                            >
+                                Instagram
+                            </Text>
+                            <Text
+                                as='a'
+                                target='_blank'
+                                href='https://www.jiyoungkimlab.com/about'
+                                fontStyle={{
+                                    fontWeight: 'normal',
+                                    opacity: 0.6,
+                                }}
+                                style={{
+                                    cursor: 'pointer',
+                                    fontSize: '16px',
+                                    textDecoration: 'none',
+                                    color: 'black',
+                                }}
+                            >
+                                Blog
+                            </Text>
+                        </div>
 
-                    <Text
-                        fontStyle={{
-                            fontWeight: 'normal',
-                            opacity: 0.6,
-                        }}
-                        style={{
-                            cursor: 'pointer',
-                            fontSize: '16px',
-                        }}
-                    >
-                        nuseum@nuseum-lab.com
-                    </Text>
-                </ContactBox>
+                        <Text
+                            fontStyle={{
+                                fontWeight: 'normal',
+                                opacity: 0.6,
+                            }}
+                            style={{
+                                cursor: 'pointer',
+                                fontSize: '16px',
+                            }}
+                        >
+                            nuseum@nuseum-lab.com
+                        </Text>
+                    </ContactBox>
+                </FooterTop>
+                <FooterWrap>
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                width: '100%',
+                                float: 'left',
+                            }}
+                        >
+                            <Text
+                                fontStyle={{
+                                    fontWeight: 'normal',
+                                    fontSize: 'button',
+                                }}
+                                style={{ width: '60%' }}
+                            >
+                                {/* 08826) 서울특별시 관악구 관악로 1. 서울대학교
+                                관악캠퍼스 IBK커뮤니케이션센터(64동) 1층 IBK창공
+                                서울대캠프 NUSEUM */}
+                                08826) NUSEUM IBK Changgong Seoul National
+                                University Camp, IBK Communication Center, 1
+                                Gwanak-ro, Gwanak-gu, Seoul, Republic of Korea
+                            </Text>
+                        </div>
+                        <Text
+                            fontStyle={{
+                                fontSize: 'button',
+                                fontWeight: 'normal',
+                            }}
+                            style={{ width: '100%', marginTop: '4px' }}
+                        >
+                            © 2022 NUSEUM. All rights reserved.
+                        </Text>
+                </FooterWrap>
             </InformationBox>
+
         </Layout>
     );
 };
