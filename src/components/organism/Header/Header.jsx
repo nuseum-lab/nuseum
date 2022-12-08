@@ -105,34 +105,6 @@ const Header = () => {
                                     SIGN UP
                                 </Text> */}
 
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    SHOP
-                                </Text>
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    LOGIN / SIGN UP
-                                </Text>
                                 <GroupWrapper
                                     style={{ alignItems: 'flex-start' }}
                                 >
@@ -353,89 +325,6 @@ const Header = () => {
                                         </SubGroupMobile>
                                     ) : null}
                                 </GroupWrapper>
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    DIARY
-                                </Text>
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    ME
-                                </Text>
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    LIBRARY
-                                </Text>
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    CURATOR
-                                </Text>
-                                <Text
-                                    fontStyle={{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    LANGUAGE
-                                </Text>
-                                <Text>
-                                    fontStyle=
-                                    {{
-                                        fontSize: 'normal',
-                                        fontWeight: 'sub',
-                                        opacity: 1,
-                                        textShadow:
-                                            'rgb(0 0 0 / 20%) 1px 1px 1px',
-                                        textDecoration:
-                                            '2px solid underline black',
-                                    }}
-                                    style={{ cursor: 'pointer' }}> HISTORY
-                                </Text>
                             </MenuBox>
                         </div>
                     ) : null}

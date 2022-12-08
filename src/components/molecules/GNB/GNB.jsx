@@ -252,57 +252,6 @@ const GNB = ({ isOpen, setIsOpen }) => {
                             <Link>HISTORY</Link>
                         </Text>
                     </GroupWrapper>
-                    {/* <GroupWrapper
-                        id={-1}
-                        onMouseEnter={(e) => {
-                            setSubVisible(true);
-                            setId(e.currentTarget.id);
-                        }}
-                        onMouseLeave={() => {
-                            setSubVisible(false);
-                        }}
-                    >
-                        <Text
-                            fontStyle={{
-                                fontSize: 'menu',
-                                fontWeight: 'sub',
-                                opacity: 1,
-                            }}
-                            style={{
-                                cursor: 'pointer',
-                                padding: '12px 20px 30px 20px',
-                                position: 'relative',
-                            }}
-                        >
-                            <Link>LANGUAGES</Link>
-                        </Text>
-                        {subVisible && id === '-1' ? (
-                            <SubGroup>
-                                <Link
-                                    onClick={() =>
-                                        dispatch(
-                                            languageActions.changeLanguage(
-                                                false
-                                            )
-                                        )
-                                    }
-                                    href='#'
-                                >
-                                    Korean
-                                </Link>
-                                <Link
-                                    onClick={() =>
-                                        dispatch(
-                                            languageActions.changeLanguage(true)
-                                        )
-                                    }
-                                    style={{ whiteSpace: 'pre-line' }}
-                                >
-                                    English
-                                </Link>
-                            </SubGroup>
-                        ) : null}
-                    </GroupWrapper> */}
                 </GNBGroup>
             )}
 

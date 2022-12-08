@@ -44,7 +44,7 @@ export const Background = styled.div`
 `;
 export const SearchResultBox = styled.div`
     width: 30%;
-    height: 40%;
+    height: 20rem;
     display: flex;
     align-items: center;
     flex-direction: column;
