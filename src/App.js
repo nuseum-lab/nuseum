@@ -1,6 +1,5 @@
 import Router from './router';
 import { createGlobalStyle } from 'styled-components';
-import { Footer, FooterWrap } from './components/atom/Footer/Footer';
 import ReactDOM from 'react-dom';
 import { colorPalette } from './lib/styles/colorPalette';
 import Text from './components/atom/Text/Text';
@@ -149,46 +148,7 @@ function App() {
         <>
             <GlobalStyle />
             <Router />
-            {ReactDOM.createPortal(
-                <Footer>
-                    <FooterWrap>
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                width: '100%',
-                                float: 'left',
-                            }}
-                        >
-                            <Text
-                                fontStyle={{
-                                    fontWeight: 'normal',
-                                    fontSize: 'button',
-                                }}
-                                style={{ width: '60%' }}
-                            >
-                                {/* 08826) 서울특별시 관악구 관악로 1. 서울대학교
-                                관악캠퍼스 IBK커뮤니케이션센터(64동) 1층 IBK창공
-                                서울대캠프 NUSEUM */}
-                                08826) NUSEUM IBK Changgong Seoul National
-                                University Camp, IBK Communication Center, 1
-                                Gwanak-ro, Gwanak-gu, Seoul, Republic of Korea
-                            </Text>
-                        </div>
-                        <Text
-                            fontStyle={{
-                                fontSize: 'button',
-                                fontWeight: 'normal',
-                            }}
-                            style={{ width: '100%', marginTop: '4px' }}
-                        >
-                            © 2022 NUSEUM. All rights reserved.
-                        </Text>
-                    </FooterWrap>
-                </Footer>,
-                document.querySelector('#footer')
-            )}
+
         </>
     );
 }

@@ -62,15 +62,13 @@ export const InformationBox = styled.div`
     margin: 0 -64px;
     padding: 0 64px 40px;
     display: flex;
+    flex-direction: column;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-end;
     @media all and (max-width: 600px) {
         width: calc(100% + 32px);
         margin: 0 -16px;
         padding: 36px 16px 20px;
-        align-items: flex-start;
-        justify-content: space-evenly;
-        flex-direction: column;
         /* =======
     @media all and (max-width: 599px) {
         flex-direction: column;
@@ -80,6 +78,16 @@ export const InformationBox = styled.div`
 >>>>>>> Stashed changes */
     }
 `;
+export const FooterTop = styled.div`
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    @media all and (max-width: 768px){
+        flex-direction: column;
+        align-items: flex-start;
+    }
+`
 
 export const SecondSectionWrapper = styled.div`
     width: 100%;
@@ -218,7 +226,8 @@ export const ContactBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    @media all and (max-width: 599px) {
+    @media all and (max-width: 768px) {
+        margin-top: 12px;
         align-items: flex-start;
     }
 `;
