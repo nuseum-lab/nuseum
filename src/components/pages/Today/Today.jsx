@@ -307,33 +307,53 @@ const Today = () => {
                             분석하기
                         </Button>
                         {modalOpen ? <Background></Background> : null}
-                        <SearchResultBox>
-                            {result.map((item) => (
-                                <>
-                                    <Text
+                        {modalOpen ? (
+                            <SearchResultBox>
+                                <div
+                                    style={{
+                                        width: '100%',
+                                        display: 'flex',
+                                        justifyContent: 'flex-start',
+                                    }}
+                                >
+                                    <span
                                         style={{
-                                            textAlign: 'left',
-                                            width: '100%',
-                                            lineHeight: 1.5,
-                                            borderBottom:
-                                                '1px solid rgba(0,0,0,0.5) ',
-                                            margin: '10px 0',
+                                            left: 0,
                                             cursor: 'pointer',
                                         }}
-                                        key={item.id}
-                                        onClick={() => {
-                                            setOpenId(item.id);
-                                        }}
+                                        onClick={() => setModalOpen(false)}
+                                        className='material-symbols-outlined'
                                     >
-                                        {item.name}
-                                    </Text>
-                                    <SearchNutritionBox
-                                        openid={openId}
-                                        item={item}
-                                    />
-                                </>
-                            ))}
-                        </SearchResultBox>
+                                        close
+                                    </span>
+                                </div>
+                                {result.map((item) => (
+                                    <>
+                                        <Text
+                                            style={{
+                                                textAlign: 'left',
+                                                width: '100%',
+                                                lineHeight: 1.5,
+                                                borderBottom:
+                                                    '1px solid rgba(0,0,0,0.5) ',
+                                                margin: '10px 0',
+                                                cursor: 'pointer',
+                                            }}
+                                            key={item.id}
+                                            onClick={() => {
+                                                setOpenId(item.id);
+                                            }}
+                                        >
+                                            {item.name}
+                                        </Text>
+                                        <SearchNutritionBox
+                                            openid={openId}
+                                            item={item}
+                                        />
+                                    </>
+                                ))}
+                            </SearchResultBox>
+                        ) : null}
                     </UtilLayout>
                 </UtilWrapper>
             </BackgroundWrapper>
