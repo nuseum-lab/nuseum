@@ -31,8 +31,11 @@ import Button from '../../atom/Button';
 import footerLogo from '../../../lib/assets/footer-logo.png';
 import { fontSize } from '../../../lib/styles/fontSize';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
+    const lang = useSelector((state) => state.language.isKorean);
+    console.log(lang);
     const navigate = useNavigate();
     return (
         <Layout>
@@ -102,13 +105,14 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ width: '60%'}}
+                            style={{ width: '60%' }}
                         >
                             NUSEUM은 생리학, 약리학, 독성학, 식품학, 영양학
                             분야에서 18년 이상 연구한 대표자의 경험을 바탕으로
-                            <Strong>"올바르게 먹기 위한 정보"</Strong>를 제공하고, 개인에게
-                            맞추어진 건강한 식이를 실천할 수 있도록 돕는 디지털
-                            시대의 혁신적인 <Strong>개인맞춤영양관리</Strong>를 구현하고자
+                            <Strong>"올바르게 먹기 위한 정보"</Strong>를
+                            제공하고, 개인에게 맞추어진 건강한 식이를 실천할 수
+                            있도록 돕는 디지털 시대의 혁신적인{' '}
+                            <Strong>개인맞춤영양관리</Strong>를 구현하고자
                             성장하고 있습니다.
                         </Text>
                     </div>
@@ -156,7 +160,9 @@ const Home = () => {
                                 fontWeight: 'normal',
                             }}
                         >
-                            <Strong>“나" </Strong>또는 <Strong>“내가 돌보고 있는 소중한 사람"</Strong>이{'\n'}
+                            <Strong>“나" </Strong>또는{' '}
+                            <Strong>“내가 돌보고 있는 소중한 사람"</Strong>이
+                            {'\n'}
                             피해야 할 그리고 선택해야 할 영양성분과 {'\n'} 관련
                             최상위의 <Strong>맞춤식품</Strong>을 알려드립니다.​
                         </Text>
@@ -191,7 +197,8 @@ const Home = () => {
                         >
                             뉴지엄은 Shop을 통해 {'\n'}
                             관련 우수한 제품을 쉽게 찾고 {'\n'}
-                            <Strong>개인맞춤영양</Strong>을 실천할 수 있도록 돕습니다.​
+                            <Strong>개인맞춤영양</Strong>을 실천할 수 있도록
+                            돕습니다.​
                         </Text>
                     </SectionTextBox>
                     <SectionImage src={section2} alt='section2' />
@@ -224,7 +231,8 @@ const Home = () => {
                             }}
                         >
                             뉴지엄은 Restaurant을 통해{'\n'} 나에게 필요한
-                            <Strong>최상위의 메뉴</Strong>와 <Strong>식당</Strong>을 연결해 드립니다.
+                            <Strong>최상위의 메뉴</Strong>와{' '}
+                            <Strong>식당</Strong>을 연결해 드립니다.
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
@@ -255,8 +263,9 @@ const Home = () => {
                             }}
                         >
                             뉴지엄은 최신의 과학지식을 기반으로 하며,{'\n'}
-                            <Strong>디지털헬스케어</Strong> 산업계에 <Strong>“먹는 부분”</Strong>을{'\n'} 담당하기
-                            위해 성장하고 있습니다.​
+                            <Strong>디지털헬스케어</Strong> 산업계에{' '}
+                            <Strong>“먹는 부분”</Strong>을{'\n'} 담당하기 위해
+                            성장하고 있습니다.​
                         </Text>
                     </SectionTextBox>
                     <SectionImage src={section4} alt='section4' />
@@ -347,7 +356,9 @@ const Home = () => {
                         Ready to get started?
                     </Text>
                     <Button
-                        onClick={() => navigate('/question')}
+                        onClick={() => {
+                            // navigate('/question')
+                        }}
                         style={{ marginTop: 30, fontSize: fontSize.button }}
                     >
                         EXPLORE NUSEUM
