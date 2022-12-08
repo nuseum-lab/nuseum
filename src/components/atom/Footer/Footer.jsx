@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const Footer = styled.footer`
     width: 100%;
     position: relative;
-    height: 80px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    background: #FAF8F6;
+    background: #faf8f6;
 `;
 export const FooterWrap = styled.div`
     width: calc(100% - 128px);
@@ -22,4 +22,4 @@ export const FooterWrap = styled.div`
     @media all and (max-width: 599px) {
         width: calc(100% - 32px);
     }
-`
+`;
