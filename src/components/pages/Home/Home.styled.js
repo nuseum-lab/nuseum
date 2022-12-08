@@ -48,9 +48,15 @@ export const SectionTextBox = styled.div`
     text-align: center;
     @media all and (max-width: 599px) {
         margin: 20px 0;
-        width: 80%;
+        width: 100%;
+        p{
+            width: 80% !important;
+            margin-bottom: 12px;
+        }
     }
     ${Text} {
+        width: 65%;
+        line-height: 1.6;
         &:first-child {
             margin-bottom: 20px;
         }

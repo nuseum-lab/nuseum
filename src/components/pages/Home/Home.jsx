@@ -177,7 +177,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ width: '60%', textAlign: 'justify' }}
                         >
                             {/* <Strong>“나" </Strong>또는{' '}
                             <Strong>“내가 돌보고 있는 소중한 사람"</Strong>이
@@ -216,7 +215,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ width: '60%', textAlign: 'justify' }}
                         >
                             {/* 뉴지엄은 Shop을 통해 {'\n'}
                             관련 우수한 제품을 쉽게 찾고 {'\n'}
@@ -254,7 +252,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ width: '60%', textAlign: 'justify' }}
                         >
                             {/* 뉴지엄은 Restaurant을 통해{'\n'} 나에게 필요한
                             <Strong>최상위의 메뉴</Strong>와{' '}
@@ -289,7 +286,6 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
-                            style={{ width: '60%', textAlign: 'justify' }}
                         >
                             {/* 뉴지엄은 최신의 과학지식을 기반으로 하며,{'\n'}
                             <Strong>디지털헬스케어</Strong> 산업계에{' '}
