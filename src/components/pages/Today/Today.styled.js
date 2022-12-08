@@ -29,11 +29,34 @@ export const SearchBar = styled.div`
         width: 100%;
     }
 `;
+export const Background = styled.div`
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    @media all and (max-width: 599px) {
+        display: none;
+    }
+`;
 export const SearchResultBox = styled.div`
-    width: 80%;
-    height: auto;
+    width: 30%;
+    height: 40%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 60px;
+    position: absolute;
+    background-color: white;
+    z-index: 10001;
+    overflow: scroll;
+    top: 25%;
+    left: 35%;
+    padding: 20px;
+    border-radius: 10px;
+    @media all and (max-width: 599px) {
+        height: 20rem;
+    }
 `;
