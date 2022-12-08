@@ -6,6 +6,10 @@ export const ResultBox = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #0000000f;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 `;
 
 export const Result = styled(motion.p)`

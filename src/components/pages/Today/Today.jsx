@@ -128,7 +128,7 @@ const Today = () => {
                             <Text
                                 fontStyle={{
                                     fontWeight: 'primary',
-                                    fontSize: 'subtitle',
+                                    fontSize: 'sub_title',
                                 }}
                                 style={{ marginBottom: '12px' }}
                             >
@@ -313,7 +313,7 @@ const Today = () => {
                                     style={{
                                         width: '100%',
                                         display: 'flex',
-                                        justifyContent: 'flex-start',
+                                        justifyContent: 'flex-end',
                                     }}
                                 >
                                     <span
@@ -335,9 +335,10 @@ const Today = () => {
                                                 width: '100%',
                                                 lineHeight: 1.5,
                                                 borderBottom:
-                                                    '1px solid rgba(0,0,0,0.5) ',
-                                                margin: '10px 0',
+                                                    '1px solid rgba(0,0,0,0.2) ',
+                                                margin: '20px 0 0',
                                                 cursor: 'pointer',
+                                                padding: '10px 0',
                                             }}
                                             key={item.id}
                                             onClick={() => {

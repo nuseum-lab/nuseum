@@ -36,7 +36,7 @@ const Question = () => {
                             <Text
                                 fontStyle={{
                                     fontWeight: 'primary',
-                                    fontSize: 'subtitle',
+                                    fontSize: 'sub_title',
                                 }}
                                 style={{ marginBottom: '12px' }}
                             >
@@ -88,8 +88,9 @@ const Question = () => {
                                 fontSize: 'button',
                                 color: 'white',
                                 position: 'relative',
-                                top: '15%',
+                                marginTop: '50px',
                                 cursor: 'pointer',
+
                             }}
                             onClick={() =>
                                 navigate('/today', {

@@ -38,25 +38,34 @@ export const Background = styled.div`
     left: 0;
     z-index: 1000;
 
-    @media all and (max-width: 599px) {
-        display: none;
-    }
 `;
 export const SearchResultBox = styled.div`
-    width: 30%;
-    height: 20rem;
+    width: 40vw;
+    height: auto;
+    min-height: 20vh;
+    max-height: 50vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     position: absolute;
     background-color: white;
     z-index: 10001;
-    overflow: scroll;
-    top: 25%;
-    left: 35%;
-    padding: 20px;
+    overflow-y: scroll;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 3%;
     border-radius: 10px;
-    @media all and (max-width: 599px) {
-        height: 20rem;
+    @media all and (max-width: 1200px) {
+        width: 60vw;
+        padding-left: 5vw;
     }
+    @media all and (max-width: 768px) {
+        width: 80vw;
+        max-height: 80vh;
+        padding-left: 6vw;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+      }
 `;

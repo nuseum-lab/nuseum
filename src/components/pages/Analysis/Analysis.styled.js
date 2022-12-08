@@ -7,6 +7,7 @@ export const Title = styled.div`
     flex-direction: column;
     align-items: center;
     padding-top: 150px;
+    padding-bottom: 80px;
 `;
 
 export const PointLayout = styled.div`

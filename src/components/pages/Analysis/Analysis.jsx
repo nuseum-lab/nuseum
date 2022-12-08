@@ -187,7 +187,7 @@ const Analysis = () => {
                 <Text
                     fontStyle={{
                         fontWeight: 'primary',
-                        fontSize: 'subtitle',
+                        fontSize: 'sub_title',
                     }}
                     style={{ marginBottom: '12px' }}
                 >
@@ -275,11 +275,11 @@ const Analysis = () => {
             <Button
                 onClick={() => navigate('/curation')}
                 style={{
-                    margin: '0 auto',
+                    margin: '80px auto',
                     display: 'block',
                     backgroundColor: '#5D4E44',
                     color: 'white',
-                    marginBottom: 30,
+                    marginBottom: 80,
                 }}
             >
                 식품 추천 받으러 가기
