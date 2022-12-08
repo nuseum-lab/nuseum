@@ -171,11 +171,9 @@ function App() {
                                 {/* 08826) 서울특별시 관악구 관악로 1. 서울대학교
                                 관악캠퍼스 IBK커뮤니케이션센터(64동) 1층 IBK창공
                                 서울대캠프 NUSEUM */}
-                                08826) 1 Gwanak-ro, Gwanak-gu, Seoul
-                                Metropolitan Government. IBK Communication
-                                Center (64-dong), Seoul National University
-                                Gwanak Campus, IBK Changgong Seoul National
-                                University Camp NUSEUM
+                                08826) NUSEUM IBK Changgong Seoul National
+                                University Camp, IBK Communication Center, 1
+                                Gwanak-ro, Gwanak-gu, Seoul, Republic of Korea
                             </Text>
                         </div>
                         <Text

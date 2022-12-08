@@ -75,12 +75,20 @@ const Analysis = () => {
         tryptophan: 0,
         dha_epa: 0,
     });
+    const upperIntake = useCalculate(
+        location.state.gender ? 'M' : 'F',
+        Number(location.state.age)
+    );
 
     const readDB = async () => {
         setLoading(true);
         try {
             let curationDB = await dfd.readExcel(
                 'https://raw.githubusercontent.com/nuseum-lab/nuseum/test/src/lib/assets/data/fooddb.xlsx'
+            );
+
+            let curationNutritionDB = await dfd.readExcel(
+                'https://raw.githubusercontent.com/nuseum-lab/nuseum/test/src/lib/assets/data/food-nutrition.xlsx'
             );
 
             // let foodDB = await dfd.readExcel(
@@ -129,6 +137,8 @@ const Analysis = () => {
     }, []);
 
     useEffect(() => {
+        // 큐레이션 리스트 DB 읽어온 이후 -> 알고리즘 시작
+
         // if (curationFoodList && foodDataFrame && supplementDataFrame) {
         //     setLoading(false);
         // }
@@ -136,6 +146,31 @@ const Analysis = () => {
         if (curationFoodList) {
             setLoading(false);
         }
+
+        // 1. 객체로부터 하루동안 섭취한 영양성분 데이터 읽어오기
+        // nutrition 상태값 사용하면 됨
+
+        // 2. 영양소 최대 섭취량 - upperIntake 활용
+        // m_cre_list => 기준치 X 일수
+        for (let i in upperIntake) {
+            if (i === 'energy') {
+                continue;
+            }
+            // 최대치 X 일수
+            upperIntake[i] *= 2;
+        }
+
+        // (기준치 - 섭취량) / 기준치
+        let intakeRatio = {};
+        for (let i in upperIntake) {
+            if (upperIntake[i]) {
+                intakeRatio[i] =
+                    (upperIntake[i] - nutrition[i]) / upperIntake[i];
+            }
+        }
+
+        // 추천 식품 시트2와 비교 시작
+
         console.log(curationFoodList);
     }, [curationFoodList, foodDataFrame, supplementDataFrame]);
 

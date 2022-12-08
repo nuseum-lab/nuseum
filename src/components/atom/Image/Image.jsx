@@ -58,7 +58,7 @@ const Image = ({ imgObject, type }) => {
                 </Text>
                 <Button
                     onClick={() => {
-                        // navigate('/question')
+                        navigate('/question');
                     }}
                     style={{
                         marginTop: 30,

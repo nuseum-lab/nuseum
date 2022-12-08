@@ -81,8 +81,8 @@ const Home = () => {
                         >
                             {/* 당신의 영양생리약리 박물관에서 무엇을 먹어야 하는지
                             알려주는 큐레이션 서비스 */}
-                            Curation service that tells you what to eat at your
-                            nutrition and physiology museum
+                            A curation service that tells you what to eat at
+                            your nutrient physiology & pharmacology museum
                         </Text>
                         <Text
                             fontStyle={{
@@ -100,12 +100,12 @@ const Home = () => {
                             먹고 있는지 이해하게 하고, 무엇을 먹어야 하는지
                             알려주고, 이를 쉽게 구매 또는 실천할 수 있도록 돕는
                             플랫폼을 구현합니다. */}
-                            Based on nutritional pharmacology and human
-                            physiology knowledge, NUSEUM, a start-up team at
-                            Seoul National University, implements a platform
-                            that helps individuals understand what they are
-                            eating, what they should eat, and easily purchase or
-                            practice them.
+                            Start-up Team NUSEUM at Seoul National University
+                            Nutrient Physiology and Pharmacology Lab implements
+                            a platform that helps individuals understand what
+                            they are eating, tells them what they should eat,
+                            and helps them easily purchase or practice their
+                            personalized diet.
                         </Text>
                         <Text
                             fontStyle={{
@@ -122,16 +122,13 @@ const Home = () => {
                             있도록 돕는 디지털 시대의 혁신적인{' '}
                             <Strong>개인맞춤영양관리</Strong>를 구현하고자
                             성장하고 있습니다. */}
-                            Based on over 18 years of experience in physiology,
-                            pharmacology, toxicology, food science, and
-                            nutrition, NUSEUM is growing to provide{' '}
-                            <Strong>information to eat properly</Strong> and
-                            implement{' '}
-                            <Strong>
-                                innovative personalized nutrition management
-                            </Strong>{' '}
-                            in the digital age to help individuals practice a
-                            healthy diet.
+                            NUSEUM provides information to eat right and helps
+                            individuals to practice a healthy diet tailored to
+                            them based on the experience of the founder who has
+                            studied physiology, pharmacology, toxicology, food
+                            science, and nutrition for more than 18 years.
+                            NUSEUM is growing to provide innovative personalized
+                            nutrition management in this digital age.
                         </Text>
                     </div>
 
@@ -177,18 +174,16 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
+                            style={{ width: '60%', textAlign: 'justify' }}
                         >
                             {/* <Strong>“나" </Strong>또는{' '}
                             <Strong>“내가 돌보고 있는 소중한 사람"</Strong>이
                             {'\n'}
                             피해야 할 그리고 선택해야 할 영양성분과 {'\n'} 관련
                             최상위의 <Strong>맞춤식품</Strong>을 알려드립니다. */}
-                            Here are some of the best personalized foods that
-                            {'\n'}
-                            <Strong>I</Strong> or{' '}
-                            <Strong>the precious person I care for</Strong>
-                            {'\n'}
-                            should avoid and choose from.
+                            NUSEUM helps individuals to choose what not to eat
+                            and what to eat for themselves and their significant
+                            others.
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
@@ -218,14 +213,14 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
+                            style={{ width: '60%', textAlign: 'justify' }}
                         >
                             {/* 뉴지엄은 Shop을 통해 {'\n'}
                             관련 우수한 제품을 쉽게 찾고 {'\n'}
                             <Strong>개인맞춤영양</Strong>을 실천할 수 있도록
                             돕습니다.​ */}
-                            Through Shop, NUSEUM helps you easily
-                            {'\n'}find related excellent products {'\n'}and
-                            practice <Strong>personalized nutrition.</Strong>
+                            NUSEUM helps individuals easily find best foods and
+                            practice personalized diet.​
                         </Text>
                     </SectionTextBox>
                     <SectionImage src={section2} alt='section2' />
@@ -256,13 +251,13 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
+                            style={{ width: '60%', textAlign: 'justify' }}
                         >
                             {/* 뉴지엄은 Restaurant을 통해{'\n'} 나에게 필요한
                             <Strong>최상위의 메뉴</Strong>와{' '}
                             <Strong>식당</Strong>을 연결해 드립니다. */}
-                            NUSEUM connects the <Strong>restaurant</Strong>{' '}
-                            <Strong>with the top menu</Strong>
-                            {'\n'} I need through Restaurant.
+                            NUSEUM connects the restaurants with the highly
+                            curated menus based on individual's needs.
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
@@ -291,15 +286,15 @@ const Home = () => {
                                 fontSize: 'normal',
                                 fontWeight: 'normal',
                             }}
+                            style={{ width: '60%', textAlign: 'justify' }}
                         >
                             {/* 뉴지엄은 최신의 과학지식을 기반으로 하며,{'\n'}
                             <Strong>디지털헬스케어</Strong> 산업계에{' '}
                             <Strong>“먹는 부분”</Strong>을{'\n'} 담당하기 위해
                             성장하고 있습니다. */}
-                            NUSEUM is based on the latest scientific knowledge
-                            {'\n'} and is growing to take on the{' '}
-                            <Strong>Eating Part</Strong> of the{' '}
-                            <Strong>digital healthcare industry.</Strong>{' '}
+                            NUSEUM is growing to be the key player to take a
+                            part on food & nutrition in the digital healthcare
+                            industry.
                         </Text>
                     </SectionTextBox>
                     <SectionImage src={section4} alt='section4' />
@@ -348,14 +343,10 @@ const Home = () => {
                             SNU Venture Builder 프로그램의 지원을 받아 자폐아동
                             개인맞춤영양 솔루션을 개발 중에 있습니다. 추후
                             NUSEUM의 주요 서비스 예입니다. */}
-                            NUSEUM, a start-up team at Seoul National
-                            University's Nutrition Physiology and Pharmacology
-                            Lab, is conducting Autism Diet Challenge with the
-                            help of Amazon Web Services/Busan CIC, and is
-                            developing personalized nutrition solutions for
-                            autistic children with the support of SNU Venture
-                            Builder program. Here's an example of NUSEUM's key
-                            services in the future.
+                            NUSEUM is conducting Autism Diet Digital Challenge
+                            powered by Amazon Web Services, developing
+                            personalized nutrition solutions for autistic
+                            children.
                         </Text>
                     </ServiceDescriptionBox>
                 </ServiceDescription>
