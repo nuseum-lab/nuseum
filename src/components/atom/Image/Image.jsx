@@ -29,16 +29,17 @@ const Image = ({ imgObject, type }) => {
             >
                 <img style={{ ...style }} src={imgObject} alt='' />
             </div>
-            <ImgTitle
-                style={{ backdropFilter : 'blur(1px)'}}
-            >
+            <ImgTitle style={{ backdropFilter: 'blur(1px)' }}>
                 <Text
                     fontStyle={{
                         fontSize: 'main_title',
                         fontWeight: 'primary',
                         color: 'white',
                     }}
-                    style={{ textShadow: '0 0 40px #5a280a', textAlign: 'center'}}
+                    style={{
+                        textShadow: '0 0 40px #5a280a',
+                        textAlign: 'center',
+                    }}
                 >
                     Your Museum of
                 </Text>
@@ -48,13 +49,22 @@ const Image = ({ imgObject, type }) => {
                         fontWeight: 'primary',
                         color: 'white',
                     }}
-                    style={{ textShadow: '0 0 40px #5a280a', textAlign: 'center'}}
+                    style={{
+                        textShadow: '0 0 40px #5a280a',
+                        textAlign: 'center',
+                    }}
                 >
                     Nutrient Physiology & Pharmacology
                 </Text>
                 <Button
-                    onClick={() => navigate('/question')}
-                    style={{ marginTop: 30, fontSize: fontSize.button ,boxShadow: '0 0 10px #be9c91' }}
+                    onClick={() => {
+                        // navigate('/question')
+                    }}
+                    style={{
+                        marginTop: 30,
+                        fontSize: fontSize.button,
+                        boxShadow: '0 0 10px #be9c91',
+                    }}
                 >
                     EXPLORE NUSEUM
                 </Button>

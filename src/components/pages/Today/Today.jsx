@@ -19,6 +19,7 @@ import {
 } from '../Question/Question.styled';
 import SearchNutritionBox from './components/SearchNutritionBox';
 import {
+    Background,
     SearchBar,
     SearchResultBox,
     SelectButton,
@@ -30,6 +31,7 @@ const Today = () => {
     const location = useLocation();
     const [result, setResult] = useState([]);
     const [openId, setOpenId] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
 
     const [selected, setSelected] = useState({
         breakfast: false,
@@ -247,6 +249,7 @@ const Today = () => {
                                     }
 
                                     if (e.key === 'Enter') {
+                                        setModalOpen(true);
                                         axios
                                             .get(`/food/?search=${food}`)
                                             .then((response) => {
@@ -303,6 +306,7 @@ const Today = () => {
                         >
                             분석하기
                         </Button>
+                        {modalOpen ? <Background></Background> : null}
                         <SearchResultBox>
                             {result.map((item) => (
                                 <>

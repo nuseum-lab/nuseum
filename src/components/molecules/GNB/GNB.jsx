@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { languageActions } from '../../../store/language-slice';
 import Text from '../../atom/Text/Text';
 import {
     Box,
@@ -13,6 +15,7 @@ import {
 const GNB = ({ isOpen, setIsOpen }) => {
     const [subVisible, setSubVisible] = useState(false);
     const [id, setId] = useState(0);
+    const dispatch = useDispatch();
     return (
         <Box>
             <UtilGroup>
@@ -23,7 +26,7 @@ const GNB = ({ isOpen, setIsOpen }) => {
                     }}
                     style={{ padding: '10px 0 6px' }}
                 >
-                    Login
+                    {/* Login */}
                 </Text>
                 <Text
                     fontStyle={{
@@ -32,7 +35,7 @@ const GNB = ({ isOpen, setIsOpen }) => {
                     }}
                     style={{ padding: '10px 0 6px' }}
                 >
-                    Sign Up
+                    {/* Sign Up */}
                 </Text>
             </UtilGroup>
 
@@ -249,6 +252,57 @@ const GNB = ({ isOpen, setIsOpen }) => {
                             <Link>HISTORY</Link>
                         </Text>
                     </GroupWrapper>
+                    {/* <GroupWrapper
+                        id={-1}
+                        onMouseEnter={(e) => {
+                            setSubVisible(true);
+                            setId(e.currentTarget.id);
+                        }}
+                        onMouseLeave={() => {
+                            setSubVisible(false);
+                        }}
+                    >
+                        <Text
+                            fontStyle={{
+                                fontSize: 'menu',
+                                fontWeight: 'sub',
+                                opacity: 1,
+                            }}
+                            style={{
+                                cursor: 'pointer',
+                                padding: '12px 20px 30px 20px',
+                                position: 'relative',
+                            }}
+                        >
+                            <Link>LANGUAGES</Link>
+                        </Text>
+                        {subVisible && id === '-1' ? (
+                            <SubGroup>
+                                <Link
+                                    onClick={() =>
+                                        dispatch(
+                                            languageActions.changeLanguage(
+                                                false
+                                            )
+                                        )
+                                    }
+                                    href='#'
+                                >
+                                    Korean
+                                </Link>
+                                <Link
+                                    onClick={() =>
+                                        dispatch(
+                                            languageActions.changeLanguage(true)
+                                        )
+                                    }
+                                    style={{ whiteSpace: 'pre-line' }}
+                                >
+                                    English
+                                </Link>
+                            </SubGroup>
+                        ) : null}
+                    </GroupWrapper> */}
                 </GNBGroup>
             )}
 

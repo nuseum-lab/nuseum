@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import * as dfd from 'danfojs';
 
 import BarGraph from '../../molecules/BarGraph/BarGraph';
 import RadarGraph from '../../molecules/RadarGraph/RadarGraph';
@@ -38,6 +39,7 @@ import Text from '../../atom/Text/Text';
 import Button from '../../atom/Button';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useCalculate from '../../../hooks/useCalculate';
+import Loading from '../../atom/Loading/Loading';
 
 const img = {
     broccoli: { eat: cbroccoli, noEat: broccoli, name: '야채' },
@@ -54,6 +56,10 @@ const img = {
 const Analysis = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    const [curationFoodList, setCurationFoodList] = useState(null);
+    const [foodDataFrame, setFoodDataFrame] = useState(null);
+    const [supplementDataFrame, setSupplementDataFrame] = useState(null);
+    const [loading, setLoading] = useState(false);
     const [nutrition, setNutrition] = useState({
         energy: 0,
         protein: 0,
@@ -69,6 +75,39 @@ const Analysis = () => {
         tryptophan: 0,
         dha_epa: 0,
     });
+
+    const readDB = async () => {
+        setLoading(true);
+        try {
+            let curationDB = await dfd.readExcel(
+                'https://raw.githubusercontent.com/nuseum-lab/nuseum/test/src/lib/assets/data/fooddb.xlsx'
+            );
+
+            // let foodDB = await dfd.readExcel(
+            //     'https://raw.githubusercontent.com/nuseum-lab/nuseum/test/src/lib/assets/data/db/food_DB.xlsx'
+            // );
+
+            // let supplementDB = await dfd.readExcel(
+            //     'https://raw.githubusercontent.com/nuseum-lab/nuseum/test/src/lib/assets/data/db/supplement_DB.xlsx'
+            // );
+
+            // setSupplementDataFrame(supplementDB.$data);
+            // setFoodDataFrame(foodDB.$data);
+
+            setCurationFoodList(
+                curationDB.$dataIncolumnFormat.map((item) => {
+                    let index = 0;
+                    for (let elem of item) {
+                        if (elem === ' ') break;
+                        index += 1;
+                    }
+                    return item.slice(0, index);
+                })
+            );
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     useEffect(() => {
         setNutrition({
@@ -86,7 +125,19 @@ const Analysis = () => {
             tryptophan: 194.39999999999998,
             dha_epa: 1391.0140000000001,
         });
+        readDB();
     }, []);
+
+    useEffect(() => {
+        // if (curationFoodList && foodDataFrame && supplementDataFrame) {
+        //     setLoading(false);
+        // }
+        // console.log(foodDataFrame);
+        if (curationFoodList) {
+            setLoading(false);
+        }
+        console.log(curationFoodList);
+    }, [curationFoodList, foodDataFrame, supplementDataFrame]);
 
     const range = useCalculate(
         location.state.gender ? 'M' : 'F',
@@ -95,6 +146,7 @@ const Analysis = () => {
 
     return (
         <Layout>
+            {loading ? <Loading /> : null}
             <Header />
             <Title>
                 <Text

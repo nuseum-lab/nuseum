@@ -41,11 +41,11 @@ export const GroupWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    a{
+    a {
         color: black;
         text-decoration: none;
     }
-    :hover > p > a{
+    :hover > p > a {
         text-shadow: rgb(0 0 0 /20%) 1px 1px 1px;
         text-decoration: 2px solid underline black;
     }
