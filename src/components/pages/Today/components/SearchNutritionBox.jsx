@@ -54,7 +54,7 @@ const SearchNutritionBox = ({ openid, item }) => {
         <AnimatePresence>
             <ResultBox
                 initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 20 * keyCount, opacity: 1 }}
+                animate={{ height: 30 * keyCount, opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.5 }}
             >
