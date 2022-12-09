@@ -356,6 +356,7 @@ const Home = () => {
                         maxWidth: '1190px',
                         display: 'block',
                         margin: '0 auto',
+                        display: 'none',
                     }}
                     alt='gray_logo'
                 />
@@ -496,7 +497,6 @@ const Home = () => {
                                     fontWeight: 'normal',
                                     fontSize: 'button',
                                 }}
-                                style={{ width: '60%' }}
                             >
                                 {/* 08826) 서울특별시 관악구 관악로 1. 서울대학교
                                 관악캠퍼스 IBK커뮤니케이션센터(64동) 1층 IBK창공

@@ -50,7 +50,7 @@ export const SectionTextBox = styled.div`
         margin: 20px 0;
         width: 100%;
         p{
-            width: 80% !important;
+            width: 86% !important;
             margin-bottom: 12px;
         }
     }
@@ -88,6 +88,7 @@ export const FooterTop = styled.div`
     display:flex;
     width: 100%;
     justify-content: space-between;
+    align-items: flex-end;
     margin-bottom: 20px;
     @media all and (max-width: 768px){
         flex-direction: column;
@@ -213,6 +214,7 @@ export const ServiceDescriptionBox = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
 
     @media all and (max-width: 1135px) and (min-width: 600px) {
         padding: 120px 30px;
@@ -224,7 +226,6 @@ export const ServiceDescriptionBox = styled.div`
         width: 90%;
         margin-left: 0;
         margin-top: -20%;
-        text-align: center;
     }
 `;
 
