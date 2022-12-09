@@ -159,8 +159,8 @@ export const MockupImg = styled(motion.img)`
     margin-top: 10px;
     height: 100%;
     @media all and (max-width: 599px) {
-        top: 0;
-        height: 50vh !important;
+        top: 8vh;
+        height: 60vh !important;
         width: 100%;
         object-fit: cover;
         object-position: top;
