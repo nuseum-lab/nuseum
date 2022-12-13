@@ -327,6 +327,7 @@ const Today = () => {
                                         close
                                     </span>
                                 </div>
+                                {console.log('result: ', result)}
                                 {result.map((item) => (
                                     <>
                                         <Text
