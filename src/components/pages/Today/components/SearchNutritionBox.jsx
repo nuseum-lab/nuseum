@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Result, ResultBox } from './SearchNutritionBox.styled';
 
 const SearchNutritionBox = ({ openid, item }) => {
+    const [height, setHeight] = useState(30);
     const renderNutrition = (param) => {
         switch (param) {
             case 'carbohydrate':
@@ -35,7 +36,7 @@ const SearchNutritionBox = ({ openid, item }) => {
                 return null;
         }
     };
-    const [keyCount, setKeyCount] = useState(0);
+    const [keyCount, setKeyCount] = useState(1);
 
     useEffect(() => {
         setKeyCount(0);
@@ -48,13 +49,14 @@ const SearchNutritionBox = ({ openid, item }) => {
                 ? null
                 : setKeyCount((prev) => prev + 1)
         );
-    }, []);
+        setHeight(keyCount * 30);
+    }, [openid]);
 
     return openid === item.id ? (
         <AnimatePresence>
             <ResultBox
                 initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 30 * keyCount, opacity: 1 }}
+                animate={{ height: height, opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.5 }}
             >
@@ -64,7 +66,8 @@ const SearchNutritionBox = ({ openid, item }) => {
                     nutrition === 'id' ||
                     nutrition === 'category' ||
                     nutrition === 'name' ||
-                    nutrition === 'classifier' ? null : (
+                    nutrition === 'classifier' ||
+                    nutrition === 'lang' ? null : (
                         <Result>
                             {renderNutrition(nutrition)[0]}:{' '}
                             {item[nutrition].toFixed(3)}
