@@ -48,10 +48,7 @@ const Header = () => {
                     initial={{ y: -100 }}
                     exit={{ y: -200 }}
                     animate={{ y: 0 }}
-                    transition={{
-                        type: 'just',
-                    }}
-                    isOpen={isOpen}
+                    isopen={isOpen}
                 >
                     <Text
                         fontStyle={{
