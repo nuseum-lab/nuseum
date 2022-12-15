@@ -2,8 +2,14 @@ import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Result, ResultBox } from './SearchNutritionBox.styled';
 
-const SearchNutritionBox = ({ openid, item }) => {
-    const [height, setHeight] = useState(30);
+const SearchNutritionBox = ({
+    openid,
+    item,
+    setInputModalOpen,
+    setInputTitle,
+}) => {
+    const [height, setHeight] = useState(1);
+
     const renderNutrition = (param) => {
         switch (param) {
             case 'carbohydrate':
@@ -39,7 +45,7 @@ const SearchNutritionBox = ({ openid, item }) => {
     const [keyCount, setKeyCount] = useState(1);
 
     useEffect(() => {
-        setKeyCount(0);
+        setKeyCount(1);
         Object.entries(item).forEach((elem) =>
             elem[1] === 0 ||
             elem[0] === 'open' ||
@@ -50,7 +56,7 @@ const SearchNutritionBox = ({ openid, item }) => {
                 : setKeyCount((prev) => prev + 1)
         );
         setHeight(keyCount * 30);
-    }, [openid]);
+    }, [openid, keyCount, height]);
 
     return openid === item.id ? (
         <AnimatePresence>
@@ -58,7 +64,7 @@ const SearchNutritionBox = ({ openid, item }) => {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: height, opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.8 }}
             >
                 {Object.keys(item).map((nutrition) =>
                     item[nutrition] === 0 ||
@@ -75,6 +81,15 @@ const SearchNutritionBox = ({ openid, item }) => {
                         </Result>
                     )
                 )}
+
+                <button
+                    onClick={() => {
+                        setInputModalOpen(true);
+                        setInputTitle(item.name);
+                    }}
+                >
+                    추가하기
+                </button>
             </ResultBox>
         </AnimatePresence>
     ) : null;
