@@ -37,7 +37,7 @@ const Image = ({ imgObject, type }) => {
                         color: 'white',
                     }}
                     style={{
-                        textShadow: '0 0 40px #5a280a',
+                        textShadow: '0 0 20px #5a280a',
                         textAlign: 'center',
                     }}
                 >
@@ -50,7 +50,7 @@ const Image = ({ imgObject, type }) => {
                         color: 'white',
                     }}
                     style={{
-                        textShadow: '0 0 40px #5a280a',
+                        textShadow: '0 0 20px #5a280a',
                         textAlign: 'center',
                     }}
                 >

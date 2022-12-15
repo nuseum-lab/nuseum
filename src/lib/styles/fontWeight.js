@@ -1,5 +1,5 @@
 export const fontWeight = {
-    black: 900,
+    black: 800,
     primary: 700,
     sub: 600,
     mid: 500,

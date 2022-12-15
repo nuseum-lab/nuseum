@@ -1,7 +1,7 @@
 export const fontSize = {
     primary: 64,
-    logo: 50,
-    main_title: 44,
+    logo: 40,
+    main_title: 36,
     sub_title: 32,
     sub: 28,
     mid: 24,

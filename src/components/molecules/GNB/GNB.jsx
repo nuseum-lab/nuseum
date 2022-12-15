@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { languageActions } from '../../../store/language-slice';
 import Text from '../../atom/Text/Text';
+import { useNavigate } from 'react-router-dom';
 import {
     Box,
     GNBGroup,
@@ -13,6 +14,7 @@ import {
 } from './GNB.styled';
 
 const GNB = ({ isOpen, setIsOpen }) => {
+    const navigate = useNavigate();
     const [subVisible, setSubVisible] = useState(false);
     const [id, setId] = useState(0);
     const dispatch = useDispatch();
@@ -247,6 +249,9 @@ const GNB = ({ isOpen, setIsOpen }) => {
                                 cursor: 'pointer',
                                 padding: '12px 0px 30px 0px',
                                 marginLeft: '20px',
+                            }}
+                            onClick={() => {
+                                navigate('/history');
                             }}
                         >
                             <Link>HISTORY</Link>
