@@ -17,9 +17,9 @@ export const Box = styled(motion.div)`
     z-index: 999;
     justify-content: space-between;
     margin: 0 auto;
-    position: ${(props) => (props.isOpen ? 'fixed' : null)};
+    position: ${(props) => (props.isopen ? 'fixed' : null)};
     background-color: ${colorPalette.whiteOrange};
-    padding: ${(props) => (props.isOpen ? '0 64px' : null)};
+    padding: ${(props) => (props.isopen ? '0 64px' : null)};
     box-sizing: border-box;
     @media all and (min-width: 600px) and (max-width: 1135px) {
         padding: 0 32px;
@@ -36,18 +36,17 @@ export const MenuBox = styled.div`
     align-items: flex-start;
     max-height: 100%;
     padding: 0 64px;
-    p{
+    p {
         padding: 15px 0;
     }
 `;
 
 export const SubGroupMobile = styled.div`
     padding-bottom: 10px;
-    a{
+    a {
         display: block;
         padding: 10px 10px;
         text-decoration: none;
         color: black;
-
     }
-`
+`;
