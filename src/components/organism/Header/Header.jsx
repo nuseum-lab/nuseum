@@ -6,8 +6,10 @@ import GNB from '../../molecules/GNB';
 import { Box, MenuBox, SubGroupMobile } from './Header.styled';
 import { Link } from 'react-router-dom';
 import { GroupWrapper } from '../../molecules/GNB/GNB.styled';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+    const navigate = useNavigate();
     const [subVisibleMobile, setSubVisibleMobile] = useState(false);
     const [id, setIdMobile] = useState(0);
 
@@ -55,6 +57,9 @@ const Header = () => {
                         fontStyle={{
                             fontSize: 'logo',
                             fontWeight: 'black',
+                        }} style={{cursor:'pointer'}}
+                        onClick={() => {
+                            navigate('/');
                         }}
                     >
                         NUSEUM
@@ -324,6 +329,32 @@ const Header = () => {
                                             </Link>
                                         </SubGroupMobile>
                                     ) : null}
+                                </GroupWrapper>
+                                <GroupWrapper>
+                                <Text
+                                        fontStyle={{
+                                            fontSize: 'normal',
+                                            fontWeight: 'sub',
+                                            opacity: 1,
+                                            textShadow:
+                                                'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                            textDecoration:
+                                                '2px solid underline black',
+                                        }}
+                                        style={{
+                                            cursor: 'pointer',
+                                            textDecoration:
+                                                id === '0'
+                                                    ? '2px solid underline black'
+                                                    : '',
+                                            fontWeight: id === '0' ? 700 : '',
+                                        }}
+                                        onClick={() => {
+                                            navigate('/history');
+                                        }}
+                                    >
+                                        HISTORY
+                                    </Text>
                                 </GroupWrapper>
                             </MenuBox>
                         </div>

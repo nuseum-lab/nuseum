@@ -6,6 +6,7 @@ import Home from './components/pages/Home/Home';
 import NotFound from './components/pages/NotFound';
 import Question from './components/pages/Question';
 import Today from './components/pages/Today';
+import History from './components/pages/History'
 
 const Router = () => {
     return (
@@ -17,6 +18,7 @@ const Router = () => {
                 <Route element={<Today />} path='/today' />
                 <Route element={<Analysis />} path='/analysis' />
                 <Route element={<Curation />} path='/curation' />
+                <Route element={<History />} path='/history' />
                 <Route path={'*'} element={<NotFound />} />
             </Routes>
         </BrowserRouter>

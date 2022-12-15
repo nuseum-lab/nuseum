@@ -29,3 +29,4 @@ export default styled.p`
                 : Number(fontSize[props?.fontStyle?.fontSize]) - 6}px;
     }
 `;
+

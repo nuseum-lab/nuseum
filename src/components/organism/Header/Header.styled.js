@@ -5,7 +5,7 @@ import { colorPalette } from '../../../lib/styles/colorPalette';
 export const Box = styled(motion.div)`
     width: 100%;
     min-height: 10vh;
-    box-shadow: 0 0 30px #00000021;
+    // box-shadow: 0 0 30px #00000021;
     position: fixed;
     z-index: 1000;
     left: 0;
