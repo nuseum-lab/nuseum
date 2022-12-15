@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import background from '../../../lib/assets/question-background.png';
 import search from '../../../lib/assets/search.png';
+import BasicModal from '../../atom/BasicModal/BasicModal';
 import Button from '../../atom/Button';
 import Input from '../../atom/Input/Input';
 import Text from '../../atom/Text/Text';
@@ -32,6 +33,8 @@ const Today = () => {
     const [result, setResult] = useState([]);
     const [openId, setOpenId] = useState(null);
     const [modalOpen, setModalOpen] = useState(false);
+    const [inputModalOpen, setInputModalOpen] = useState(false);
+    const [inputTitle, setInputTitle] = useState('');
 
     const [selected, setSelected] = useState({
         breakfast: false,
@@ -52,6 +55,13 @@ const Today = () => {
     return (
         <Layout style={{ width: '100%', padding: 0 }}>
             <Header />
+            <BasicModal
+                setOpen={setInputModalOpen}
+                open={inputModalOpen}
+                inputTitle={inputTitle}
+                setFoodList={setFoodList}
+                selected={selected}
+            />
             <BackgroundWrapper reverse={true}>
                 <ImgWrapper
                     style={{
@@ -110,7 +120,7 @@ const Today = () => {
                                                     fontWeight: 400,
                                                 }}
                                             >
-                                                {meal}
+                                                {meal[0]} / {meal[1]}g 또는 ml
                                             </Text>
                                         ))}
                                     </>
@@ -249,29 +259,22 @@ const Today = () => {
                                     }
 
                                     if (e.key === 'Enter') {
-                                        setModalOpen(true);
                                         axios
                                             .get(`/food/?search=${food}`)
                                             .then((response) => {
                                                 console.log(response.data);
+                                                if (response.data.count === 0) {
+                                                    window.alert(
+                                                        '검색결과가 없습니다.'
+                                                    );
+                                                    return;
+                                                }
+                                                setModalOpen(true);
                                                 setResult([
                                                     ...response.data.results,
                                                 ]);
                                             })
                                             .catch((err) => console.log(err));
-                                        for (let key in selected) {
-                                            if (selected[key]) {
-                                                setFoodList((prev) => {
-                                                    return {
-                                                        ...prev,
-                                                        [key]: [
-                                                            ...prev[key],
-                                                            food,
-                                                        ],
-                                                    };
-                                                });
-                                            }
-                                        }
                                     }
                                 }}
                             />
@@ -306,8 +309,10 @@ const Today = () => {
                         >
                             분석하기
                         </Button>
-                        {modalOpen ? <Background></Background> : null}
-                        {modalOpen ? (
+                        {modalOpen && !inputModalOpen ? (
+                            <Background></Background>
+                        ) : null}
+                        {modalOpen && !inputModalOpen ? (
                             <SearchResultBox>
                                 <div
                                     style={{
@@ -327,7 +332,6 @@ const Today = () => {
                                         close
                                     </span>
                                 </div>
-                                {console.log('result: ', result)}
                                 {result.map((item) => (
                                     <>
                                         <Text
@@ -351,6 +355,10 @@ const Today = () => {
                                         <SearchNutritionBox
                                             openid={openId}
                                             item={item}
+                                            setInputModalOpen={
+                                                setInputModalOpen
+                                            }
+                                            setInputTitle={setInputTitle}
                                         />
                                     </>
                                 ))}
