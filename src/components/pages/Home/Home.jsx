@@ -38,7 +38,6 @@ import { useSelector } from 'react-redux';
 
 const Home = () => {
     const lang = useSelector((state) => state.language.isKorean);
-    console.log(lang);
     const navigate = useNavigate();
     return (
         <Layout>
@@ -416,7 +415,7 @@ const Home = () => {
                                 alignItems: 'center',
                                 marginBottom: 10,
                                 width: 280,
-                                maxWidth: '100%'
+                                maxWidth: '100%',
                             }}
                         >
                             <Text
@@ -483,41 +482,40 @@ const Home = () => {
                     </ContactBox>
                 </FooterTop>
                 <FooterWrap>
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                width: '100%',
-                                float: 'left',
-                            }}
-                        >
-                            <Text
-                                fontStyle={{
-                                    fontWeight: 'normal',
-                                    fontSize: 'button',
-                                }}
-                            >
-                                {/* 08826) 서울특별시 관악구 관악로 1. 서울대학교
-                                관악캠퍼스 IBK커뮤니케이션센터(64동) 1층 IBK창공
-                                서울대캠프 NUSEUM */}
-                                08826) NUSEUM IBK Changgong Seoul National
-                                University Camp, IBK Communication Center, 1
-                                Gwanak-ro, Gwanak-gu, Seoul, Republic of Korea
-                            </Text>
-                        </div>
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            width: '100%',
+                            float: 'left',
+                        }}
+                    >
                         <Text
                             fontStyle={{
-                                fontSize: 'button',
                                 fontWeight: 'normal',
+                                fontSize: 'button',
                             }}
-                            style={{ width: '100%', marginTop: '4px' }}
                         >
-                            © 2022 NUSEUM. All rights reserved.
+                            {/* 08826) 서울특별시 관악구 관악로 1. 서울대학교
+                                관악캠퍼스 IBK커뮤니케이션센터(64동) 1층 IBK창공
+                                서울대캠프 NUSEUM */}
+                            08826) NUSEUM IBK Changgong Seoul National
+                            University Camp, IBK Communication Center, 1
+                            Gwanak-ro, Gwanak-gu, Seoul, Republic of Korea
                         </Text>
+                    </div>
+                    <Text
+                        fontStyle={{
+                            fontSize: 'button',
+                            fontWeight: 'normal',
+                        }}
+                        style={{ width: '100%', marginTop: '4px' }}
+                    >
+                        © 2022 NUSEUM. All rights reserved.
+                    </Text>
                 </FooterWrap>
             </InformationBox>
-
         </Layout>
     );
 };
