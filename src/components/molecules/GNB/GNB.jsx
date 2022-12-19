@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { languageActions } from '../../../store/language-slice';
 import Text from '../../atom/Text/Text';
@@ -205,6 +205,26 @@ const GNB = ({ isOpen, setIsOpen }) => {
                             </SubGroup>
                         ) : null}
                     </GroupWrapper>
+
+                    <GroupWrapper>
+                        <Text
+                            fontStyle={{
+                                fontSize: 'menu',
+                                fontWeight: 'sub',
+                                opacity: 1,
+                            }}
+                            style={{
+                                cursor: 'pointer',
+                                padding: '12px 0px 30px 0px',
+                                marginLeft: '20px',
+                            }}
+                            onClick={() => {
+                                navigate('/history');
+                            }}
+                        >
+                            <Link>HISTORY</Link>
+                        </Text>
+                    </GroupWrapper>
                     <GroupWrapper
                         onMouseEnter={(e) => {
                             console.log(e.currentTarget.id);
@@ -227,35 +247,34 @@ const GNB = ({ isOpen, setIsOpen }) => {
                                 padding: '12px 20px 30px 20px',
                             }}
                         >
-                            <Link>CURATOR</Link>
+                            <Link>LANGUAGE</Link>
                         </Text>
                         {subVisible && id === '5' ? (
                             <SubGroup>
-                                <Link href='#'>ME</Link>
-                                <Link style={{ whiteSpace: 'pre-line' }}>
-                                    SIGNIFICANT{'\n'}OTHER
+                                <Link
+                                    onClick={() =>
+                                        dispatch(
+                                            languageActions.changeLanguage(true)
+                                        )
+                                    }
+                                    href='#'
+                                >
+                                    KOREAN
+                                </Link>
+                                <Link
+                                    onClick={() =>
+                                        dispatch(
+                                            languageActions.changeLanguage(
+                                                false
+                                            )
+                                        )
+                                    }
+                                    style={{ whiteSpace: 'pre-line' }}
+                                >
+                                    ENGLISH
                                 </Link>
                             </SubGroup>
                         ) : null}
-                    </GroupWrapper>
-                    <GroupWrapper>
-                        <Text
-                            fontStyle={{
-                                fontSize: 'menu',
-                                fontWeight: 'sub',
-                                opacity: 1,
-                            }}
-                            style={{
-                                cursor: 'pointer',
-                                padding: '12px 0px 30px 0px',
-                                marginLeft: '20px',
-                            }}
-                            onClick={() => {
-                                navigate('/history');
-                            }}
-                        >
-                            <Link>HISTORY</Link>
-                        </Text>
                     </GroupWrapper>
                 </GNBGroup>
             )}

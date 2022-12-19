@@ -7,11 +7,13 @@ import { Box, MenuBox, SubGroupMobile } from './Header.styled';
 import { Link } from 'react-router-dom';
 import { GroupWrapper } from '../../molecules/GNB/GNB.styled';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Header = () => {
     const navigate = useNavigate();
     const [subVisibleMobile, setSubVisibleMobile] = useState(false);
     const [id, setIdMobile] = useState(0);
+    const [isOpenLanguage, setIsOpenLanguage] = useState(false);
 
     function OpenSubGroup(xid) {
         if (subVisibleMobile) {
@@ -29,6 +31,16 @@ const Header = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const { scrollY } = useScroll();
+
+    const container = {
+        hidden: { height: 0 },
+        show: {
+            height: 100,
+            transition: {
+                duration: 0.2,
+            },
+        },
+    };
 
     const [headerVisible, setHeaderVisible] = useState(true);
     useEffect(() => {
@@ -54,7 +66,8 @@ const Header = () => {
                         fontStyle={{
                             fontSize: 'logo',
                             fontWeight: 'black',
-                        }} style={{cursor:'pointer'}}
+                        }}
+                        style={{ cursor: 'pointer' }}
                         onClick={() => {
                             navigate('/');
                         }}
@@ -328,7 +341,7 @@ const Header = () => {
                                     ) : null}
                                 </GroupWrapper>
                                 <GroupWrapper>
-                                <Text
+                                    <Text
                                         fontStyle={{
                                             fontSize: 'normal',
                                             fontWeight: 'sub',
@@ -352,6 +365,45 @@ const Header = () => {
                                     >
                                         HISTORY
                                     </Text>
+                                </GroupWrapper>
+                                <GroupWrapper>
+                                    <Text
+                                        fontStyle={{
+                                            fontSize: 'normal',
+                                            fontWeight: 'sub',
+                                            opacity: 1,
+                                            textShadow:
+                                                'rgb(0 0 0 / 20%) 1px 1px 1px',
+                                            textDecoration:
+                                                '2px solid underline black',
+                                        }}
+                                        style={{
+                                            cursor: 'pointer',
+                                            textDecoration:
+                                                id === '0'
+                                                    ? '2px solid underline black'
+                                                    : '',
+                                            fontWeight: id === '0' ? 700 : '',
+                                        }}
+                                        onClick={() => {
+                                            setIsOpenLanguage((prev) => !prev);
+                                        }}
+                                    >
+                                        LANGUAGE
+                                    </Text>
+                                    <AnimatePresence>
+                                        {isOpenLanguage ? (
+                                            <motion.div
+                                                style={{ overflow: 'hidden' }}
+                                                variants={container}
+                                                initial='hidden'
+                                                animate='show'
+                                            >
+                                                <p>ENGLISH</p>
+                                                <p>한국어</p>
+                                            </motion.div>
+                                        ) : null}
+                                    </AnimatePresence>
                                 </GroupWrapper>
                             </MenuBox>
                         </div>
