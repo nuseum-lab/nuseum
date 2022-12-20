@@ -37,7 +37,7 @@ const Today = () => {
     const [inputTitle, setInputTitle] = useState('');
 
     const [selected, setSelected] = useState({
-        breakfast: false,
+        breakfast: true,
         lunch: false,
         dinner: false,
         snack: false,
