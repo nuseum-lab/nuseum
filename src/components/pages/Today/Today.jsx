@@ -18,11 +18,11 @@ import {
     UtilLayout,
     UtilWrapper,
 } from '../Question/Question.styled';
-import SearchNutritionBox from './components/SearchNutritionBox';
+
+import SearchResultBoxWrapper from './components/SearchResultBoxWrapper';
 import {
     Background,
     SearchBar,
-    SearchResultBox,
     SelectButton,
     SelectButtonWrapper,
 } from './Today.styled';
@@ -51,6 +51,7 @@ const Today = () => {
         snack: [],
         supplement: [],
     });
+    const [hasSecond, setHasSecond] = useState(false);
 
     return (
         <Layout style={{ width: '100%', padding: 0 }}>
@@ -262,17 +263,20 @@ const Today = () => {
                                         axios
                                             .get(`/food/?search=${food}`)
                                             .then((response) => {
-                                                console.log(response.data);
                                                 if (response.data.count === 0) {
                                                     window.alert(
                                                         '검색결과가 없습니다.'
                                                     );
                                                     return;
                                                 }
+
                                                 setModalOpen(true);
                                                 setResult([
                                                     ...response.data.results,
                                                 ]);
+                                                if (response.data.next) {
+                                                    setHasSecond(true);
+                                                }
                                             })
                                             .catch((err) => console.log(err));
                                     }
@@ -313,56 +317,16 @@ const Today = () => {
                             <Background></Background>
                         ) : null}
                         {modalOpen && !inputModalOpen ? (
-                            <SearchResultBox>
-                                <div
-                                    style={{
-                                        width: '100%',
-                                        display: 'flex',
-                                        justifyContent: 'flex-end',
-                                    }}
-                                >
-                                    <span
-                                        style={{
-                                            left: 0,
-                                            cursor: 'pointer',
-                                        }}
-                                        onClick={() => setModalOpen(false)}
-                                        className='material-symbols-outlined'
-                                    >
-                                        close
-                                    </span>
-                                </div>
-                                {result.map((item) => (
-                                    <>
-                                        <Text
-                                            style={{
-                                                textAlign: 'left',
-                                                width: '100%',
-                                                lineHeight: 1.5,
-                                                borderBottom:
-                                                    '1px solid rgba(0,0,0,0.2) ',
-                                                margin: '20px 0 0',
-                                                cursor: 'pointer',
-                                                padding: '10px 0',
-                                            }}
-                                            key={item.id}
-                                            onClick={() => {
-                                                setOpenId(item.id);
-                                            }}
-                                        >
-                                            {item.name}
-                                        </Text>
-                                        <SearchNutritionBox
-                                            openid={openId}
-                                            item={item}
-                                            setInputModalOpen={
-                                                setInputModalOpen
-                                            }
-                                            setInputTitle={setInputTitle}
-                                        />
-                                    </>
-                                ))}
-                            </SearchResultBox>
+                            <SearchResultBoxWrapper
+                                setModalOpen={setModalOpen}
+                                result={result}
+                                setOpenId={setOpenId}
+                                openId={openId}
+                                setInputModalOpen={setInputModalOpen}
+                                setInputTitle={setInputTitle}
+                                hasSecond={hasSecond}
+                                searchParam={food}
+                            />
                         ) : null}
                     </UtilLayout>
                 </UtilWrapper>
