@@ -54,10 +54,10 @@ export const SubGroup = styled.div`
     position: absolute;
     width: 150px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 18px;
     padding-bottom: 10px;
     box-shadow: 0px 4px 5px 0px rgb(0 0 0 /20%);
-    top: 80px;
+    top: 70px;
     background-color: #faf8f6;
     border-radius: 5px;
     transition: 0.3s all ease;

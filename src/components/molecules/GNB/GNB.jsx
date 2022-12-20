@@ -215,8 +215,7 @@ const GNB = ({ isOpen, setIsOpen }) => {
                             }}
                             style={{
                                 cursor: 'pointer',
-                                padding: '12px 0px 30px 0px',
-                                marginLeft: '20px',
+                                padding: '12px 20px 30px 20px',
                             }}
                             onClick={() => {
                                 navigate('/history');
@@ -244,7 +243,8 @@ const GNB = ({ isOpen, setIsOpen }) => {
                             }}
                             style={{
                                 cursor: 'pointer',
-                                padding: '12px 20px 30px 20px',
+                                padding: '12px 0px 30px 0px',
+                                marginLeft: '20px',
                             }}
                         >
                             <Link>LANGUAGE</Link>

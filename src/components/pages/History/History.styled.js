@@ -58,7 +58,7 @@ export const HistoryText = styled.div`
     background: white;
     padding: 30px 30px 0px; 
     div{
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
     h4{
         margin-bottom: 8px;
