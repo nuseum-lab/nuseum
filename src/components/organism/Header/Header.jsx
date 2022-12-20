@@ -406,13 +406,14 @@ const Header = () => {
                                                     style={{
                                                         cursor: 'pointer',
                                                     }}
-                                                    onClick={() =>
+                                                    onClick={() => {
                                                         dispatch(
                                                             languageActions.changeLanguage(
                                                                 false
                                                             )
-                                                        )
-                                                    }
+                                                        );
+                                                        setIsOpen(false);
+                                                    }}
                                                 >
                                                     ENGLISH
                                                 </p>
@@ -420,13 +421,14 @@ const Header = () => {
                                                     style={{
                                                         cursor: 'pointer',
                                                     }}
-                                                    onClick={() =>
+                                                    onClick={() => {
                                                         dispatch(
                                                             languageActions.changeLanguage(
                                                                 true
                                                             )
-                                                        )
-                                                    }
+                                                        );
+                                                        setIsOpen(false);
+                                                    }}
                                                 >
                                                     한국어
                                                 </p>
