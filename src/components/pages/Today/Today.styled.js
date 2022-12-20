@@ -37,7 +37,6 @@ export const Background = styled.div`
     top: 0;
     left: 0;
     z-index: 1000;
-
 `;
 export const SearchResultBox = styled.div`
     width: 40vw;
@@ -53,7 +52,7 @@ export const SearchResultBox = styled.div`
     overflow-y: scroll;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     padding: 3%;
     border-radius: 10px;
     @media all and (max-width: 1200px) {
@@ -67,5 +66,5 @@ export const SearchResultBox = styled.div`
     }
     ::-webkit-scrollbar {
         display: none;
-      }
+    }
 `;
