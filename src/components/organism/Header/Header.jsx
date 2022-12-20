@@ -8,12 +8,15 @@ import { Link } from 'react-router-dom';
 import { GroupWrapper } from '../../molecules/GNB/GNB.styled';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useDispatch } from 'react-redux';
+import { languageActions } from '../../../store/language-slice';
 
 const Header = () => {
     const navigate = useNavigate();
     const [subVisibleMobile, setSubVisibleMobile] = useState(false);
     const [id, setIdMobile] = useState(0);
     const [isOpenLanguage, setIsOpenLanguage] = useState(false);
+    const dispatch = useDispatch();
 
     function OpenSubGroup(xid) {
         if (subVisibleMobile) {
@@ -399,8 +402,34 @@ const Header = () => {
                                                 initial='hidden'
                                                 animate='show'
                                             >
-                                                <p>ENGLISH</p>
-                                                <p>한국어</p>
+                                                <p
+                                                    style={{
+                                                        cursor: 'pointer',
+                                                    }}
+                                                    onClick={() =>
+                                                        dispatch(
+                                                            languageActions.changeLanguage(
+                                                                false
+                                                            )
+                                                        )
+                                                    }
+                                                >
+                                                    ENGLISH
+                                                </p>
+                                                <p
+                                                    style={{
+                                                        cursor: 'pointer',
+                                                    }}
+                                                    onClick={() =>
+                                                        dispatch(
+                                                            languageActions.changeLanguage(
+                                                                true
+                                                            )
+                                                        )
+                                                    }
+                                                >
+                                                    한국어
+                                                </p>
                                             </motion.div>
                                         ) : null}
                                     </AnimatePresence>

@@ -81,10 +81,9 @@ const Home = () => {
                             }}
                             style={{ marginBottom: '30px', width: '60%' }}
                         >
-                            {/* 당신의 영양생리약리 박물관에서 무엇을 먹어야 하는지
-                            알려주는 큐레이션 서비스 */}
-                            A curation service that tells you what to eat at
-                            your nutrient physiology & pharmacology museum
+                            {lang
+                                ? '당신의 영양생리약리 박물관에서 무엇을 먹어야 하는지 알려주는 큐레이션 서비스'
+                                : 'A curation service that tells you what to eat at your nutrient physiology & pharmacology museum'}
                         </Text>
                         <Text
                             fontStyle={{
@@ -97,17 +96,9 @@ const Home = () => {
                                 marginBottom: '16px',
                             }}
                         >
-                            {/* 서울대학교 영양생리약리연구실 창업팀 NUSEUM은
-                            영양약리, 인체생리 지식을 기반으로 개인이 무엇을
-                            먹고 있는지 이해하게 하고, 무엇을 먹어야 하는지
-                            알려주고, 이를 쉽게 구매 또는 실천할 수 있도록 돕는
-                            플랫폼을 구현합니다. */}
-                            Start-up Team NUSEUM at Seoul National University
-                            Nutrient Physiology and Pharmacology Lab implements
-                            a platform that helps individuals understand what
-                            they are eating, tells them what they should eat,
-                            and helps them easily purchase or practice their
-                            personalized diet.
+                            {lang
+                                ? '서울대학교 영양생리약리연구실 창업팀 NUSEUM은 영양약리, 인체생리 지식을 기반으로 개인이 무엇을 먹고 있는지 이해하게 하고, 무엇을 먹어야 하는지 알려주고, 이를 쉽게 구매 또는 실천할 수 있도록 돕는 플랫폼을 구현합니다.'
+                                : 'Start-up Team NUSEUM at Seoul National University Nutrient Physiology and Pharmacology Lab implements a platform that helps individuals understand what they are eating, tells them what they should eat, and helps them easily purchase or practice their personalized diet.'}
                         </Text>
                         <Text
                             fontStyle={{
@@ -117,20 +108,9 @@ const Home = () => {
                             }}
                             style={{ width: '60%' }}
                         >
-                            {/* NUSEUM은 생리학, 약리학, 독성학, 식품학, 영양학
-                            분야에서 18년 이상 연구한 대표자의 경험을 바탕으로 
-                            <Strong>"올바르게 먹기 위한 정보"</Strong>를
-                            제공하고, 개인에게 맞추어진 건강한 식이를 실천할 수
-                            있도록 돕는 디지털 시대의 혁신적인{' '}
-                            <Strong>개인맞춤영양관리</Strong>를 구현하고자
-                            성장하고 있습니다. */}
-                            NUSEUM provides information to eat right and helps
-                            individuals to practice a healthy diet tailored to
-                            them based on the experience of the founder who has
-                            studied physiology, pharmacology, toxicology, food
-                            science, and nutrition for more than 18 years.
-                            NUSEUM is growing to provide innovative personalized
-                            nutrition management in this digital age.
+                            {lang
+                                ? 'NUSEUM은 생리학, 약리학, 독성학, 식품학, 영양학 분야에서 18년 이상 연구한 대표자의 경험을 바탕으로  올바르게 먹기 위한 정보를 제공하고, 개인에게 맞추어진 건강한 식이를 실천할 수 있도록 돕는 디지털 시대의 혁신적인 개인맞춤영양관리를 구현하고자 성장하고 있습니다.'
+                                : 'NUSEUM provides information to eat right and helps individuals to practice a healthy diet tailored to them based on the experience of the founder who has studied physiology, pharmacology, toxicology, food science, and nutrition for more than 18 years. NUSEUM is growing to provide innovative personalized nutrition management in this digital age.'}
                         </Text>
                     </div>
 
@@ -177,14 +157,9 @@ const Home = () => {
                                 fontWeight: 'normal',
                             }}
                         >
-                            {/* <Strong>“나" </Strong>또는{' '}
-                            <Strong>“내가 돌보고 있는 소중한 사람"</Strong>이
-                            {'\n'}
-                            피해야 할 그리고 선택해야 할 영양성분과 {'\n'} 관련
-                            최상위의 <Strong>맞춤식품</Strong>을 알려드립니다. */}
-                            NUSEUM helps individuals to choose what not to eat
-                            and what to eat for themselves and their significant
-                            others.
+                            {lang
+                                ? '나 또는 내가 돌보고 있는 소중한 사람이 피해야 할 그리고 선택해야 할 영양성분과 관련 최상위의 맞춤식품을 알려드립니다.'
+                                : 'NUSEUM helps individuals to choose what not to eat and what to eat for themselves and their significant others.'}
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
@@ -215,12 +190,9 @@ const Home = () => {
                                 fontWeight: 'normal',
                             }}
                         >
-                            {/* 뉴지엄은 Shop을 통해 {'\n'}
-                            관련 우수한 제품을 쉽게 찾고 {'\n'}
-                            <Strong>개인맞춤영양</Strong>을 실천할 수 있도록
-                            돕습니다.​ */}
-                            NUSEUM helps individuals easily find best foods and
-                            practice personalized diet.​
+                            {lang
+                                ? '뉴지엄은 Shop을 통해 관련 우수한 제품을 쉽게 찾고 개인맞춤영양을 실천할 수 있도록 돕습니다.​'
+                                : 'NUSEUM helps individuals easily find best foods and practice personalized diet.​'}
                         </Text>
                     </SectionTextBox>
                     <SectionImage src={section2} alt='section2' />
@@ -252,11 +224,9 @@ const Home = () => {
                                 fontWeight: 'normal',
                             }}
                         >
-                            {/* 뉴지엄은 Restaurant을 통해{'\n'} 나에게 필요한
-                            <Strong>최상위의 메뉴</Strong>와{' '}
-                            <Strong>식당</Strong>을 연결해 드립니다. */}
-                            NUSEUM connects the restaurants with the highly
-                            curated menus based on individual's needs.
+                            {lang
+                                ? '뉴지엄은 Restaurant을 통해 나에게 필요한 최상위의 메뉴와 식당을 연결해 드립니다.'
+                                : "NUSEUM connects the restaurants with the highly curated menus based on individual's needs."}
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
@@ -286,13 +256,9 @@ const Home = () => {
                                 fontWeight: 'normal',
                             }}
                         >
-                            {/* 뉴지엄은 최신의 과학지식을 기반으로 하며,{'\n'}
-                            <Strong>디지털헬스케어</Strong> 산업계에{' '}
-                            <Strong>“먹는 부분”</Strong>을{'\n'} 담당하기 위해
-                            성장하고 있습니다. */}
-                            NUSEUM is growing to be the key player to take a
-                            part on food & nutrition in the digital healthcare
-                            industry.
+                            {lang
+                                ? '뉴지엄은 최신의 과학지식을 기반으로 하며, 디지털헬스케어 산업계에 먹는 부분을 담당하기 위해 성장하고 있습니다.'
+                                : 'NUSEUM is growing to be the key player to take a part on food & nutrition in the digital healthcare industry.'}
                         </Text>
                     </SectionTextBox>
                     <SectionImage src={section4} alt='section4' />
@@ -335,16 +301,9 @@ const Home = () => {
                             }}
                             style={{ color: 'white', lineHeight: 1.5 }}
                         >
-                            {/* 서울대학교 영양생리약리연구실 창업팀 NUSEUM은
-                            아마존웹서비스/부산CIC의 도움을 받아 Autism Diet
-                            Challenge를 수행 중에 있으며, 서울대학교 창업지원단,
-                            SNU Venture Builder 프로그램의 지원을 받아 자폐아동
-                            개인맞춤영양 솔루션을 개발 중에 있습니다. 추후
-                            NUSEUM의 주요 서비스 예입니다. */}
-                            NUSEUM is conducting Autism Diet Digital Challenge
-                            powered by Amazon Web Services, developing
-                            personalized nutrition solutions for autistic
-                            children.
+                            {lang
+                                ? '서울대학교 영양생리약리연구실 창업팀 NUSEUM은 아마존웹서비스/부산CIC의 도움을 받아 Autism Diet Challenge를 수행 중에 있으며, 서울대학교 창업지원단, SNU Venture Builder 프로그램의 지원을 받아 자폐아동 개인맞춤영양 솔루션을 개발 중에 있습니다. 추후 NUSEUM의 주요 서비스 예입니다.'
+                                : 'NUSEUM is conducting Autism Diet Digital Challenge powered by Amazon Web Services, developing personalized nutrition solutions for autistic children.'}
                         </Text>
                     </ServiceDescriptionBox>
                 </ServiceDescription>
@@ -497,12 +456,9 @@ const Home = () => {
                                 fontSize: 'button',
                             }}
                         >
-                            {/* 08826) 서울특별시 관악구 관악로 1. 서울대학교
-                                관악캠퍼스 IBK커뮤니케이션센터(64동) 1층 IBK창공
-                                서울대캠프 NUSEUM */}
-                            08826) NUSEUM IBK Changgong Seoul National
-                            University Camp, IBK Communication Center, 1
-                            Gwanak-ro, Gwanak-gu, Seoul, Republic of Korea
+                            {lang
+                                ? '08826) 서울특별시 관악구 관악로 1. 서울대학교 관악캠퍼스 IBK커뮤니케이션센터(64동) 1층 IBK창공 서울대캠프 NUSEUM'
+                                : '08826) NUSEUM IBK Changgong Seoul National University Camp, IBK Communication Center, 1 Gwanak-ro, Gwanak-gu, Seoul, Republic of Korea'}
                         </Text>
                     </div>
                     <Text
