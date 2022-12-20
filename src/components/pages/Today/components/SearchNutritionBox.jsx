@@ -1,5 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { foodActions } from '../../../../store/nutrition-slice';
 import { Result, ResultBox } from './SearchNutritionBox.styled';
 
 const SearchNutritionBox = ({
@@ -9,7 +11,6 @@ const SearchNutritionBox = ({
     setInputTitle,
 }) => {
     const [height, setHeight] = useState(1);
-
     const renderNutrition = (param) => {
         switch (param) {
             case 'carbohydrate':
@@ -43,6 +44,7 @@ const SearchNutritionBox = ({
         }
     };
     const [keyCount, setKeyCount] = useState(1);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         setKeyCount(1);
@@ -56,7 +58,7 @@ const SearchNutritionBox = ({
                 : setKeyCount((prev) => prev + 1)
         );
         setHeight(keyCount * 30);
-    }, [openid, keyCount, height]);
+    }, [openid, keyCount, height, item]);
 
     return openid === item.id ? (
         <AnimatePresence>
@@ -86,6 +88,7 @@ const SearchNutritionBox = ({
                     onClick={() => {
                         setInputModalOpen(true);
                         setInputTitle(item.name);
+                        dispatch(foodActions.add(item));
                     }}
                 >
                     추가하기
