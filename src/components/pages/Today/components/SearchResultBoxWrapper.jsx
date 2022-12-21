@@ -6,6 +6,7 @@ import { SearchResultBox } from '../Today.styled';
 import SearchNutritionBox from './SearchNutritionBox';
 
 let init = true;
+
 const SearchResultBoxWrapper = ({
     setModalOpen,
     result,
@@ -15,6 +16,7 @@ const SearchResultBoxWrapper = ({
     setInputTitle,
     hasSecond,
     searchParam,
+    setInputCompletedFood,
 }) => {
     const [isFetching, setIsFetching] = useState(false);
     const [page, setPage] = useState(3);
@@ -72,6 +74,7 @@ const SearchResultBoxWrapper = ({
             console.log(err);
             if (err.response.status === 404) {
                 setIsFetching(false);
+
                 return;
             }
         }
@@ -138,6 +141,7 @@ const SearchResultBoxWrapper = ({
                         item={item}
                         setInputModalOpen={setInputModalOpen}
                         setInputTitle={setInputTitle}
+                        setInputCompletedFood={setInputCompletedFood}
                     />
                 </React.Fragment>
             ))}
