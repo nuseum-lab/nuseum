@@ -40,17 +40,19 @@ import Button from '../../atom/Button';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useCalculate from '../../../hooks/useCalculate';
 import Loading from '../../atom/Loading/Loading';
+import { useSelector } from 'react-redux';
+import useCategory from '../../../hooks/useCategory';
 
 const img = {
-    broccoli: { eat: cbroccoli, noEat: broccoli, name: '야채' },
+    broccoli: { eat: cbroccoli, noEat: broccoli, name: '채소' },
     strawberry: { eat: cstrawberry, noEat: strawberry, name: '과일' },
     bean: { eat: cbean, noEat: bean, name: '콩/두부' },
     rice: { eat: crice, noEat: rice, name: '통곡물' },
     seaweed: { eat: cseaweed, noEat: seaweed, name: '해조류' },
-    amond: { eat: camond, noEat: amond, name: '아몬드' },
+    amond: { eat: camond, noEat: amond, name: '견과류 및 종실류' },
     fish: { eat: cfish, noEat: fish, name: '고기/생선/달걀' },
-    milk: { eat: cmilk, noEat: milk, name: '유제품' },
-    mushroom: { eat: cmushroom, noEat: mushroom, name: '버섯' },
+    milk: { eat: cmilk, noEat: milk, name: '우유 및 유제품류' },
+    mushroom: { eat: cmushroom, noEat: mushroom, name: '버섯류' },
 };
 
 const Analysis = () => {
@@ -60,21 +62,15 @@ const Analysis = () => {
     const [foodDataFrame, setFoodDataFrame] = useState(null);
     const [supplementDataFrame, setSupplementDataFrame] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [nutrition, setNutrition] = useState({
-        energy: 0,
-        protein: 0,
-        fat: 0,
-        carbohydrate: 0,
-        dietary_fiber: 0,
-        magnesium: 0,
-        vitamin_a: 0,
-        vitamin_d: 0,
-        vitamin_b6: 0,
-        folic_acid: 0,
-        vitamin_b12: 0,
-        tryptophan: 0,
-        dha_epa: 0,
-    });
+    const nutritionWithSupplement = useSelector(
+        (state) => state.nutrition.withSupplement
+    );
+    const nutritionWithoutSupplement = useSelector(
+        (state) => state.nutrition.withoutSupplement
+    );
+
+    const [numOfcategory, category] = useCategory(location.state.foodList);
+
     const upperIntake = useCalculate(
         location.state.gender ? 'M' : 'F',
         Number(location.state.age)
@@ -118,21 +114,6 @@ const Analysis = () => {
     };
 
     useEffect(() => {
-        setNutrition({
-            energy: 741.071849989,
-            protein: 38.748302778479996,
-            fat: 30.061191666610004,
-            carbohydrate: 67.11065833848001,
-            dietary_fiber: 0.278775,
-            magnesium: 44.285075,
-            vitamin_a: 102.2849999969,
-            vitamin_d: 12.865,
-            vitamin_b6: 0.11599999999999999,
-            folic_acid: 95.640775,
-            vitamin_b12: 3.526625,
-            tryptophan: 194.39999999999998,
-            dha_epa: 1391.0140000000001,
-        });
         readDB();
     }, []);
 
@@ -165,7 +146,8 @@ const Analysis = () => {
         for (let i in upperIntake) {
             if (upperIntake[i]) {
                 intakeRatio[i] =
-                    (upperIntake[i] - nutrition[i]) / upperIntake[i];
+                    (upperIntake[i] - nutritionWithSupplement[i]) /
+                    upperIntake[i];
             }
         }
 
@@ -213,14 +195,17 @@ const Analysis = () => {
                         >
                             충분/권장섭취량 대비 실제 섭취량(%)
                         </Text>
-                        {nutrition ? (
+                        {nutritionWithSupplement ? (
                             <RadarGraph
-                                data={nutrition}
+                                data={nutritionWithSupplement}
                                 range={range}
                                 dateCount={1}
+                                dataWithoutSupplement={
+                                    nutritionWithoutSupplement
+                                }
                             />
                         ) : null}
-                        <BarGraph data={nutrition} />
+                        <BarGraph data={nutritionWithSupplement} />
                     </UtilLayout>
                 </UtilWrapper>
                 <UtilWrapper
@@ -252,16 +237,22 @@ const Analysis = () => {
                             }}
                             style={{ margin: '30px 0' }}
                         >
-                            33점
+                            {((numOfcategory / 9) * 100).toFixed(0)}점
                         </Text>
                         <PointLayout>
                             <Text fontStyle={{ fontSize: 'sub_title' }}>
-                                3/9
+                                {numOfcategory}/9
                             </Text>
                             <PointBox>
                                 {Object.keys(img).map((item) => (
                                     <Point key={item}>
-                                        <PointImg src={img[item].eat} />
+                                        <PointImg
+                                            src={
+                                                category[item]
+                                                    ? img[item].eat
+                                                    : img[item].noEat
+                                            }
+                                        />
                                         <Text fontStyle={{ fontSize: 'menu' }}>
                                             {img[item].name}
                                         </Text>
