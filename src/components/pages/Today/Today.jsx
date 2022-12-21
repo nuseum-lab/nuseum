@@ -36,6 +36,9 @@ const Today = () => {
     const [inputModalOpen, setInputModalOpen] = useState(false);
     const [inputTitle, setInputTitle] = useState('');
 
+    const [inputCompletedFood, setInputCompletedFood] = useState(null);
+
+    // 입력된 음식목록 -> 이미지 위에 올라가는 리스트에 사용됨
     const [selected, setSelected] = useState({
         breakfast: true,
         lunch: false,
@@ -43,6 +46,7 @@ const Today = () => {
         snack: false,
         supplement: false,
     });
+
     const [food, setFood] = useState('');
     const [foodList, setFoodList] = useState({
         breakfast: [],
@@ -62,6 +66,7 @@ const Today = () => {
                 inputTitle={inputTitle}
                 setFoodList={setFoodList}
                 selected={selected}
+                inputCompletedFood={inputCompletedFood}
             />
             <BackgroundWrapper reverse={true}>
                 <ImgWrapper
@@ -289,6 +294,28 @@ const Today = () => {
                                     height: 20,
                                     position: 'relative',
                                     right: 40,
+                                    cursor: 'pointer',
+                                }}
+                                onClick={() => {
+                                    axios
+                                        .get(`/food/?search=${food}`)
+                                        .then((response) => {
+                                            if (response.data.count === 0) {
+                                                window.alert(
+                                                    '검색결과가 없습니다.'
+                                                );
+                                                return;
+                                            }
+
+                                            setModalOpen(true);
+                                            setResult([
+                                                ...response.data.results,
+                                            ]);
+                                            if (response.data.next) {
+                                                setHasSecond(true);
+                                            }
+                                        })
+                                        .catch((err) => console.log(err));
                                 }}
                             />
                         </SearchBar>
@@ -307,6 +334,7 @@ const Today = () => {
                                     state: {
                                         gender: location.state.gender,
                                         age: location.state.age,
+                                        foodList,
                                     },
                                 })
                             }
@@ -326,6 +354,7 @@ const Today = () => {
                                 setInputTitle={setInputTitle}
                                 hasSecond={hasSecond}
                                 searchParam={food}
+                                setInputCompletedFood={setInputCompletedFood}
                             />
                         ) : null}
                     </UtilLayout>
