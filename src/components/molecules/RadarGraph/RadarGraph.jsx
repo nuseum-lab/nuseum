@@ -18,7 +18,7 @@ ChartJS.register(
 );
 ChartJS.defaults.font.size = 8;
 
-const RadarGraph = ({ dateCount, data, range }) => {
+const RadarGraph = ({ dateCount, data, range, dataWithoutSupplement }) => {
     let dataForRadar = {
         labels: [
             // 'A',
@@ -135,6 +135,117 @@ const RadarGraph = ({ dateCount, data, range }) => {
                         ? 100
                         : (
                               (+data.vitamin_d /
+                                  (range.vitamin_d * dateCount)) *
+                              100
+                          ).toFixed(1),
+                ],
+                fill: true,
+                backgroundColor: 'rgba(190, 197, 198, 0.6)',
+                borderColor: 'rgba(190, 197, 198, 0.6)',
+                pointBackgroundColor: 'rgba(190, 197, 198, 0.6)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(190, 197, 198, 0.6)',
+            },
+            {
+                label: '음식(%)',
+                data: [
+                    (
+                        (+dataWithoutSupplement.dha_epa /
+                            (range.dha_epa * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
+                        ? 100
+                        : (
+                              (+dataWithoutSupplement.dha_epa /
+                                  (range.dha_epa * dateCount)) *
+                              100
+                          ).toFixed(1),
+                    (
+                        (+dataWithoutSupplement.folic_acid /
+                            (range.folic_acid * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
+                        ? 100
+                        : (
+                              (+dataWithoutSupplement.folic_acid /
+                                  (range.folic_acid * dateCount)) *
+                              100
+                          ).toFixed(1),
+                    (
+                        (+dataWithoutSupplement.magnesium /
+                            (range.magnesium * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
+                        ? 100
+                        : (
+                              (+dataWithoutSupplement.magnesium /
+                                  (range.magnesium * dateCount)) *
+                              100
+                          ).toFixed(1),
+                    (
+                        (+dataWithoutSupplement.tryptophan /
+                            (range.tryptophan * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
+                        ? 100
+                        : (
+                              (+dataWithoutSupplement.tryptophan /
+                                  (range.tryptophan * dateCount)) *
+                              100
+                          ).toFixed(1),
+                    (
+                        (+dataWithoutSupplement.vitamin_a /
+                            (range.vitamin_a * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
+                        ? 100
+                        : (
+                              (+dataWithoutSupplement.vitamin_a /
+                                  (range.vitamin_a * dateCount)) *
+                              100
+                          ).toFixed(1),
+                    (
+                        (+dataWithoutSupplement.dietary_fiber /
+                            (range.dietary_fiber * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
+                        ? 100
+                        : (
+                              (+dataWithoutSupplement.dietary_fiber /
+                                  (range.dietary_fiber * dateCount)) *
+                              100
+                          ).toFixed(1),
+                    (
+                        (+dataWithoutSupplement.vitamin_b6 /
+                            (range.vitamin_b6 * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
+                        ? 100
+                        : (
+                              (+dataWithoutSupplement.vitamin_b6 /
+                                  (range.vitamin_b6 * dateCount)) *
+                              100
+                          ).toFixed(1),
+                    (
+                        (+dataWithoutSupplement.vitamin_b12 /
+                            (range.vitamin_b12 * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
+                        ? 100
+                        : (
+                              (+dataWithoutSupplement.vitamin_b12 /
+                                  (range.vitamin_b12 * dateCount)) *
+                              100
+                          ).toFixed(1),
+                    (
+                        (+dataWithoutSupplement.vitamin_d /
+                            (range.vitamin_d * dateCount)) *
+                        100
+                    ).toFixed(1) > 100
+                        ? 100
+                        : (
+                              (+dataWithoutSupplement.vitamin_d /
                                   (range.vitamin_d * dateCount)) *
                               100
                           ).toFixed(1),
