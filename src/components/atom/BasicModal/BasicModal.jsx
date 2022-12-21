@@ -5,9 +5,21 @@ import ModalDialog from '@mui/joy/ModalDialog';
 import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
 import React, { useState } from 'react';
+import useEstimate from '../../../hooks/useEstimate';
+import { useDispatch } from 'react-redux';
+import { foodActions } from '../../../store/nutrition-slice';
 
-const BasicModal = ({ open, inputTitle, setOpen, setFoodList, selected }) => {
-    const [amount, setAmount] = useState(0);
+const BasicModal = ({
+    open,
+    inputTitle,
+    setOpen,
+    setFoodList,
+    selected,
+    inputCompletedFood,
+}) => {
+    const [amount, setAmount] = useState(1);
+    const calculatedNutrition = useEstimate(inputCompletedFood, amount);
+    const dispatch = useDispatch();
 
     return (
         <React.Fragment>
@@ -68,13 +80,17 @@ const BasicModal = ({ open, inputTitle, setOpen, setFoodList, selected }) => {
                                             ...prev,
                                             [key]: [
                                                 ...prev[key],
-                                                [inputTitle, amount],
+                                                [
+                                                    inputTitle,
+                                                    amount,
+                                                    inputCompletedFood.category,
+                                                ],
                                             ],
                                         };
                                     });
                                 }
                             }
-
+                            dispatch(foodActions.add(calculatedNutrition));
                             setOpen(false);
                         }}
                     >
