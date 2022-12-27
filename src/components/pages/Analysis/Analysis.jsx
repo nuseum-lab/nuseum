@@ -38,10 +38,10 @@ import mushroom from '../../../lib/assets/no-color/mushroom.png';
 import Text from '../../atom/Text/Text';
 import Button from '../../atom/Button';
 import { useLocation, useNavigate } from 'react-router-dom';
-import useCalculate from '../../../hooks/useCalculate';
 import Loading from '../../atom/Loading/Loading';
 import { useSelector } from 'react-redux';
 import useCategory from '../../../hooks/useCategory';
+import useCalculate from '../../../hooks/useCalculate';
 
 const img = {
     broccoli: { eat: cbroccoli, noEat: broccoli, name: '채소' },
@@ -58,9 +58,12 @@ const img = {
 const Analysis = () => {
     const location = useLocation();
     const navigate = useNavigate();
+
     const [curationFoodList, setCurationFoodList] = useState(null);
+    const [curationNutritionList, setCurationNutritionList] = useState(null);
     const [foodDataFrame, setFoodDataFrame] = useState(null);
     const [supplementDataFrame, setSupplementDataFrame] = useState(null);
+
     const [loading, setLoading] = useState(false);
     const nutritionWithSupplement = useSelector(
         (state) => state.nutrition.withSupplement
@@ -108,8 +111,80 @@ const Analysis = () => {
                     return item.slice(0, index);
                 })
             );
+
+            setCurationNutritionList(
+                curationNutritionDB.$dataIncolumnFormat.map((item) => {
+                    let index = 0;
+                    for (let elem of item) {
+                        if (elem === ' ') break;
+                        index += 1;
+                    }
+                    return item.slice(0, index);
+                })
+            );
         } catch (err) {
             console.log(err);
+        }
+    };
+
+    const recommendStart = (
+        intakeRatio,
+        nutritionWithCategory,
+        hateList,
+        removeTargetNutrition
+    ) => {
+        // intakeRatio 순회하면서 음수인 요소는 제외한다.
+
+        // 과잉된 영양성분들
+        let overdoseNutritents = [];
+        for (let key in intakeRatio) {
+            if (intakeRatio[key] < 0) {
+                overdoseNutritents.push(key);
+            }
+        }
+
+        // dha_epa : "DHA+EPA(mg)" 형태의 딕셔너리로 바꾸기
+        let nutritionNameDictionary = {
+            dha_epa: 'DHA+EPA(mg)',
+            folic_acid: '엽산(DFE)(㎍)',
+            magnesium: '마그네슘(㎎)',
+            tryptophan: '트립토판(㎎)',
+            vitamin_a: 'total 비타민 A(㎍)',
+            dietary_fiber: '총 식이섬유(g)',
+            vitamin_b6: '비타민 B6(㎎)',
+            vitamin_b12: '비타민 B12(㎍)',
+            vitamin_d: '비타민 D(㎍)',
+        };
+
+        // 과잉되지 않은 영양성분에 대한 한글명 추출후 딕셔너리에 키 밸류 쌍으로 저장
+        for (let key in overdoseNutritents) {
+            delete nutritionNameDictionary[overdoseNutritents[key]];
+        }
+
+        // 한글명 순회
+        for (let nameObj of Object.entries(nutritionNameDictionary)) {
+            // nutritionWithCategory 딕셔너리 키값이 한글 영양성분명이므로
+            // 각각의 딕셔너리 밸류를 순회한다 -> 각 밸류는 영양성분에 대응되는 음식 리스트
+            let foodListWithNutrition = [...nutritionWithCategory[nameObj[1]]];
+
+            for (let hateFood of hateList) {
+                // 과잉된 영양성분을 제외한 영양성분 리스트를 각각 순회하다가
+                // 각 영양성분에 해당하는 음식 리스트중에
+                // hateList에 포함되는 음식이 있는 경우 삭제하는 로직 -> 하나도 포함되어 있지 않다고 판단ㄷ
+                if (foodListWithNutrition.indexOf(hateFood) !== -1) {
+                    foodListWithNutrition = [
+                        ...foodListWithNutrition.slice(
+                            0,
+                            foodListWithNutrition.indexOf(hateFood)
+                        ),
+                        ...foodListWithNutrition.slice(
+                            foodListWithNutrition.indexOf(hateFood) + 1
+                        ),
+                    ];
+                }
+            }
+
+            nutritionWithCategory[nameObj[1]] = [...foodListWithNutrition];
         }
     };
 
@@ -119,13 +194,12 @@ const Analysis = () => {
 
     useEffect(() => {
         // 큐레이션 리스트 DB 읽어온 이후 -> 알고리즘 시작
-
-        // if (curationFoodList && foodDataFrame && supplementDataFrame) {
-        //     setLoading(false);
-        // }
-        // console.log(foodDataFrame);
-        if (curationFoodList) {
+        // curationFoodList : fooddb.xlsx 시트 1
+        // curationNutritionList : food-nutrition.xlsx -> fooddb.xlsx 시트 2
+        if (curationFoodList && curationNutritionList) {
             setLoading(false);
+        } else {
+            return;
         }
 
         // 1. 객체로부터 하루동안 섭취한 영양성분 데이터 읽어오기
@@ -142,6 +216,7 @@ const Analysis = () => {
         }
 
         // (기준치 - 섭취량) / 기준치
+        // intakeRatio === ReDn 까지 구했음
         let intakeRatio = {};
         for (let i in upperIntake) {
             if (upperIntake[i]) {
@@ -151,9 +226,77 @@ const Analysis = () => {
             }
         }
 
-        // 추천 식품 시트2와 비교 시작
+        // 달걀 & 사과 각 50g에 대한 데이터
+        // {
+        //     "dietary_fiber": 1,
+        //     "magnesium": 0.987972972972973,
+        //     "vitamin_a": 0.862875,
+        //     "vitamin_d": -0.14299999999999996,
+        //     "vitamin_b6": 0.9820000000000001,
+        //     "folic_acid": 0.8640000000000001,
+        //     "vitamin_b12": 0.35208333333333336,
+        //     "tryptophan": 0.8816666666666667,
+        //     "dha_epa": 0.5718875
+        // }
 
-        console.log(curationFoodList);
+        // 추천 식품 시트2와 비교 시작 fd = pd.read_excel , nts = pd.read_excel
+        const category = [
+            '채소',
+            '과일',
+            '콩/두부',
+            '통곡물',
+            '버섯',
+            '해조류',
+            '견과',
+            '고기/생선/달걀',
+            '유제품',
+        ];
+        const nutritionName = [
+            'DHA+EPA(mg)',
+            '엽산(DFE)(㎍)',
+            '마그네슘(㎎)',
+            '트립토판(㎎)',
+            'total 비타민 A(㎍)',
+            '총 식이섬유(g)',
+            '비타민 B6(㎎)',
+            '비타민 B12(㎍)',
+            '비타민 D(㎍)',
+        ];
+
+        let foodListWithCategory = {};
+
+        for (let index in category) {
+            // 채소 : [...]
+            foodListWithCategory[category[index]] = curationFoodList[index];
+        }
+
+        let nutritionWithCategory = {};
+        for (let index in nutritionName) {
+            nutritionWithCategory[nutritionName[index]] =
+                curationNutritionList[index];
+        }
+
+        const hateList = [
+            '소고기(안심)',
+            '소고기(사태)',
+            '닭고기',
+            '김',
+            '달걀',
+            '장어',
+        ];
+        const removeTargetNutrition = ['비타민B6', '비타민B12', '트립토판'];
+
+        // nutritionWithCategory
+        // DHA+EPA : [...]
+        // 마그네슘 : [...]
+        recommendStart(
+            intakeRatio,
+            nutritionWithCategory,
+            hateList,
+            removeTargetNutrition
+        );
+        // 여기서부터 추천로직 시작
+        // recommend(intakeRatio, nutritionWithCategory, hateList, removeTargetNutrtition)
     }, [curationFoodList, foodDataFrame, supplementDataFrame]);
 
     const range = useCalculate(
