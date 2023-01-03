@@ -26,6 +26,9 @@ const History = () => {
                         <div>
                             <h4>01.01 ~ 12.31</h4>
                             <Text>{lang ? '- 과학기술정보통신부 한국연구재단 중견연구자원사업 "뇌건강 foodme-physiome-exposome 지식을 기반으로 하는 개인 맞춤 브레인 푸드 머신러닝 예측 모델 개발 연구' : "- The Ministry of Science and ICT's support project for the Korea Research Foundation's Mid-sized Research Institute 'Development of a predictive model for customized brain food machine learning based on brain health foodme-physiome-exposome knowledge'"}</Text>
+                        </div>
+                        <div>
+                            <h4>01.01 ~ 12.31</h4>
                             <Text>{lang ? '- 아마존 웹서비스 의료 혁신과제 자폐 영유아동의 디지털 식이개선 챌린지 참여':'- Participate in the Amazon Web Service Medical Innovation Task Digital Diet Improvement Challenge for Autistic Infants and Children'}</Text>
                         </div>
                         <div>
@@ -39,7 +42,7 @@ const History = () => {
                         </div>
                         <div>
                             <h4>05.13 ~ 12.31</h4>
-                            <Text>{lang ? '- 서울대학교 창업지원단 [창업클럽] 선정':"- Selected as the Startup Club of Seoul National University's Startup Support Group"}</Text>
+                            <Text>{lang ? '- 서울대학교 창업지원단 "창업클럽" 선정':"- Selected as the Startup Club of Seoul National University's Startup Support Group"}</Text>
                             <Text>{lang ? '- 서울대학교 창업지원단 창업클럽 교내경진대회 최우수상 수상 (2022.06.15)':'- Won the grand prize at the school competition hosted by the Seoul National University Startup Support Group Startup Club (2022.06.15)'}</Text>
                         </div>
                         <div>
