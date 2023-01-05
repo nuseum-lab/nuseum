@@ -55,7 +55,7 @@ export const SectionTextBox = styled.div`
         }
     }
     ${Text} {
-        width: 65%;
+        width: 70%;
         line-height: 1.6;
         &:first-child {
             margin-bottom: 20px;
