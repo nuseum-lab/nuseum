@@ -82,8 +82,8 @@ const Home = () => {
                             style={{ marginBottom: '30px', width: '60%' }}
                         >
                             {lang
-                                ? '당신의 영양생리약리 박물관에서 무엇을 먹어야 하는지 알려주는 큐레이션 서비스'
-                                : 'A curation service that tells you what to eat at your nutrient physiology & pharmacology museum'}
+                                ? '당신은 당신이 먹은 것으로 구성됩니다. \n 당신은 무엇인가요.'
+                                : 'YOU are what you eat. \n Then what are you going to eat.'}
                         </Text>
                         <Text
                             fontStyle={{
@@ -97,8 +97,8 @@ const Home = () => {
                             }}
                         >
                             {lang
-                                ? '서울대학교 영양생리약리연구실 창업팀 NUSEUM은 영양약리, 인체생리 지식을 기반으로 개인이 무엇을 먹고 있는지 이해하게 하고, 무엇을 먹어야 하는지 알려주고, 이를 쉽게 구매 또는 실천할 수 있도록 돕는 플랫폼을 구현합니다.'
-                                : 'Start-up Team NUSEUM at Seoul National University Nutrient Physiology and Pharmacology Lab implements a platform that helps individuals understand what they are eating, tells them what they should eat, and helps them easily purchase or practice their personalized diet.'}
+                                ? '스타트업 뉴지엄은 개인맞춤영양에 대한 미친 아이디어로 consumer tech와 digital health care 산업에 혁신을 도모합니다.'
+                                : 'Start-up Team NUSEUM pursues crazy ideas for personaized nutirition to be apllied on Consumer Tech and Digital Health Care Industry'}
                         </Text>
                         <Text
                             fontStyle={{
@@ -158,8 +158,8 @@ const Home = () => {
                             }}
                         >
                             {lang
-                                ? '나 또는 내가 돌보고 있는 소중한 사람이 피해야 할 그리고 선택해야 할 영양성분과 관련 최상위의 맞춤식품을 알려드립니다.'
-                                : 'NUSEUM helps individuals to choose what not to eat and what to eat for themselves and their significant others.'}
+                                ? '뉴지엄은 당신과 당신의 소중한 사람이 피해야 할, 섭취해야 할 영양성분과 식품의 선택을 돕습니다'
+                                : 'NUSEUM helps individuals to choose what not to eat and what to eat for themselves and their significant others'}
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
@@ -191,8 +191,8 @@ const Home = () => {
                             }}
                         >
                             {lang
-                                ? '뉴지엄은 Shop을 통해 관련 우수한 제품을 쉽게 찾고 개인맞춤영양을 실천할 수 있도록 돕습니다.​'
-                                : 'NUSEUM helps individuals easily find best foods and practice personalized diet.​'}
+                                ? '뉴지엄은 e-commerce와 연계하여 당신과 당신의 소중한 사람이 개인맞춤영양을 쉽게 실천하도록 돕습니다'
+                                : 'NUSEUM connects e-commerce to help food choice right for you and your significant others'}
                         </Text>
                     </SectionTextBox>
                     <SectionImage src={section2} alt='section2' />
@@ -225,8 +225,8 @@ const Home = () => {
                             }}
                         >
                             {lang
-                                ? '뉴지엄은 Restaurant을 통해 나에게 필요한 최상위의 메뉴와 식당을 연결해 드립니다.'
-                                : "NUSEUM connects the restaurants with the highly curated menus based on individual's needs."}
+                                ? '뉴지엄은 배달업체 및 식당과 연계하여 당신과 당신의 소중한 사람의 식당과 메뉴 선택을 돕습니다'
+                                : "NUSEUM connects food delivery, take out & dine-in cafe to help menu choice right for you and your significant others"}
                         </Text>
                     </SectionTextBox>
                 </ImageBox>
@@ -257,8 +257,8 @@ const Home = () => {
                             }}
                         >
                             {lang
-                                ? '뉴지엄은 최신의 과학지식을 기반으로 하며, 디지털헬스케어 산업계에 먹는 부분을 담당하기 위해 성장하고 있습니다.'
-                                : 'NUSEUM is growing to be the key player to take a part on food & nutrition in the digital healthcare industry.'}
+                                ? '뉴지엄은 빠르게 확장되고 있는 디지털헬스케어산업의 \n "먹는 부분"을 담당하기 위해 성장하고 있습니다'
+                                : 'NUSEUM is growing as a key player in food and nutrition in the digital healthcare industry'}
                         </Text>
                     </SectionTextBox>
                     <SectionImage src={section4} alt='section4' />
@@ -302,8 +302,8 @@ const Home = () => {
                             style={{ color: 'white', lineHeight: 1.5 }}
                         >
                             {lang
-                                ? '서울대학교 영양생리약리연구실 창업팀 NUSEUM은 아마존웹서비스/부산CIC의 도움을 받아 Autism Diet Challenge를 수행 중에 있으며, 서울대학교 창업지원단, SNU Venture Builder 프로그램의 지원을 받아 자폐아동 개인맞춤영양 솔루션을 개발 중에 있습니다. 추후 NUSEUM의 주요 서비스 예입니다.'
-                                : 'NUSEUM is conducting Autism Diet Digital Challenge powered by Amazon Web Services, developing personalized nutrition solutions for autistic children.'}
+                                ? '뉴지엄은 아마존웹서비스의 도움을 받아 자폐아동의 편중된 식이를 개선하기 위한 Autism Diet Digital Challenge를 수행하고 있습니다.'
+                                : 'NUSEUM is conducting Autism Diet Digital Challenge powered by Amazon Web Service, developing innovative personalized nutrition solution for autistic children'}
                         </Text>
                     </ServiceDescriptionBox>
                 </ServiceDescription>

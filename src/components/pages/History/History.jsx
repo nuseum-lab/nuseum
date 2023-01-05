@@ -16,7 +16,7 @@ const History = () => {
             <h1>
                 HISTORY
             </h1>
-            <Text>NUSEUM</Text>
+            <Text>{lang ? '뉴지엄의 성장과 함께 하세요' : 'history of NUSEUM'}</Text>
             <HistoryTextBox>
                 <YearWrap
                     style={{borderBottom: '2px dotted rgba(0 0 0 / 20%'}}
