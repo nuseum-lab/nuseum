@@ -18,7 +18,10 @@ export const Box = styled(motion.div)`
     justify-content: space-between;
     margin: 0 auto;
     position: ${(props) => (props.isopen ? 'fixed' : null)};
-    background-color: ${colorPalette.whiteOrange};
+
+    background-color: ${(props) => props.hovercustome.background};
+    color: ${(props) => props.hovercustome.color};
+
     padding: ${(props) => (props.isopen ? '0 64px' : null)};
     box-sizing: border-box;
     @media all and (min-width: 600px) and (max-width: 1135px) {
@@ -27,6 +30,11 @@ export const Box = styled(motion.div)`
     @media all and (max-width: 599px) {
         padding: 0 16px;
     }
+    :hover{
+        color:black;
+        background-color: ${colorPalette.whiteOrange};
+    }
+
 `;
 
 export const MenuBox = styled.div`
@@ -47,6 +55,6 @@ export const SubGroupMobile = styled.div`
         display: block;
         padding: 10px 10px;
         text-decoration: none;
-        color: black;
+        color: inherit;
     }
 `;

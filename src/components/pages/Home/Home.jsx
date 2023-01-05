@@ -41,7 +41,8 @@ const Home = () => {
     const navigate = useNavigate();
     return (
         <Layout>
-            <Header />
+            <Header 
+                hovercustome={{color: 'white', background:'transparent'}}/>
             <Image type='main' imgObject={background} />
             <Section
                 style={{
@@ -82,7 +83,7 @@ const Home = () => {
                             style={{ marginBottom: '30px', width: '60%' }}
                         >
                             {lang
-                                ? '당신은 당신이 먹은 것으로 구성됩니다. \n 당신은 무엇인가요.'
+                                ? '당신은 당신이 먹는 것으로 구성됩니다. \n 당신은 무엇인가요.'
                                 : 'YOU are what you eat. \n Then what are you going to eat.'}
                         </Text>
                         <Text

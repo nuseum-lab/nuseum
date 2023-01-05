@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
 import { languageActions } from '../../../store/language-slice';
 
-const Header = () => {
+const Header = (hovercustome) => {
     const navigate = useNavigate();
     const [subVisibleMobile, setSubVisibleMobile] = useState(false);
     const [id, setIdMobile] = useState(0);
@@ -60,6 +60,7 @@ const Header = () => {
         <AnimatePresence>
             {headerVisible || isOpen ? (
                 <Box
+                    hovercustome={hovercustome}
                     initial={{ y: -100 }}
                     exit={{ y: -200 }}
                     animate={{ y: 0 }}

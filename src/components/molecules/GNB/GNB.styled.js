@@ -42,7 +42,7 @@ export const GroupWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     a {
-        color: black;
+        color: inherit;
         text-decoration: none;
     }
     :hover > p > a {
